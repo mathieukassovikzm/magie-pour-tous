@@ -1,0 +1,9 @@
+<div class="section section-trust">
+  <div class="section-title">
+    <h1>Ils nous font confiance</h1>
+  </div>
+  <Carousel :nbSlidesToShow="nbSlidesToShow" :realSlidesCount="realSlidesCount">
+    <CarouselSlide v-for="(companie, index) in companies" :key="index" :index="index" :companie="companie">
+    </CarouselSlide>
+  </Carousel>
+</div>

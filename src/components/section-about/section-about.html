@@ -1,0 +1,91 @@
+<section class="section section-about">
+  <div class="section-title">
+    <h1>Qui suis-je?</h1>
+  </div>
+  <div class="section-container">
+    <div v-if="isSmall" class="isSmall">
+      <div class="about-elt about-div-img">
+        <!--
+          // TODO: Gerer la taille de l'image
+        -->
+        <img class="about-img" src="../../assets/img/About-PhotoProfil.jpg" alt="Go2Sport - Damien Le Bellec">
+      </div>
+      <div class="about-elt about-div-text title" v-if="isSmall">
+        <h2>Damien <span>Le Bellec</span></h2>
+      </div>
+      <div class="about-elt about-div-text" >
+        <p>
+          {{p01}}
+        </p>
+        <p>
+          {{p02}}
+        </p>
+        <p>
+          {{p03}}
+        </p>
+        <p>
+          {{p04}}
+        </p>
+      </div>
+    </div>
+    <div v-if="isMedium" class="isMedium">
+      <div class="container-flex">
+        <div class="about-div-img item-flex">
+          <img class="about-img" src="../../assets/img/About-PhotoProfil.jpg" alt="Go2Sport - Damien Le Bellec">
+        </div>
+        <div class="item-flex">
+          <div class="about-div-text title">
+            <h2>Damien <span>Le Bellec</span></h2>
+          </div>
+          <div class="about-div-text paragraph">
+            <p>
+              {{p01}}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="about-div-text" >
+        <p>
+          {{p01}}
+        </p>
+        <p>
+          {{p02}}
+        </p>
+        <p>
+          {{p03}}
+        </p>
+        <p>
+          {{p04}}
+        </p>
+      </div>
+    </div>
+    <div v-if="isLarge" class="isLarge">
+      <div class="container-flex">
+        <div class="about-div-img item-flex">
+          <img class="about-img" src="../../assets/img/About-PhotoProfil.jpg" alt="Go2Sport - Damien Le Bellec">
+        </div>
+        <div class="item-flex">
+          <div class="about-div-text title">
+            <h2>Damien <span>Le Bellec</span></h2>
+          </div>
+          <div class="about-div-text paragraph">
+            <p>
+              {{p01}}
+            </p>
+            <p>
+              {{p02}}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="about-div-text" >
+        <p>
+          {{p03}}
+        </p>
+        <p>
+          {{p04}}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

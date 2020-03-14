@@ -1,0 +1,19 @@
+.see-elt{
+  .list-stickers{
+    margin: 10px;
+    @include list-stickers-with-description($scale: $see-sticker-icon-scale, $scale-hover: $see-sticker-icon-scale-hover);
+  }
+  .sources{
+    font-size: $base-size-s;
+    font-style: italic;
+  }
+}
+
+@media only screen and ( min-width:650px){
+  .see-elt{
+    .list-stickers{
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+}

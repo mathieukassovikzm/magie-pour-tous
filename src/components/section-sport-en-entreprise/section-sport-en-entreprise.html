@@ -1,0 +1,37 @@
+<section class="section section-see">
+  <div class="section-title">
+    <h1>Sport en entreprise</h1>
+  </div>
+
+  <nav v-if="isDisplayMobile" class="see-nav">
+    <div class="see-nav-item item-bienfaits">
+      <div class="title"><h1>Les bienfaits</h1></div>
+    </div>
+    <Bienfaits class="see-element-container"></Bienfaits>
+    <div class="see-nav-item item-activitees">
+      <div class="title"><h1>Les activités</h1></div>
+    </div>
+    <Activitees class="see-element-container"></Activitees>
+    <div class="see-nav-item item-formules">
+      <div class="title"><h1>Nos formules</h1></div>
+    </div>
+    <Formules class="see-element-container"></Formules>
+  </nav>
+
+  <div v-if="!isDisplayMobile">
+    <nav class="see-nav">
+      <router-link :to="{name:'bienfaits'}" class="see-nav-item item-bienfaits">
+        <div class="title"><h1>Les bienfaits</h1></div>
+      </router-link>
+      <router-link :to="{name:'activitees'}" class="see-nav-item item-activitees">
+        <div class="title"><h1>Les activités</h1></div>
+      </router-link>
+      <router-link :to="{name:'formules'}" class="see-nav-item item-formules">
+        <div class="title"><h1>Nos formules</h1></div>
+      </router-link>
+    </nav>
+    <div class="section-container">
+      <router-view></router-view>
+    </div>
+  </div>
+</section>

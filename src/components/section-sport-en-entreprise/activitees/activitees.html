@@ -1,0 +1,9 @@
+<div class="see-elt">
+  <h2>Les activitées</h2>
+  <p class="description">En fonction des envies, nous pouvons animer tous types d'activités en intérieur comme en extérieur.</p>
+  <div class="see-elt-list-activities">
+    <div class="see-elt-activite" v-for="activitee in activitees">
+      <activity v-bind:activity="activitee"></activity>
+    </div>
+  </div>
+</div>

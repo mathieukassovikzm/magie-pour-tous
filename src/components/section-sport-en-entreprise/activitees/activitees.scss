@@ -1,0 +1,19 @@
+.see-elt{
+  width: 100%;
+  h2{
+    margin: 20px 0;
+  }
+  .description{
+    margin: 0 20px 30px 20px;
+  }
+
+  @media only screen and ( min-width:650px){
+    .see-elt-list-activities{
+      display: flex;
+      flex-wrap: wrap;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

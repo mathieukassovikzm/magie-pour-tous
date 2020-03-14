@@ -1,0 +1,22 @@
+<section class="section section-spp">
+  <div class="section-title">
+    <h1>Sport pour particulier</h1>
+  </div>
+  <div class="section-container">
+    <p>Nous proposons une séance de Fitness remise en forme à la salle de la
+      Coudraie de Pleyben tous les mardis de 18h30 à 19h30.
+      Notre but est de vous accompagner à la reprise d'une activité sportive
+      où encore à vous entretenir physiquement.
+    </p>
+    <div class="container-flex">
+      <div class="vignette" :class="element.class" v-for="element in elements">
+        <div class="vignette-text">
+          <div class="vignette-text-container">
+            <h2>{{element.title}}</h2>
+            <p>{{element.description}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

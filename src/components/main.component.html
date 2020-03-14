@@ -1,0 +1,47 @@
+<div>
+  <header class="header">
+    <div class="top-header light-background">
+      <div class="top-header-img">
+        <img src="../assets/img/logos/Go2Sport_Logo-website-bg-white.png" alt="logo Go2Sport" class="img">
+      </div>
+      <div class="phone">
+        <h2>Contactez moi:</h2>
+        <h1>06 63 43 42 80</h1>
+      </div>
+    </div>
+    <div class="bottom-header dark-background">
+      <transition name="translatedMenu"
+        v-on:before-enter="toggleScroll"
+        v-on:after-leave="toggleScroll">
+        <nav id="navbar" class="nav" :class="isFixe" v-show="isOpened" >
+          <a v-for="navItem in navItems"
+              class="nav-item"
+              v-bind:href="navItem.href">{{ navItem.name }}
+          </a>
+        </nav>
+      </transition>
+      <div class="bottom-header-logo">
+        <div class="bottom-header-item menu-img">
+          <img src="../assets/img/logos/Go2Sport_Logo-medium-bg-black.png" alt="logo Go2Sport">
+        </div>
+        <div class="bottom-header-item menu-burger">
+          <div class="menu-icon" :class="isOpen" @click.prevent="openMenu">
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="container light-background">
+    <!--
+    <sectionEm></sectionEm>
+    -->
+    <SectionG2S id="home"></SectionG2S>
+    <SectionSee id="see"></SectionSee>
+    <SectionSpp id="spp"></SectionSpp>
+    <SectionAbout id="apropos"></SectionAbout>
+    <SectionTrust></SectionTrust>
+    <SectionContact></SectionContact>
+  </div>
+  <Footer class="dark-background"></Footer>
+</div>
