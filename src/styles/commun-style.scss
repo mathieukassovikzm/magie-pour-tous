@@ -1,46 +1,53 @@
-h1{
+h1 {
   @include title-h1;
 }
-h2{
+
+h2 {
   @include title-h2;
 }
-h3{
+
+h3 {
   @include title-h3;
 }
-p{
+
+p {
   color: $c-text-dark;
   font-size: 20px;
   text-align: center;
 }
-button{
+
+button {
   @include button;
 }
 
-.section{
+.section {
   margin: 0;
   padding-top: 0;
   padding-bottom: $section-padding-tb;
   padding-left: $section-padding-lr;
   padding-right: $section-padding-lr;
 
-  .section-container{
+  .section-container {
     width: 100%;
     padding: $section-container-padding-tb $section-container-padding-lr;
   }
-  .section-title{
+
+  .section-title {
     @include section-title;
     margin-bottom: 50px;
   }
 }
 
-.light-background{
+.light-background {
   background-color: $c-secundary-light;
   color: $c-text-dark;
 }
-.dark-background{
+
+.dark-background {
   background-color: $c-secundary-dark;
   color: $c-text-light;
 }
+
 .fa {
   padding: 10px;
   font-size: 30px;
@@ -50,25 +57,29 @@ button{
   margin: 6px 7px;
   border-radius: 50%;
   transition: background $animation-duration;
-  &:hover{
+
+  &:hover {
     background: $c-primary;
   }
 }
+
 .fa-facebook {
   background: #3B5998;
   color: #FFF;
 }
+
 .fa-instagram {
-  background: linear-gradient(153deg, #405DE6, #5851DB,#833AB4,#C13584,#E1306C,#FD1D1D,#F56040,#F77737,#FCAF45,#FFDC80);
+  background: linear-gradient(153deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80);
   color: #FFF;
 }
 
-@media only screen and ( min-width:650px){
-  .section{
-    .section-container{
+@media only screen and (min-width:650px) {
+  .section {
+    .section-container {
       width: 75%;
       margin: auto;
-      h1{
+
+      h1 {
         font-size: 40px;
       }
     }

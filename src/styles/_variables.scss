@@ -5,8 +5,8 @@ $animation-duration: .5s;
  *******************************/
 
 $c-primary: #fdb719;
-$c-primary-light: lighten($c-primary,0.7);
-$c-primary-dark:  darken($c-primary,0.7);
+$c-primary-light: lighten($c-primary, 0.7);
+$c-primary-dark: darken($c-primary, 0.7);
 
 $c-secundary: #757575;
 $c-secundary-light: #FFF;
@@ -36,7 +36,7 @@ $margin-bottom-h1: 20px;
 $margin-bottom-h2: 15px;
 $margin-bottom-h3: 10px;
 
-$background-image: "../assets/img/Background.png";
+$background-image: "./../../assets/img/Background.png";
 $background-color: $c-primary;
 
 $vignette-border-width: 2px;
@@ -55,7 +55,7 @@ $nav-height: 93vh;
 /*******************************
  * section-Title
  *******************************/
- $section-height: 160px;
+$section-height: 160px;
 /*******************************
  * section-Go2Sport
  *******************************/
@@ -73,14 +73,12 @@ $see-bienfait-icon-size: 100px;
 
 // Activitées
 $see-img-nav-path: '../../assets/img/section-see/';
-$see-activity:
- fitness, combat, sports-co, sports-raquettes, sports-plein-air;
-$see-sport:
- fitness, pilate, step, cardio-training, gym-douce,
- boxe-francaise, judo, gouren, lutte,
- football, handball, basketball, volleyball, rugby, ultimate,
- badminton, tennis-de-table, tennis,
- course-a-pied, course-d-orientation, velo;
+$see-activity: fitness, combat, sports-co, sports-raquettes, sports-plein-air;
+$see-sport: fitness, pilate, step, cardio-training, gym-douce,
+  boxe-francaise, judo, gouren, lutte,
+  football, handball, basketball, volleyball, rugby, ultimate,
+  badminton, tennis-de-table, tennis,
+  course-a-pied, course-d-orientation, velo;
 $see-img-path: '../../../../assets/img/section-see/';
 $see-nav-height: 120px;
 $see-nav-border-color: $c-primary;
