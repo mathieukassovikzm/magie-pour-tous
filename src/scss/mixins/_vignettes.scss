@@ -1,0 +1,120 @@
+@mixin vignette(
+  $width,
+  $m-top-bottom,
+  $h2-color,
+  $h2-shade-color,
+  $h2-size: $base-size-l,
+  $txt-color,
+  $txt-size: $base-size-m,
+  $box-shadow-color: $c-box-shadow,
+  $border-width: $vignette-border-width)
+{
+  position: relative;
+  display: flex;
+
+  width: $width - 2*$border-width;
+  height: $width / 2;
+  min-width: $width - 2*$border-width;
+  min-height: $width / 2;
+
+  margin: $m-top-bottom auto;
+
+  border: $border-width solid $h2-color;
+  border-radius: 10px 10px 10px 10px;
+
+  transition: transform 0.1s;
+  cursor: pointer;
+
+  background-repeat: no-repeat;
+  background-size: contain;
+  .vignette-text{
+    position: relative;
+    width: 50%;
+    height: 100%;
+    background: rgba(255,255,255,0.90);
+    border-radius: 7px 0px 0px 7px;
+    .vignette-text-container{
+      width: 85%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      h2{
+        padding-bottom: 5px;
+        margin-bottom: 5px;
+        color: $h2-color;
+        font-family: "Norwester", sans-serif;
+        font-size: $base-size-m;
+        text-shadow: 0px 1px 2px $h2-shade-color;
+        border-bottom: 1px solid $h2-color;
+        text-transform: uppercase;
+      }
+      p{
+        font-style: italic;
+        font-size: $base-size-s;
+      }
+    }
+  }
+  &:hover{
+    transform: scale(1.02);
+  }
+
+  @media only screen and ( min-width:450px){
+    width: $width * 1.3 - 2*$border-width;
+    height: ($width * 1.3) / 2;
+    .vignette-text{
+      width: $width/2;
+      padding: 10px;
+      .vignette-text-container{
+        h2{
+          padding-bottom: 10px;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+
+  @media only screen and ( min-width:650px){
+    width: ($width * 1.5) - 2*$border-width;
+    height: ($width * 1.5) / 2;
+    .vignette-text{
+      width: ($width * 1.5)/2.5;
+      padding: 20px;
+      .vignette-text-container{
+        p{
+          font-size: $base-size-m;
+        }
+      }
+    }
+  }
+
+  @media only screen and ( min-width:850px){
+    width: ($width * 2) - 2*$border-width;
+    height: ($width * 2) / 2;
+    .vignette-text{
+      width: ($width * 2)/2.5;
+      padding: 20px;
+      .vignette-text-container{
+        h2{
+          font-size: $base-size-l;
+        }
+        p{
+          font-size: $base-size-l;
+        }
+      }
+    }
+  }
+
+  @media only screen and ( min-width:1233px){
+    width: ($width * 1.5) - 2*$border-width;
+    height: ($width * 1.5) / 2;
+    .vignette-text{
+      width: ($width * 1.5)/2.5;
+      .vignette-text-container{
+        p{
+          font-size: $base-size-m;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,66 @@
+@mixin list-stickers-with-description($scale, $scale-hover){
+  .sticker{
+    margin: 10px auto;
+    width: 100%;
+    padding: 20px;
+    border: 1px solid $c-primary;
+
+    .sticker-txt{
+      h2{
+        text-align: center;
+      }
+      p{
+        text-align: center;
+        font-size: $see-bienfait-txt-size;
+      }
+    }
+    .sticker-icon{
+      @include sticker-icon;
+      height: 150px;
+      transform: scale($scale);
+    }
+    &:hover, &.hovered{
+      transition: transform 0.1s ease;
+      transform: scale($scale-hover);
+      .sticker-icon{
+        .icon{
+          @include svg-hover;
+        }
+      }
+    }
+  }
+
+  @media only screen and (min-width:650px){
+    .sticker{
+      width: 500px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      .sticker-icon{
+        width: 30%;
+        height: 100%;
+      }
+      .sticker-txt{
+        width: 70%;
+        margin-left: 10px;
+        p{
+          text-align: left;
+        }
+      }
+    }
+  }
+}
+
+@mixin sticker-icon(){
+  transition: all 0.2s ease;
+  position: relative;
+  .icon{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: $see-bienfait-icon-size;
+    height: $see-bienfait-icon-size;
+    @include svg;
+  }
+}

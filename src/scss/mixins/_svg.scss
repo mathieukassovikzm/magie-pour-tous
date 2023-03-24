@@ -1,0 +1,27 @@
+@mixin svg($color: $c-primary){
+  &.icon-svg{
+    path, circle, polygon{
+      fill: $color;
+    }
+  }
+  &.icon-svg-circle{
+    circle{
+      stroke: $color;
+      stroke-width: 2px;
+      fill: none;
+    }
+  }
+}
+
+@mixin svg-hover($color: $c-primary, $color-hover: $c-secundary-light){
+  &.icon-svg{
+    path, circle, polygon{
+      fill: $color-hover;
+    }
+  }
+  &.icon-svg-circle{
+    circle{
+      fill: $color;
+    }
+  }
+}
