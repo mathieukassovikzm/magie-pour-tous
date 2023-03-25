@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { RoutesNames } from './models/routes';
+import { UiService } from './services/ui.service';
 
 @Component({
   selector: 'app-root',
@@ -6,26 +8,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  public navItems = [
-    { name: 'Sport en entreprise', href: '#see' },
-    //{ name: 'Echauffement musculaire', href: "#sem" },
-    { name: 'Sport pour particulier', href: '#spp' },
-    { name: 'A propos', href: '#apropos' },
-    { name: 'Contact', href: '#contact' },
-  ];
   public limiteSize = 650;
   public isUnderLimiteSize = false;
   public wasUnderLimiteSize = false;
-  public isOpened = false;
   public classCantScroll = 'cant-scroll';
-  public navbar = null;
-  public top = null;
-  public isFixed = false;
+  public isSmallSquare = false;
+  public classSmallSquare = 'small';
+  public isNavOpenState = false;
+  public backgroundColor = '';
 
-  constructor() {
-    this.wasUnderLimiteSize = this.checkLimitSize();
-    this.isUnderLimiteSize = this.wasUnderLimiteSize;
-    this.doneResizing();
+  public pageHome = RoutesNames.PageHome;
+  public pageSportEnEntreprise = RoutesNames.PageSportEnEntreprise;
+  public pageSportPourParticulier = RoutesNames.PageSportPourParticulier;
+  public pageSportEnEcoles = RoutesNames.PageSportEnEcoles;
+  public pageContact = RoutesNames.PageContact;
+
+  constructor(private uiService: UiService) {
+    this.isNavOpenState = this.uiService.getIsNavOpen();
+    this.backgroundColor = this.uiService.getBackgroundColor();
+    // this.wasUnderLimiteSize = this.checkLimitSize();
+    // this.isUnderLimiteSize = this.wasUnderLimiteSize;
+    // this.doneResizing();
   }
 
   ngOnInit() {
@@ -41,27 +44,16 @@ export class AppComponent implements OnInit {
     // document.addEventListener('scroll', this.onScroll);
   }
 
-  public isOpen(): string {
-    return this.isOpened === true
-      ? 'menu-icon is-opened'
-      : 'menu-icon is-closed';
-  }
-
-  public isFixe(): string {
-    return this.isFixed === true ? 'fixed-nav' : '';
-  }
-
   openMenu() {
     // let windowWidth = document.documentElement.clientWidth;
     // if (windowWidth < this.limiteSize) {
-    //   const navLinks = document.querySelectorAll('.nav-item');
-    //   if (this.isOpened === true) {
-    //     this.isOpened = false;
+    //   const navLinks = document.querySelectorAll('.nav-item-responsive');
+    //   // If the menu just closed => Fadeout, else FadeIn
+    //   if (this.getNavOpenState === false) {
     //     navLinks.forEach((link) => {
     //       link.style.animation = `navLinkFadeOut 0.5s ease`;
     //     });
     //   } else {
-    //     this.isOpened = true;
     //     navLinks.forEach((link, index) => {
     //       link.style.animation = `navLinkFadeIn 0.5s ease forwards ${
     //         index / 7 + 0.1
@@ -71,78 +63,74 @@ export class AppComponent implements OnInit {
     // }
   }
 
+  goToTop() {
+    // FunctionsMove.moveSlowToId('#app');
+  }
+
+  linkClicked(idLinkClicked: number) {
+    // if (FunctionsResize.isUnderLimitSize(this.limiteSize)) {
+    //   this.setToFalseNavOpen();
+    // }
+    // $('html,body').animate(
+    //   {
+    //     scrollTop: $(idLinkClicked).offset().top - $('#fake-elt').height(),
+    //   },
+    //   'slow'
+    // );
+  }
+
   onNavBarItemClicked() {
     this.openMenu();
   }
 
-  doneResizing() {
-    // this.isUnderLimiteSize = this.checkLimitSize();
-    // // TODO: check le little bug when resize
-    // if (this.isUnderLimiteSize === this.wasUnderLimiteSize) {
-    //   if (this.isUnderLimiteSize === true) {
-    //     this.isOpened = false;
-    //   } else {
-    //     this.isOpened = true;
-    //   }
-    // } else {
-    //   if (this.isUnderLimiteSize === true) {
-    //     /* enlever l'animation ici */
-    //     const nav = document.getElementById('navbar');
-    //     nav.style.animation = '';
-    //     this.isOpened = false;
-    //   } else {
-    //     this.isOpened = true;
-    //     const navLinks = document.querySelectorAll('.nav-item');
-    //     navLinks.forEach((link) => {
-    //       link.style.animation = '';
-    //     });
-    //   }
+  onResize() {
+    // this.isUnderLimiteSize = FunctionsResize.isUnderLimitSize(this.limiteSize);
+    // if (this.isUnderLimiteSize !== this.wasUnderLimiteSize) {
+    //   /* enlever l'animation ici */
+    //   const nav = document.getElementById('nav-responsive');
+    //   nav.style.animation = '';
+    //   this.setToFalseNavOpen();
     // }
     // this.wasUnderLimiteSize = this.isUnderLimiteSize;
-  }
-
-  /* Check if the window is under the limiteSize
-   * @returns true is window under the limiteSize, false otherwise
-   */
-  checkLimitSize() {
-    let windowWidth = document.documentElement.clientWidth;
-    if (windowWidth < this.limiteSize) {
-      return true;
-    } else {
-      return false;
-    }
   }
 
   /* Toggle the class to the body to forbid the scroll if the Nav is open
    * Called before and after the transition on the Nav
    */
   toggleScroll() {
-    if (this.checkLimitSize()) {
-      const elementBody = document.getElementsByTagName('body')[0];
-      if (this.isOpened === true) {
-        elementBody.classList.add(this.classCantScroll);
-      } else {
-        elementBody.classList.remove(this.classCantScroll);
-      }
-    }
-  }
-
-  onScroll() {
-    //console.log(this.scrollY() > this.top)
-    // if (this.scrollY() > this.top) {
-    //   this.isFixed = true;
-    // } else {
-    //   this.isFixed = false;
+    // if (FunctionsResize.isUnderLimitSize(this.limiteSize)) {
+    //   const elementBody = document.getElementsByTagName('html')[0];
+    //   if (this.getNavOpenState === true) {
+    //     elementBody.classList.add(this.classCantScroll);
+    //   } else {
+    //     elementBody.classList.remove(this.classCantScroll);
+    //   }
     // }
   }
 
-  scrollY() {
-    var supportPageOffset = window.pageXOffset !== undefined;
-    var isCSS1Compat = (document.compatMode || '') === 'CSS1Compat';
-    return supportPageOffset
-      ? window.pageYOffset
-      : isCSS1Compat
-      ? document.documentElement.scrollTop
-      : document.body.scrollTop;
+  onScroll() {
+    var y = window.scrollY;
+    if (y > 50 && !this.isSmallSquare) {
+      this.isSmallSquare = true;
+    } else if (y < 50 && this.isSmallSquare) {
+      this.isSmallSquare = false;
+    }
+  }
+
+  beforeLeave(element: any) {
+    // this.prevHeight = getComputedStyle(element).height;
+  }
+
+  enter(element: any) {
+    // const { height } = getComputedStyle(element);
+    // element.style.height = this.prevHeight;
+    // setTimeout(() => {
+    //   element.style.height = height;
+    // });
+    // FunctionsMove.moveFastToId('#app');
+  }
+
+  afterEnter(element: any) {
+    element.style.height = 'auto';
   }
 }

@@ -1,0 +1,25 @@
+<div [class]="classHeaderScreen()">
+  <div class="div-logo" [class.small]="isSmallSquare">
+    <div [class]="classMenuSquare()"></div>
+    <div (click)="goToTop()">
+      <img src="./assets/img/logos/Go2Sport_Logo-website-bg-black.png" class="menu-img" alt="logo Go2Sport 29" />
+    </div>
+  </div>
+  <nav class="nav">
+    <a [routerLink]="pageHome" class="nav-item">
+      Accueil
+    </a>
+    <a [routerLink]="pageSportEnEntreprise" class="nav-item">
+      Entreprise
+    </a>
+    <a [routerLink]="pageSportPourParticulier" class="nav-item">
+      Particulier
+    </a>
+    <a [routerLink]="pageSportEnEcoles" class="nav-item">
+      Ecoles
+    </a>
+    <a [routerLink]="pageContact" class="nav-item">
+      Contact
+    </a>
+  </nav>
+</div>

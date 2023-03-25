@@ -1,0 +1,29 @@
+<div [class]="classHeader()">
+  <!-- <transition name="translatedMenu" v-on:before-enter="toggleScroll" v-on:after-leave="toggleScroll"> -->
+  <nav id="nav-responsive" [class]="classNav()" *ngIf="isNavOpenState">
+    <a [routerLink]="pageHome" class="nav-item">
+      Accueil
+    </a>
+    <a [routerLink]="pageSportEnEntreprise" class="nav-item">
+      Entreprise
+    </a>
+    <a [routerLink]="pageSportPourParticulier" class="nav-item">
+      Particulier
+    </a>
+    <a [routerLink]="pageSportEnEcoles" class="nav-item">
+      Ecoles
+    </a>
+    <a [routerLink]="pageContact" class="nav-item">
+      Contact
+    </a>
+  </nav>
+  <!-- </transition>-->
+  <div id="elt-sticky-responsive" class="header-logo">
+    <div [class]="classHeaderItemMenuImg()" (click)="goToTop()">
+      <img src="./assets/img/logos/Go2Sport_Logo-medium-bg-black.png" alt="logo Go2Sport 29" />
+    </div>
+    <div [class]="classHeaderItemMenuBurger()">
+      <app-burger />
+    </div>
+  </div>
+</div>

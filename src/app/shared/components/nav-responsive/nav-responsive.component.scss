@@ -1,0 +1,233 @@
+@import "_variables-dir";
+
+:host {
+  .cant-scroll {
+    overflow: hidden;
+  }
+
+  .fake-elt {
+    height: $header-bottom-height;
+  }
+
+  .header {
+    z-index: 10;
+    position: absolute;
+    height: $header-bottom-height;
+    display: flex;
+    flex-wrap: wrap;
+
+    &.responsive {
+      .header-logo {
+        position: fixed;
+        width: 100%;
+        max-height: $header-bottom-height;
+        display: flex;
+        flex-direction: row;
+        align-content: space-between;
+        top: 0;
+
+        .menu-img {
+          width: 70%;
+          cursor: pointer;
+
+          img {
+            height: $header-bottom-height;
+            width: auto;
+          }
+        }
+
+        .menu-burger {
+          width: 30%;
+        }
+      }
+    }
+
+    .nav {
+      .nav-item {
+        padding: 5px 0;
+        font-family: $font-txt, sans-serif;
+        transition: color $animation-duration;
+
+        &:hover,
+        &.active,
+        &.router-link-exact-active {
+          color: $header-txt-hover-color;
+          cursor: pointer;
+        }
+      }
+
+      &.nav-responsive {
+        position: fixed;
+        top: $header-bottom-height;
+        width: 100%;
+        // height: $header-responsive-nav-height;
+        height: calc(100vh - #{$header-bottom-height});
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        text-align: center;
+
+        transition: transform $animation-duration;
+        border-top: 1px solid $header-txt-hover-color;
+        border-bottom: 1px solid $header-txt-hover-color;
+
+        &.is-opened {
+          transform: translateX(0);
+        }
+
+        &.is-closed {
+          transform: translateX(100%);
+        }
+
+        .nav-item {
+          display: block;
+          padding: 5px 0;
+          font-size: $header-txt-responsive-size;
+          text-transform: uppercase;
+          opacity: 0;
+        }
+      }
+    }
+
+    .menu-icon {
+      position: relative;
+      margin: auto;
+      width: 50px;
+      height: 100%;
+      cursor: pointer;
+
+      transition: transform $animation-duration;
+
+      span {
+        position: absolute;
+        top: 50%;
+        bottom: 50%;
+
+        display: block;
+        width: 25px;
+        height: 2px;
+
+        background-color: $header-txt-hover-color;
+        transform: translateX(50%) translateY(-50%);
+
+        &::before,
+        &::after {
+          content: "";
+
+          position: absolute;
+          top: 0;
+          left: 0;
+
+          display: block;
+          width: 25px;
+          height: 2px;
+
+          background-color: $header-txt-hover-color;
+
+          transform: translateY(-6px);
+          transition: transform $animation-duration;
+        }
+
+        &::after {
+          transform: translateY(6px);
+        }
+      }
+
+      &:hover {
+        span::before {
+          transform: translateY(-8px);
+        }
+
+        span::after {
+          transform: translateY(8px);
+        }
+      }
+
+      span::before,
+      span::after {
+        transform-origin: 50% 50%;
+      }
+
+      &.is-opened {
+        transform: rotate(180deg);
+
+        span {
+          background: transparent;
+
+          &::before {
+            transform: translateY(0) rotate(45deg);
+          }
+
+          &::after {
+            transform: translateY(0) rotate(-45deg);
+          }
+        }
+      }
+    }
+  }
+
+  .translatedMenu-enter-active {
+    animation: translateIn $animation-duration;
+  }
+
+  .translatedMenu-leave-active {
+    animation: translateIn $animation-duration reverse;
+  }
+
+  @keyframes translateIn {
+    0% {
+      transform: translateX(100%);
+    }
+
+    100% {
+      transform: translateX(0%);
+    }
+  }
+
+  //Animation of the responsive menu
+  @keyframes navLinkFadeIn {
+    from {
+      opacity: 0;
+      transform: translateX(150px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes navLinkFadeOut {
+    from {
+      opacity: 1;
+    }
+
+    to {
+      opacity: 0;
+    }
+  }
+
+  @keyframes navLinkFade {
+    from {
+      opacity: 0;
+      transform: translateX(150px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
+
+/* ---------------------- Media query ----------------------------*/
+
+@media only screen and (min-width: $min-width-m) {
+  :host {
+    .header.responsive {
+      display: none;
+    }
+  }
+}

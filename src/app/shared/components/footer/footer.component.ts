@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { UiService } from 'src/services/ui.service';
+import { RoutesNames } from 'src/app/models/routes';
+import { UiService } from 'src/app/services/ui.service';
 
 @Component({
   selector: 'app-footer',
@@ -8,9 +9,12 @@ import { UiService } from 'src/services/ui.service';
 })
 export class FooterComponent implements OnInit {
   public isCookieHidden = false;
+  public pageMentionsLegales = RoutesNames.PageMentionsLegales;
+  public pagePolitiqueConfidentialite =
+    RoutesNames.PagePolitiqueConfidentialite;
 
   constructor(private uiService: UiService) {
-    this.isCookieHidden = uiService.getIsCookieHidden();
+    this.isCookieHidden = this.uiService.getIsCookieHidden();
   }
 
   ngOnInit() {}
