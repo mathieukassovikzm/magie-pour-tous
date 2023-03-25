@@ -1,0 +1,34 @@
+$animation-duration: 0.3s !default;
+
+/*****************************
+** Routeur Fade Height
+*****************************/
+.fade-height-enter-active,
+.fade-height-leave-active {
+  transition-duration: $animation-duration;
+  transition-property: height, opacity;
+  transition-timing-function: ease;
+  overflow: hidden;
+}
+
+.fade-height-enter,
+.fade-height-leave-active {
+  opacity: 0;
+}
+
+/*****************************
+** Routeur Slide Fade Height
+*****************************/
+.fade-slide-height-enter-active,
+.fade-slide-height-leave-active {
+  transition-duration: $animation-duration;
+  transition-property: height, opacity, transform;
+  transition-timing-function: ease;
+  overflow: hidden;
+}
+
+.fade-slide-height-enter,
+.fade-slide-height-leave-active {
+  opacity: 0;
+  transform: translateX(-100px);
+}
