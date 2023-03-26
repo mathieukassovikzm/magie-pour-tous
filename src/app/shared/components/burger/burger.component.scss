@@ -1,9 +1,9 @@
-@import "helpers-dir";
+@import "_variables-dir";
 
 /******* Variables *******/
 $burger-anim-duration: $animation-duration;
-$burger-color: $txt-dark;
-
+$burger-color: $header-txt-hover-color;
+$burger-w: 50px;
 
 :host {
   .icon-burger {
