@@ -19,7 +19,6 @@ $s-title-margin-tb-bkg-blk: 100px !default;
 
     &.bkg-blk {
       text-shadow: 1px 1px 2px $c-secundary-light;
-
       margin: $s-title-margin-tb-bkg-blk auto;
 
       .ctn-title {
@@ -29,15 +28,17 @@ $s-title-margin-tb-bkg-blk: 100px !default;
         z-index: 1;
       }
 
-      .svg-banner {
-        position: absolute;
-        top: -1 * $s-title-banner-height/3.5;
+      ::ng-deep {
+        .svg-banner {
+          position: absolute;
+          top: -1 * $s-title-banner-height/3.5;
 
-        width: 100%;
-        height: $s-title-banner-height;
+          width: 100%;
+          height: $s-title-banner-height;
 
-        polygon {
-          fill: url(#BannerGradient);
+          polygon {
+            fill: url(#BannerGradient);
+          }
         }
       }
     }
