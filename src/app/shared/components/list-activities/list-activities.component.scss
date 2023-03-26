@@ -1,0 +1,15 @@
+@import "_variables-dir";
+
+@media only screen and (min-width: $min-width-m) {
+  :host .list-activities {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+    .activitee {
+      margin: auto 10px;
+    }
+  }
+}

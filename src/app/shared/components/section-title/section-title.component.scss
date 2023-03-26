@@ -31,7 +31,7 @@ $s-title-margin-tb-bkg-blk: 100px !default;
       ::ng-deep {
         .svg-banner {
           position: absolute;
-          top: -1 * $s-title-banner-height/3.5;
+          top: -1 * calc($s-title-banner-height/3.5);
 
           width: 100%;
           height: $s-title-banner-height;
@@ -67,7 +67,7 @@ $s-title-margin-tb-bkg-blk: 100px !default;
         top: $bue-bar-top;
         height: $bue-bar-height;
         width: $bue-bar-width;
-        left: (100% - $bue-bar-width)/2;
+        left: calc((100% - $bue-bar-width) / 2);
         background-color: $bue-bar-color;
       }
     }

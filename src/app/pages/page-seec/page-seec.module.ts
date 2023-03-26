@@ -5,6 +5,7 @@ import { PageSeecRoutingModule } from './page-seec-routing.module';
 import { SectionIntroModule } from 'src/app/shared/components/section-intro/section-intro.module';
 import { SeecPresentationModule } from './seec-presentation/seec-presentation.module';
 import { SeecFormulesModule } from './seec-formules/seec-formules.module';
+import { SeecActiviteesModule } from './seec-activitees/seec-activitees.module';
 
 @NgModule({
   imports: [
@@ -13,6 +14,7 @@ import { SeecFormulesModule } from './seec-formules/seec-formules.module';
     SectionIntroModule,
     SeecPresentationModule,
     SeecFormulesModule,
+    SeecActiviteesModule,
   ],
   exports: [PageSeecComponent],
   declarations: [PageSeecComponent],
