@@ -7,13 +7,13 @@ const lightBackground = 'light-background';
   providedIn: 'root',
 })
 export class UiService {
-  private isNavOpen = false;
-  private isCookieHidden = false;
-  private backgroundColor = darkBackground;
-  private isHoveredSolidarity = false;
-  private isHoveredShare = false;
-  private isHoveredTolerance = false;
-  private isHoveredConviviality = false;
+  public isNavOpen = false;
+  public isCookieHidden = false;
+  public backgroundColor = darkBackground;
+  public isHoveredSolidarity = false;
+  public isHoveredShare = false;
+  public isHoveredTolerance = false;
+  public isHoveredConviviality = false;
 
   constructor() {}
 
@@ -40,9 +40,6 @@ export class UiService {
     this.isCookieHidden = value;
   }
 
-  getIsHoveredSolidarity(): boolean {
-    return this.isHoveredSolidarity;
-  }
   setHoveredSolidarity(value: boolean): void {
     this.isHoveredSolidarity = value;
     console.log(this.isHoveredSolidarity);

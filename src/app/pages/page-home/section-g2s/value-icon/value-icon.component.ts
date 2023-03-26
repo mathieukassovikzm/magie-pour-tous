@@ -10,69 +10,78 @@ export class ValueIconComponent implements OnInit {
   @Input() value: any;
   public isHovered = false;
   public classHovered = 'hovered';
-  public isHoveredSolidarity = false;
-  public isHoveredShare = false;
-  public isHoveredTolerance = false;
-  public isHoveredConviviality = false;
 
   constructor(private uiService: UiService) {}
 
-  ngOnInit() {
-    this.isHoveredSolidarity = this.uiService.getIsHoveredSolidarity();
-    this.isHoveredShare = this.uiService.getIsHoveredShare();
-    this.isHoveredTolerance = this.uiService.getIsHoveredTolerance();
-    this.isHoveredConviviality = this.uiService.getIsHoveredConviviality();
-  }
+  ngOnInit() {}
 
   isHover() {
     if (this.value.name === 'Solidarite') {
-      return this.isHoveredSolidarity;
+      return this.uiService.isHoveredSolidarity;
     }
     if (this.value.name === 'Partage') {
-      return this.isHoveredShare;
+      return this.uiService.isHoveredShare;
     }
     if (this.value.name === 'Tolerance') {
-      return this.isHoveredTolerance;
+      return this.uiService.isHoveredTolerance;
     }
     if (this.value.name === 'Convivialite') {
-      return this.isHoveredConviviality;
+      return this.uiService.isHoveredConviviality;
     }
     return '';
   }
 
   hoverIn(): void {
-    if (this.value.name === 'Solidarite' && this.isHoveredSolidarity == false) {
-      this.uiService.setHoveredSolidarity(true);
+    if (
+      this.value.name === 'Solidarite' &&
+      this.uiService.isHoveredSolidarity == false
+    ) {
+      this.uiService.isHoveredSolidarity = true;
     }
-    if (this.value.name === 'Partage' && this.isHoveredShare == false) {
-      this.uiService.setHoveredShare(true);
+    if (
+      this.value.name === 'Partage' &&
+      this.uiService.isHoveredShare == false
+    ) {
+      this.uiService.isHoveredShare = true;
     }
-    if (this.value.name === 'Tolerance' && this.isHoveredTolerance == false) {
-      this.uiService.setHoveredTolerance(true);
+    if (
+      this.value.name === 'Tolerance' &&
+      this.uiService.isHoveredTolerance == false
+    ) {
+      this.uiService.isHoveredTolerance = true;
     }
     if (
       this.value.name === 'Convivialite' &&
-      this.isHoveredConviviality == false
+      this.uiService.isHoveredConviviality == false
     ) {
-      this.uiService.setHoveredConviviality(true);
+      this.uiService.isHoveredConviviality = true;
     }
   }
 
   hoverOut(): void {
-    if (this.value.name === 'Solidarite' && this.isHoveredSolidarity == true) {
-      this.uiService.setHoveredSolidarity(false);
+    if (
+      this.value.name === 'Solidarite' &&
+      this.uiService.isHoveredSolidarity == true
+    ) {
+      this.uiService.isHoveredSolidarity = false;
     }
-    if (this.value.name === 'Partage' && this.isHoveredShare == true) {
-      this.uiService.setHoveredShare(false);
+    if (
+      this.value.name === 'Partage' &&
+      this.uiService.isHoveredShare == true
+    ) {
+      this.uiService.isHoveredShare = false;
     }
-    if (this.value.name === 'Tolerance' && this.isHoveredTolerance == true) {
-      this.uiService.setHoveredTolerance(false);
+    if (
+      this.value.name === 'Tolerance' &&
+      this.uiService.isHoveredTolerance == true
+    ) {
+      this.uiService.isHoveredTolerance = false;
     }
     if (
       this.value.name === 'Convivialite' &&
-      this.isHoveredConviviality == true
+      this.uiService.isHoveredConviviality == true
     ) {
-      this.uiService.setHoveredConviviality(false);
+      this.uiService.isHoveredConviviality = false;
     }
   }
 
