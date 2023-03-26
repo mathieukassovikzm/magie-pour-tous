@@ -1,0 +1,55 @@
+@import "_variables-dir";
+@import "_common-dir";
+@import '_mixins-dir';
+
+$value-scale: 1.1 !default;
+$value-icon-size: 100px !default;
+
+:host {
+  .value-icon {
+    position: relative;
+    width: 100%;
+    margin: 15px 0;
+    padding: 20px;
+    border: none;
+    transition: all 0.2s ease;
+    transition: transform $animation-duration-short ease, color $animation-duration-short ease;
+
+    .value-icon-title {
+      h4 {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        display: inline-block;
+      }
+    }
+
+    .value-icon-icon {
+      position: relative;
+      transform: scale($value-scale);
+      width: $value-icon-size;
+      height: $value-icon-size;
+      left: 50%;
+      transform: translateX(-50%);
+
+      ::ng-deep {
+        svg {
+          position: absolute;
+          width: $value-icon-size;
+          height: $value-icon-size;
+          @include svg;
+        }
+      }
+    }
+
+    &.hovered {
+      transform: scale($value-scale);
+
+      .value-icon-icon {
+        ::ng-deep {
+          @include svg-hover;
+        }
+      }
+    }
+  }
+}
