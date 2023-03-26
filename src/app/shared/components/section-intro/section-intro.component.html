@@ -1,0 +1,15 @@
+<section id="s-intro" class="s-intro">
+  <!-- <transition name="fade"> -->
+  <div id="panel" class="panel animation panel-right">
+    <div id="contain" class="contain">
+      <div class="txt">
+        <h1>{{titleInfos.h1}}</h1>
+        <h5>{{titleInfos.h5}}</h5>
+        <app-btn-cartoon (btnClicked)="goToLink()">Savoir plus</app-btn-cartoon>
+      </div>
+    </div>
+    <div id="triangle" class="triangle triangle-screen on-left" v-show="!isTriangleResponsive"></div>
+    <div id="triangle-responsive" class="triangle triangle-responsive on-left" v-show="isTriangleResponsive"></div>
+  </div>
+  <!-- </transition> -->
+</section>

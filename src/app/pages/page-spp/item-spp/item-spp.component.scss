@@ -1,0 +1,85 @@
+@import "variables-dir";
+
+/*******************************
+ * Section-Sport-pour-particuliers
+ *******************************/
+$spp-categories: public, materiel, people, feel;
+$spp-img-path: "./../../../../assets/img/section-spp/";
+$ispp-max-width: 300px !default;
+$ispp-margin-tb: 40px !default;
+$ispp-img-size: 200px !default;
+$ispp-title-margin-t: 20px !default;
+$ispp-title-margin-b: 10px !default;
+$ispp-bar-color: $c-primary !default;
+$ispp-bar-width: 60% !default;
+$ispp-bar-height: 2px !default;
+
+:host {
+  .item-spp {
+    position: relative;
+    max-width: $ispp-max-width;
+    margin: $ispp-margin-tb auto;
+
+    .item-spp-img-ctn {
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      width: $ispp-img-size;
+
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+
+      border-radius: 50%;
+      box-shadow: $drop-shadow-size $drop-shadow-color;
+
+      &:before {
+        content: "";
+        display: block;
+        padding-top: 100%;
+        /* initial ratio of 1:1*/
+      }
+    }
+
+    .item-spp-dsc {
+      .ctn-title.box-underline {
+        position: relative;
+        display: block;
+        text-align: center;
+        margin-top: $ispp-title-margin-t;
+        margin-bottom: $ispp-title-margin-b;
+
+        cursor: default;
+
+        .custom-underline {
+          position: relative;
+          display: inline-block;
+          text-align: center;
+        }
+
+        .custom-underline,
+        .custom-underline:hover,
+        .custom-underline:focus,
+        .custom-underline:active {
+          text-decoration: none;
+        }
+
+        .custom-underline::after {
+          content: "";
+          position: absolute;
+          top: 90%;
+          height: $ispp-bar-height;
+          width: $ispp-bar-width;
+          left: (100% - $ispp-bar-width)/2;
+          background-color: $ispp-bar-color;
+        }
+      }
+    }
+  }
+
+  @each $category in $spp-categories {
+    .spp-elt-#{$category} {
+      background-image: url($spp-img-path + "Go2Sport-photo-spp-#{$category}.jpg");
+    }
+  }
+}
