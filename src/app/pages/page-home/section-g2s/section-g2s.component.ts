@@ -47,7 +47,7 @@ export class SectionG2sComponent implements OnInit {
 
   hoverInSolidarity(): void {
     if (this.uiService.isHoveredSolidarity === false) {
-      this.uiService.setHoveredSolidarity(true);
+      this.uiService.isHoveredSolidarity = true;
     }
   }
 

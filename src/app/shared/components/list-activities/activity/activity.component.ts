@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { IActivityModel } from 'src/app/models/activity';
 
 @Component({
   selector: 'app-activity',
@@ -6,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./activity.component.scss'],
 })
 export class ActivityComponent implements OnInit {
-  @Input() activity: any;
+  @Input() activity: IActivityModel = {};
 
   public boolTabOpen = true;
   public ctnVignettes;

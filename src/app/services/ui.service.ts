@@ -39,27 +39,4 @@ export class UiService {
   setCookieHidden(value: boolean): void {
     this.isCookieHidden = value;
   }
-
-  setHoveredSolidarity(value: boolean): void {
-    this.isHoveredSolidarity = value;
-    console.log(this.isHoveredSolidarity);
-  }
-  getIsHoveredShare(): boolean {
-    return this.isHoveredShare;
-  }
-  setHoveredShare(value: boolean): void {
-    this.isHoveredShare = value;
-  }
-  getIsHoveredTolerance(): boolean {
-    return this.isHoveredTolerance;
-  }
-  setHoveredTolerance(value: boolean): void {
-    this.isHoveredTolerance = value;
-  }
-  getIsHoveredConviviality(): boolean {
-    return this.isHoveredConviviality;
-  }
-  setHoveredConviviality(value: boolean): void {
-    this.isHoveredConviviality = value;
-  }
 }

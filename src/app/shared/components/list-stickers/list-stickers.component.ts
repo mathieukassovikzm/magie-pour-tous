@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { IStickerModel } from 'src/app/models/sticker';
 
 @Component({
   selector: 'app-list-stickers',
@@ -6,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./list-stickers.component.scss'],
 })
 export class ListStickersComponent implements OnInit {
-  @Input() listOfStickers: any;
+  @Input() listOfStickers: IStickerModel[] = [];
   constructor() {}
 
   ngOnInit() {}

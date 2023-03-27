@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { IStickerModel } from 'src/app/models/sticker';
 
 @Component({
   selector: 'app-sticker',
@@ -6,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./sticker.component.scss'],
 })
 export class StickerComponent implements OnInit {
-  @Input() sticker: any;
+  @Input() sticker: IStickerModel = {};
 
   constructor() {}
 

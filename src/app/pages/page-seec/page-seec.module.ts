@@ -6,6 +6,7 @@ import { SectionIntroModule } from 'src/app/shared/components/section-intro/sect
 import { SeecPresentationModule } from './seec-presentation/seec-presentation.module';
 import { SeecFormulesModule } from './seec-formules/seec-formules.module';
 import { SeecActiviteesModule } from './seec-activitees/seec-activitees.module';
+import { SectionTrustModule } from './section-trust/section-trust.module';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { SeecActiviteesModule } from './seec-activitees/seec-activitees.module';
     SeecPresentationModule,
     SeecFormulesModule,
     SeecActiviteesModule,
+    SectionTrustModule,
   ],
   exports: [PageSeecComponent],
   declarations: [PageSeecComponent],
