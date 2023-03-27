@@ -6,6 +6,7 @@ import { SeeActiviteesModule } from './see-activitees/see-activitees.module';
 import { SeeFormulesModule } from './see-formules/see-formules.module';
 import { SectionTrustModule } from './section-trust/section-trust.module';
 import { SectionIntroModule } from 'src/app/shared/components/section-intro/section-intro.module';
+import { SeeBienfaitsModule } from './see-bienfaits/see-bienfaits.module';
 
 @NgModule({
   imports: [
@@ -14,6 +15,7 @@ import { SectionIntroModule } from 'src/app/shared/components/section-intro/sect
     SectionIntroModule,
     SeeActiviteesModule,
     SeeFormulesModule,
+    SeeBienfaitsModule,
     SectionTrustModule,
   ],
   exports: [PageSeeComponent],

@@ -55,8 +55,51 @@ export class SeeService {
       url: 'see-sports-plein-air',
       sports: [
         { name: 'Course à pied', url: 'course-a-pied' },
-        { name: 'Course d’orientation', url: 'course-d-orientation' },
+        { name: "Course d'orientation", url: 'course-d-orientation' },
         { name: 'Vélo', url: 'velo' },
+      ],
+    },
+  ];
+  public seeListBienfaits: IStickerModel[] = [
+    {
+      name: 'BienEtre',
+      title: 'Bien être au travail',
+      lstTxt: [
+        'Diminue le stress et la fatigue',
+        "Augmente l'espérance de vie de 3 ans",
+        "Retarde de 6 ans l'âge de dépendance",
+      ],
+    },
+    {
+      name: 'Productivite',
+      title: 'Augmentation de la productivité',
+      lstTxt: [
+        'Augmente la productivité de 6 à 9%',
+        "Diminue l'absentéisme de 30 à 40%",
+        'Réduit de 40% les accidents du travail',
+      ],
+    },
+    {
+      name: 'Rentabilite',
+      title: '4 à 14% net de Rentabilité',
+      lstTxt: [
+        "Le sport en entreprise à un impact direct sur l'augmentation de la rentabilité",
+      ],
+    },
+    {
+      name: 'Entreprise',
+      title: "Pour l'entreprise",
+      lstTxt: [
+        'Réduit de 40% les accidents du travail',
+        "Diminue l'absentéisme de 30 à 40%",
+      ],
+    },
+    {
+      name: 'Financier',
+      title: 'Un gain financier',
+      lstTxt: [
+        "Pour l'employé Economise 30 à 34 euros sur le budget de santé",
+        "Pour la société civile c'est 308 à 348€ d'économie sur les dépenses de santé par personne / an",
       ],
     },
   ];
