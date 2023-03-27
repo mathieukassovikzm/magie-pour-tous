@@ -17,6 +17,6 @@ export class BurgerComponent implements OnInit {
   }
 
   isOpen(): boolean {
-    return this.uiService.getIsNavOpen();
+    return this.uiService.isNavOpen;
   }
 }

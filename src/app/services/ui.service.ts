@@ -1,3 +1,4 @@
+import { ViewportScroller } from '@angular/common';
 import { Injectable } from '@angular/core';
 
 const darkBackground = 'dark-background';
@@ -25,18 +26,14 @@ export class UiService {
     this.isNavOpen = false;
   }
 
-  getIsNavOpen(): boolean {
-    return this.isNavOpen;
-  }
+  moveSlowToId(viewportScroller: ViewportScroller, idItem: string) {
+    var item = document.getElementById(idItem);
+    var fakeElt = document.getElementById('fake-elt');
 
-  getBackgroundColor(): string {
-    return this.backgroundColor;
-  }
-
-  getIsCookieHidden(): boolean {
-    return this.isCookieHidden;
-  }
-  setCookieHidden(value: boolean): void {
-    this.isCookieHidden = value;
+    if (!!item && !!fakeElt) {
+      var scrollPosition = item.offsetTop - fakeElt.clientHeight;
+      console.log(scrollPosition);
+      viewportScroller.scrollToPosition([0, scrollPosition]);
+    }
   }
 }

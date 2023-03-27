@@ -1,4 +1,6 @@
+import { ViewportScroller } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
+import { UiService } from 'src/app/services/ui.service';
 
 @Component({
   selector: 'app-section-intro',
@@ -7,11 +9,17 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class SectionIntroComponent implements OnInit {
   @Input() titleInfos: any;
-  constructor() {}
+  constructor(
+    private uiService: UiService,
+    private viewportScroller: ViewportScroller
+  ) {}
 
   ngOnInit() {}
 
   goToLink() {
-    // FunctionsMove.moveSlowToId(`#${this.titleInfos.link}`);
+    this.uiService.moveSlowToId(
+      this.viewportScroller,
+      `${this.titleInfos.link}`
+    );
   }
 }

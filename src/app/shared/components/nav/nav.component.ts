@@ -1,3 +1,4 @@
+import { ViewportScroller } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RoutesNames } from 'src/app/models/routes';
 import { UiService } from 'src/app/services/ui.service';
@@ -18,9 +19,12 @@ export class NavComponent implements OnInit {
   public backgroundColor = '';
   public isSmallSquare = false;
 
-  constructor(private uiService: UiService) {
-    this.backgroundColor = this.uiService.getBackgroundColor();
-    this.isNavOpenState = this.uiService.getIsNavOpen();
+  constructor(
+    private uiService: UiService,
+    private viewportScroller: ViewportScroller
+  ) {
+    this.backgroundColor = this.uiService.backgroundColor;
+    this.isNavOpenState = this.uiService.isNavOpen;
   }
 
   ngOnInit() {}
@@ -34,6 +38,6 @@ export class NavComponent implements OnInit {
   }
 
   goToTop() {
-    // FunctionsMove.moveSlowToId('#app');
+    this.uiService.moveSlowToId(this.viewportScroller, `app`);
   }
 }

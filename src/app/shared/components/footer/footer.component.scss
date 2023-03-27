@@ -111,10 +111,6 @@ $footer-img-width: 250px !default;
     .footer.section {
       background-image: url("/assets/img/footer.jpg");
 
-      &.hidden {
-        transform: translateY($cookie-screen-translate-y);
-      }
-
       .footer-item {
         .contact-infos {
           display: flex;
