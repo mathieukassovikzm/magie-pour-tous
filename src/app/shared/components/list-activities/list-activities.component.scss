@@ -1,5 +1,11 @@
 @import "_variables-dir";
 
+:host {
+  .list-activities {
+    margin: 10px;
+  }
+}
+
 @media only screen and (min-width: $min-width-m) {
   :host .list-activities {
     display: flex;
