@@ -1,3 +1,4 @@
+import { ViewportScroller } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RoutesNames } from './models/routes';
 import { UiService } from './services/ui.service';
@@ -23,9 +24,12 @@ export class AppComponent implements OnInit {
   public pageSportEnEcoles = RoutesNames.PageSportEnEcoles;
   public pageContact = RoutesNames.PageContact;
 
-  constructor(private uiService: UiService) {
-    this.isNavOpenState = this.uiService.getIsNavOpen();
-    this.backgroundColor = this.uiService.getBackgroundColor();
+  constructor(
+    private uiService: UiService,
+    private viewportScroller: ViewportScroller
+  ) {
+    this.isNavOpenState = this.uiService.isNavOpen;
+    this.backgroundColor = this.uiService.backgroundColor;
     // this.wasUnderLimiteSize = this.checkLimitSize();
     // this.isUnderLimiteSize = this.wasUnderLimiteSize;
     // this.doneResizing();
@@ -64,7 +68,7 @@ export class AppComponent implements OnInit {
   }
 
   goToTop() {
-    // FunctionsMove.moveSlowToId('#app');
+    this.uiService.moveSlowToId(this.viewportScroller, `app`);
   }
 
   linkClicked(idLinkClicked: number) {
