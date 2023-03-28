@@ -7,3 +7,11 @@ export class RoutesNames {
   public static PageMentionsLegales = 'mentions-legales';
   public static PagePolitiqueConfidentialite = 'politique-confidentialite';
 }
+
+export interface IPageInfos {
+  route?: string;
+  displayName?: string;
+  iconName?: string;
+  disponible?: boolean;
+  visibleInNav?: boolean;
+}

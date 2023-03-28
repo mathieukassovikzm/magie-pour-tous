@@ -5,13 +5,9 @@
     <app-nav-responsive></app-nav-responsive>
   </header>
 
-  <div class="container">
+  <div [@routeAnimations] class="container">
     <router-outlet></router-outlet>
   </div>
-  <!-- <transition class="container" name="fade-height" mode="out-in" @beforeLeave="beforeLeave" @enter="enter"
-    @afterEnter="afterEnter">
-    <router-view></router-view>
-  </transition> -->
   <app-footer></app-footer>
   <!-- <CookieBar></CookieBar> -->
 </div>

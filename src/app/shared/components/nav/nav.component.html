@@ -6,20 +6,10 @@
     </div>
   </div>
   <nav class="nav">
-    <a [routerLink]="pageHome" class="nav-item">
-      Accueil
-    </a>
-    <a [routerLink]="pageSportEnEntreprise" class="nav-item">
-      Entreprise
-    </a>
-    <a [routerLink]="pageSportPourParticulier" class="nav-item">
-      Particulier
-    </a>
-    <a [routerLink]="pageSportEnEcoles" class="nav-item">
-      Ecoles
-    </a>
-    <a [routerLink]="pageContact" class="nav-item">
-      Contact
-    </a>
+    <div *ngFor="let navItem of lstPagesNav">
+      <a [routerLink]="navItem.route" class="nav-item" routerLinkActive="router-link-exact-active">
+        {{navItem.displayName}}
+      </a>
+    </div>
   </nav>
 </div>

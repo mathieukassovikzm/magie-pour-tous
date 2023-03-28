@@ -1,8 +1,9 @@
 import { transition, trigger, useAnimation } from '@angular/animations';
 import { ViewportScroller } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import * as _ from 'lodash';
 import { Observable, Subscription } from 'rxjs';
-import { RoutesNames } from 'src/app/models/routes';
+import { IPageInfos, RoutesNames } from 'src/app/models/routes';
 import { UiService } from 'src/app/services/ui.service';
 import { SidebarCloseAnimation, SidebarOpenAnimation } from './animation';
 
@@ -48,12 +49,18 @@ export class NavResponsiveComponent implements OnInit, OnDestroy {
   public isNavOpenState = false;
   public subscription$: Subscription = new Subscription();
 
+  public lstPagesNav: IPageInfos[];
+
   constructor(
     private uiService: UiService,
     private viewportScroller: ViewportScroller
   ) {
     this.backgroundColor = this.uiService.backgroundColor;
     this.isNavOpenState$ = this.uiService.subIsNavOpen.asObservable();
+
+    this.lstPagesNav = _.filter(this.uiService.lstPages, {
+      visibleInNav: true,
+    });
   }
 
   ngOnInit() {
