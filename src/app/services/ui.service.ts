@@ -1,6 +1,6 @@
 import { ViewportScroller } from '@angular/common';
 import { Injectable } from '@angular/core';
-import { Observable, of, Subject } from 'rxjs';
+import { Subject } from 'rxjs';
 
 const darkBackground = 'dark-background';
 const lightBackground = 'light-background';

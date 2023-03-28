@@ -59,7 +59,6 @@
         position: fixed;
         top: $header-bottom-height;
         width: 100%;
-        // height: $header-responsive-nav-height;
         height: calc(100vh - #{$header-bottom-height});
 
         display: flex;
@@ -72,75 +71,13 @@
         border-top: 1px solid $header-txt-hover-color;
         border-bottom: 1px solid $header-txt-hover-color;
 
-        &.is-opened {
-          transform: translateX(0);
-        }
-
-        &.is-closed {
-          transform: translateX(100%);
-        }
-
         .nav-item {
           display: block;
           padding: 5px 0;
           font-size: $header-txt-responsive-size;
           text-transform: uppercase;
-          opacity: 0;
         }
       }
-    }
-  }
-
-  .translatedMenu-enter-active {
-    animation: translateIn $animation-duration;
-  }
-
-  .translatedMenu-leave-active {
-    animation: translateIn $animation-duration reverse;
-  }
-
-  @keyframes translateIn {
-    0% {
-      transform: translateX(100%);
-    }
-
-    100% {
-      transform: translateX(0%);
-    }
-  }
-
-  //Animation of the responsive menu
-  @keyframes navLinkFadeIn {
-    from {
-      opacity: 0;
-      transform: translateX(150px);
-    }
-
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-  @keyframes navLinkFadeOut {
-    from {
-      opacity: 1;
-    }
-
-    to {
-      opacity: 0;
-    }
-  }
-
-  @keyframes navLinkFade {
-    from {
-      opacity: 0;
-      transform: translateX(150px);
-    }
-
-    to {
-      opacity: 1;
-      transform: translateX(0);
     }
   }
 }

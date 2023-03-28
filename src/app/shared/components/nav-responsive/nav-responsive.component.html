@@ -1,6 +1,6 @@
-<div [class]="classHeader()">
+<div class="header responsive dark-background">
   <!-- <transition name="translatedMenu" v-on:before-enter="toggleScroll" v-on:after-leave="toggleScroll"> -->
-  <nav id="nav-responsive" [class]="classNav()" *ngIf="isNavOpenState">
+  <nav [@sideMenu] *ngIf="isNavOpenState" class="nav nav-responsive dark-background">
     <a [routerLink]="pageHome" class="nav-item">
       Accueil
     </a>
@@ -18,11 +18,11 @@
     </a>
   </nav>
   <!-- </transition>-->
-  <div id="elt-sticky-responsive" class="header-logo">
-    <div [class]="classHeaderItemMenuImg()" (click)="goToTop()">
+  <div class="header-logo">
+    <div class="header-item menu-img dark-background" (click)="goToTop()">
       <img src="./assets/img/logos/Go2Sport_Logo-medium-bg-black.png" alt="logo Go2Sport 29" />
     </div>
-    <div [class]="classHeaderItemMenuBurger()">
+    <div class="header-item menu-burger dark-background">
       <app-burger />
     </div>
   </div>
