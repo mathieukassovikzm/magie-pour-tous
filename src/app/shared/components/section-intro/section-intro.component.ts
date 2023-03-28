@@ -10,14 +10,6 @@ import { UiService } from 'src/app/services/ui.service';
 export class SectionIntroComponent implements OnInit, AfterViewInit {
   @Input() titleInfos: any;
 
-  public isUnderLimit = false;
-  public wasUnderLimit = false;
-  public limiteSize = 850;
-  public panel: any;
-  public triangle: any;
-  public triangleResponsive: any;
-  public contain: any;
-
   constructor(
     private uiService: UiService,
     private viewportScroller: ViewportScroller

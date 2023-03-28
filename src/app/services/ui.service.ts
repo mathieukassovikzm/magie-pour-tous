@@ -1,5 +1,6 @@
 import { ViewportScroller } from '@angular/common';
 import { Injectable } from '@angular/core';
+import { Observable, of, Subject } from 'rxjs';
 
 const darkBackground = 'dark-background';
 const lightBackground = 'light-background';
@@ -9,6 +10,8 @@ const lightBackground = 'light-background';
 })
 export class UiService {
   public isNavOpen = false;
+  public subIsNavOpen = new Subject<boolean>();
+
   public isCookieHidden = false;
   public backgroundColor = darkBackground;
   public isHoveredSolidarity = false;
@@ -20,10 +23,12 @@ export class UiService {
 
   toggleNav(): void {
     this.isNavOpen = !this.isNavOpen;
+    this.subIsNavOpen.next(this.isNavOpen);
   }
 
   closeNav(): void {
     this.isNavOpen = false;
+    this.subIsNavOpen.next(this.isNavOpen);
   }
 
   moveSlowToId(viewportScroller: ViewportScroller, idItem: string) {

@@ -1,5 +1,6 @@
 import { ViewportScroller } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { fromEvent, Observable, Subscription, tap } from 'rxjs';
 import { RoutesNames } from './models/routes';
 import { UiService } from './services/ui.service';
 
@@ -8,14 +9,9 @@ import { UiService } from './services/ui.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy {
   public limiteSize = 650;
-  public isUnderLimiteSize = false;
-  public wasUnderLimiteSize = false;
   public classCantScroll = 'cant-scroll';
-  public isSmallSquare = false;
-  public classSmallSquare = 'small';
-  public isNavOpenState = false;
   public backgroundColor = '';
 
   public pageHome = RoutesNames.PageHome;
@@ -24,18 +20,57 @@ export class AppComponent implements OnInit {
   public pageSportEnEcoles = RoutesNames.PageSportEnEcoles;
   public pageContact = RoutesNames.PageContact;
 
+  public resizeObservable$: Observable<Event>;
+  public subscription$: Subscription = new Subscription();
+
+  public isUnderLimit = false;
+  public isNavOpenState = false;
+  public isNavOpenState$: Observable<boolean>;
+
   constructor(
     private uiService: UiService,
     private viewportScroller: ViewportScroller
   ) {
     this.isNavOpenState = this.uiService.isNavOpen;
     this.backgroundColor = this.uiService.backgroundColor;
+
+    this.resizeObservable$ = fromEvent(window, 'resize');
+    var subResize = this.resizeObservable$.subscribe((evt) => {
+      this.onResize();
+    });
+    this.subscription$.add(subResize);
+
+    this.isNavOpenState$ = this.uiService.subIsNavOpen.asObservable().pipe(
+      tap((valNavOpen) => {
+        if (this.isUnderLimit) {
+          const elementBody = document.getElementsByTagName('html')[0];
+          if (valNavOpen === true) {
+            elementBody.classList.add(this.classCantScroll);
+          } else {
+            elementBody.classList.remove(this.classCantScroll);
+          }
+        }
+      })
+    );
+
+    var subNav = this.isNavOpenState$.subscribe();
+    this.subscription$.add(subNav);
+
     // this.wasUnderLimiteSize = this.checkLimitSize();
     // this.isUnderLimiteSize = this.wasUnderLimiteSize;
     // this.doneResizing();
   }
 
   ngOnInit() {
+    var clientWidth = document.documentElement.clientWidth;
+    if (clientWidth < this.limiteSize) {
+      this.isUnderLimit = true;
+      this.isUnderLimit = true;
+    } else if (clientWidth > this.limiteSize) {
+      this.isUnderLimit = false;
+      this.isUnderLimit = false;
+    }
+
     // this.$nextTick(function () {
     //   var resizeId;
     //   window.addEventListener('resize', () => {
@@ -46,6 +81,10 @@ export class AppComponent implements OnInit {
     // this.navbar = $('#navbar');
     // this.top = this.navbar.offset().top + this.scrollY();
     // document.addEventListener('scroll', this.onScroll);
+  }
+
+  ngOnDestroy() {
+    this.subscription$.unsubscribe();
   }
 
   openMenu() {
@@ -88,6 +127,7 @@ export class AppComponent implements OnInit {
   }
 
   onResize() {
+    this.isUnderLimitSize();
     // this.isUnderLimiteSize = FunctionsResize.isUnderLimitSize(this.limiteSize);
     // if (this.isUnderLimiteSize !== this.wasUnderLimiteSize) {
     //   /* enlever l'animation ici */
@@ -98,26 +138,12 @@ export class AppComponent implements OnInit {
     // this.wasUnderLimiteSize = this.isUnderLimiteSize;
   }
 
-  /* Toggle the class to the body to forbid the scroll if the Nav is open
-   * Called before and after the transition on the Nav
-   */
-  toggleScroll() {
-    // if (FunctionsResize.isUnderLimitSize(this.limiteSize)) {
-    //   const elementBody = document.getElementsByTagName('html')[0];
-    //   if (this.getNavOpenState === true) {
-    //     elementBody.classList.add(this.classCantScroll);
-    //   } else {
-    //     elementBody.classList.remove(this.classCantScroll);
-    //   }
-    // }
-  }
-
-  onScroll() {
-    var y = window.scrollY;
-    if (y > 50 && !this.isSmallSquare) {
-      this.isSmallSquare = true;
-    } else if (y < 50 && this.isSmallSquare) {
-      this.isSmallSquare = false;
+  isUnderLimitSize(): void {
+    var clientWidth = document.documentElement.clientWidth;
+    if (clientWidth < this.limiteSize && this.isUnderLimit === false) {
+      this.isUnderLimit = true;
+    } else if (clientWidth > this.limiteSize && this.isUnderLimit === true) {
+      this.isUnderLimit = false;
     }
   }
 
@@ -132,9 +158,25 @@ export class AppComponent implements OnInit {
     //   element.style.height = height;
     // });
     // FunctionsMove.moveFastToId('#app');
+    this.uiService.moveSlowToId(this.viewportScroller, `app`);
   }
 
   afterEnter(element: any) {
     element.style.height = 'auto';
   }
 }
+
+/* Toggle the class to the body to forbid the scroll if the Nav is open
+ * Called before and after the transition on the Nav
+ */
+// toggleScroll() {
+//   if (this.isUnderLimit) {
+//     const elementBody = document.getElementsByTagName('html')[0];
+//     console.log(elementBody);
+//     if (this.uiService.isNavOpen === true) {
+//       elementBody.classList.add(this.classCantScroll);
+//     } else {
+//       elementBody.classList.remove(this.classCantScroll);
+//     }
+//   }
+// }
