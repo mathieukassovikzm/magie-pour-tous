@@ -42,29 +42,6 @@ $intro-ctn-top: 48%;
       width: 100%;
       height: calc(100vh - #{$header-bottom-height});
 
-      .triangle {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        height: 0px;
-        width: 0px;
-        opacity: $intro-bkg-opacity;
-
-        z-index: 1;
-
-        &.on-right {
-          right: 0;
-          border-color: $intro-bkg-color transparent transparent $intro-bkg-color;
-          border-style: solid;
-        }
-
-        &.on-left {
-          left: 0;
-          border-color: transparent $intro-bkg-color $intro-bkg-color transparent;
-          border-style: solid;
-        }
-      }
-
       .contain {
         position: absolute;
         width: 50%;
@@ -100,20 +77,23 @@ $intro-ctn-top: 48%;
           }
         }
       }
+
+      svg {
+        height: calc(100vh - #{$header-bottom-height});
+        display: block;
+        height: 100%;
+        width: 100%;
+
+        .triangle {
+          fill: transparentize($intro-bkg-color, 1-$intro-bkg-opacity);
+
+          &.triangle-screen {
+            display: none;
+          }
+        }
+      }
     }
   }
-}
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity $intro-transition-duration ease $intro-transition-delay,
-    transform $intro-transition-duration ease $intro-transition-delay;
-}
-
-.fade-enter,
-.fade-leave-active {
-  opacity: 0;
-  transform: translateX(100px);
 }
 
 @media only screen and (min-width: $min-width-l) {
@@ -134,7 +114,6 @@ $intro-ctn-top: 48%;
   }
 
   :host {
-
     .s-intro {
       .panel {
         position: absolute;
@@ -146,7 +125,7 @@ $intro-ctn-top: 48%;
         }
 
         .contain {
-          background: transparentize($intro-bkg-color, 1-$intro-bkg-opacity);
+          // background: transparentize($intro-bkg-color, 1-$intro-bkg-opacity);
           height: calc(100vh - #{$header-bottom-height});
           bottom: 0;
         }
@@ -165,14 +144,20 @@ $intro-ctn-top: 48%;
           }
         }
 
-        .triangle.triangle-screen {
-          border-right-width: $intro-triangle-width;
-          border-left-width: $intro-triangle-width;
+        svg {
+          .triangle {
+            &.triangle-responsive {
+              display: none;
+            }
+
+            &.triangle-screen {
+              display: block;
+            }
+          }
         }
       }
     }
   }
-
 }
 
 @media only screen and (min-width: 1190px) {

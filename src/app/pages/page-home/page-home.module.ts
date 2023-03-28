@@ -3,9 +3,17 @@ import { CommonModule } from '@angular/common';
 import { PageHomeComponent } from './page-home.component';
 import { PageHomeRoutingModule } from './page-home-routing.module';
 import { SectionG2sModule } from './section-g2s/section-g2s.module';
+import { SectionIntroModule } from 'src/app/shared/components/section-intro/section-intro.module';
+import { SectionAboutModule } from './section-about/section-about.module';
 
 @NgModule({
-  imports: [CommonModule, PageHomeRoutingModule, SectionG2sModule],
+  imports: [
+    CommonModule,
+    PageHomeRoutingModule,
+    SectionG2sModule,
+    SectionAboutModule,
+    SectionIntroModule,
+  ],
   exports: [PageHomeComponent],
   declarations: [PageHomeComponent],
 })

@@ -32,7 +32,6 @@ export class UiService {
 
     if (!!item && !!fakeElt) {
       var scrollPosition = item.offsetTop - fakeElt.clientHeight;
-      console.log(scrollPosition);
       viewportScroller.scrollToPosition([0, scrollPosition]);
     }
   }
