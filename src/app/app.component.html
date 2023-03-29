@@ -5,7 +5,8 @@
     <app-nav-responsive></app-nav-responsive>
   </header>
 
-  <div [@routeAnimations]="outlet.isActivated ? outlet.activatedRoute : ''" class="container">
+  <div [@routeAnimations]="outlet.isActivated ? outlet.activatedRoute : ''" class="container"
+    (@routeAnimations.start)="onAnimationEnterEvent($event)" (@routeAnimations.done)="onAnimationDoneEvent($event)">
     <router-outlet #outlet="outlet"></router-outlet>
   </div>
   <!-- <CookieBar></CookieBar> -->

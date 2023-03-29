@@ -1,7 +1,6 @@
+import { AnimationEvent } from '@angular/animations';
 import { ViewportScroller } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ChildrenOutletContexts, RouterOutlet } from '@angular/router';
-import { AnimationEvent } from '@angular/animations';
 import { fromEvent, Observable, Subscription, tap } from 'rxjs';
 import { sliderAnimation } from './animation';
 import { UiService } from './services/ui.service';
@@ -26,10 +25,11 @@ export class AppComponent implements OnInit, OnDestroy {
 
   public oldAnimationState: number | undefined = undefined;
 
+  public prevHeight = '';
+
   constructor(
     private uiService: UiService,
-    private viewportScroller: ViewportScroller,
-    private contexts: ChildrenOutletContexts
+    private viewportScroller: ViewportScroller
   ) {
     this.isNavOpenState = this.uiService.isNavOpen;
     this.backgroundColor = this.uiService.backgroundColor;
@@ -89,9 +89,17 @@ export class AppComponent implements OnInit, OnDestroy {
     }
   }
 
-  // prepareRoute(outlet: RouterOutlet) {
-  //   return outlet &&
-  //     outlet.activatedRouteData &&
-  //     outlet.activatedRouteData['animationState'];
-  // }
+  onAnimationEnterEvent(event: AnimationEvent) {
+    this.prevHeight = getComputedStyle(event.element).height;
+  }
+
+  onAnimationDoneEvent(event: AnimationEvent) {
+    if (event.toState == 'ActivatedRoute') {
+      const { height } = getComputedStyle(event?.element);
+      event.element.style.height = this.prevHeight;
+      setTimeout(() => {
+        event.element.style.height = height;
+      });
+    }
+  }
 }
