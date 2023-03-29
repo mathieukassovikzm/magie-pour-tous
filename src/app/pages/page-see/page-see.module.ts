@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { FooterModule } from 'src/app/shared/components/footer/footer.module';
 import { SectionIntroModule } from 'src/app/shared/components/section-intro/section-intro.module';
 import { PageSeeRoutingModule } from './page-see-routing.module';
 import { PageSeeComponent } from './page-see.component';
@@ -19,8 +20,9 @@ import { SeeTitresNavSvgModule } from './see-titres-nav-svg/see-titres-nav-svg.m
     SeeBienfaitsModule,
     SectionTrustModule,
     SeeTitresNavSvgModule,
+    FooterModule
   ],
   exports: [PageSeeComponent],
   declarations: [PageSeeComponent],
 })
-export class PageSeeModule {}
+export class PageSeeModule { }

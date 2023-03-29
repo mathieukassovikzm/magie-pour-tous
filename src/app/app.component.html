@@ -5,9 +5,8 @@
     <app-nav-responsive></app-nav-responsive>
   </header>
 
-  <div [@routeAnimations] class="container">
-    <router-outlet></router-outlet>
+  <div [@routeAnimations]="outlet.isActivated ? outlet.activatedRoute : ''" class="container">
+    <router-outlet #outlet="outlet"></router-outlet>
   </div>
-  <app-footer></app-footer>
   <!-- <CookieBar></CookieBar> -->
 </div>

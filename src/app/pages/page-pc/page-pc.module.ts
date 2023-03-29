@@ -1,11 +1,12 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PagePcComponent } from './page-pc.component';
+import { NgModule } from '@angular/core';
+import { FooterModule } from 'src/app/shared/components/footer/footer.module';
 import { PagePcRoutingModule } from './page-pc-routing.module';
+import { PagePcComponent } from './page-pc.component';
 
 @NgModule({
-  imports: [CommonModule, PagePcRoutingModule],
+  imports: [CommonModule, PagePcRoutingModule, FooterModule],
   exports: [PagePcComponent],
   declarations: [PagePcComponent],
 })
-export class PagePcModule {}
+export class PagePcModule { }

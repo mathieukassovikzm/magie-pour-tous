@@ -1,14 +1,16 @@
 import { ViewportScroller } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ChildrenOutletContexts, RouterOutlet } from '@angular/router';
+import { AnimationEvent } from '@angular/animations';
 import { fromEvent, Observable, Subscription, tap } from 'rxjs';
-import { RoutingAnimation } from './animation';
+import { sliderAnimation } from './animation';
 import { UiService } from './services/ui.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  animations: [RoutingAnimation],
+  animations: [sliderAnimation],
 })
 export class AppComponent implements OnInit, OnDestroy {
   public limiteSize = 650;
@@ -22,9 +24,12 @@ export class AppComponent implements OnInit, OnDestroy {
   public isNavOpenState = false;
   public isNavOpenState$: Observable<boolean>;
 
+  public oldAnimationState: number | undefined = undefined;
+
   constructor(
     private uiService: UiService,
-    private viewportScroller: ViewportScroller
+    private viewportScroller: ViewportScroller,
+    private contexts: ChildrenOutletContexts
   ) {
     this.isNavOpenState = this.uiService.isNavOpen;
     this.backgroundColor = this.uiService.backgroundColor;
@@ -83,4 +88,10 @@ export class AppComponent implements OnInit, OnDestroy {
       this.isUnderLimit = false;
     }
   }
+
+  // prepareRoute(outlet: RouterOutlet) {
+  //   return outlet &&
+  //     outlet.activatedRouteData &&
+  //     outlet.activatedRouteData['animationState'];
+  // }
 }

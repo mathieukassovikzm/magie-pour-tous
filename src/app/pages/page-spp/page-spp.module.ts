@@ -1,10 +1,11 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PageSppComponent } from './page-spp.component';
-import { PageSppRoutingModule } from './page-spp-routing.module';
+import { NgModule } from '@angular/core';
+import { FooterModule } from 'src/app/shared/components/footer/footer.module';
+import { SectionIntroModule } from 'src/app/shared/components/section-intro/section-intro.module';
 import { SectionTitleSimpleModule } from 'src/app/shared/components/section-title/section-title-simple/section-title-simple.module';
 import { ItemSppModule } from './item-spp/item-spp.module';
-import { SectionIntroModule } from 'src/app/shared/components/section-intro/section-intro.module';
+import { PageSppRoutingModule } from './page-spp-routing.module';
+import { PageSppComponent } from './page-spp.component';
 
 @NgModule({
   imports: [
@@ -13,8 +14,9 @@ import { SectionIntroModule } from 'src/app/shared/components/section-intro/sect
     SectionTitleSimpleModule,
     ItemSppModule,
     SectionIntroModule,
+    FooterModule
   ],
   exports: [PageSppComponent],
   declarations: [PageSppComponent],
 })
-export class PageSppModule {}
+export class PageSppModule { }
