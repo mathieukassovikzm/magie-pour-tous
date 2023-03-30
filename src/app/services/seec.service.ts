@@ -91,37 +91,74 @@ export class SeecService {
     {
       name: 'Ecole Saint-Joseph',
       town: 'Pleyben',
-      logo: 'companies_ecole-st-joseph-pleyben.png',
+      logo: 'companies_ecole-privee-saint-joseph-pleyben.png',
+      visible: true,
     },
     {
       name: 'Ecole publique Jules Verne',
       town: 'Plonevez-du-Faou',
       logo: 'companies_ecole-publique-jules-verne.png',
+      visible: true,
     },
     {
       name: 'Ecole Maternelle Park Gwenn',
       town: "Pont-de-Buis lès Quimerc'h",
       logo: 'companies_ecole-maternelle-park-gwenn.png',
+      visible: true,
     },
     {
       name: 'Ecole Maternelle Publique Per-Jackez Helias',
       town: 'Pleyben',
       logo: 'companies_ecole-maternelle-publique-per-jackezhelias.png',
+      visible: true,
     },
     {
       name: 'Ecole privée Saint-Joseph',
       town: 'Edern',
       logo: 'companies_ecole-st-joseph-edern.png',
+      visible: true,
     },
     {
       name: 'Ecole Publique',
       town: 'Lennon',
       logo: 'companies_ecole-publique-lennon.png',
+      visible: true,
     },
     {
       name: 'Ecole Publique',
       town: 'Spezet',
       logo: 'companies_ecole-publique-spezet.png',
+      visible: true,
+    },
+    {
+      name: 'Ecole Publique Yves Ke Gall',
+      town: 'Lannedern',
+      logo: 'companies_ecole-publique-Yves-Le-Gall-Lannedern.png',
+      visible: true,
+    },
+    {
+      name: 'Ecole Privée Saint Augustin',
+      town: 'Lannedern',
+      logo: 'companies_ecole-privee-Saint-Augustin-Langolen.png',
+      visible: true,
+    },
+    {
+      name: 'Ecole Privée Sainte Anne Briec',
+      town: 'Lannedern',
+      logo: 'companies_ecole-privee-Sainte-Anne-Briec.png',
+      visible: true,
+    },
+    {
+      name: 'Ecole Publique Les Petites Abeilles',
+      town: 'Saint Thois',
+      logo: 'companies_ecole-publique-Des-petites-Abeilles-Saint-thois.png',
+      visible: true,
+    },
+    {
+      name: 'Ecole Publique Les Lutins',
+      town: 'Cloitre Pleyben',
+      logo: 'companies_ecole-publique-les-lutins-cloitre-pleyben.png',
+      visible: true,
     },
   ];
 

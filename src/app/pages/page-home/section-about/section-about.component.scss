@@ -202,14 +202,20 @@ $s-about-drop-shadow-color: $drop-shadow-color !default;
   }
 }
 
-@media only screen and (min-width: $min-width-m) {
+@media only screen and (min-width: $min-width-xl) {
   :host {
     .section-about {
+
+      .ctn-banner,
+      .ctn-grid {
+        grid-template-rows: minmax($s-about-row-minmax-m, 1fr) 1fr;
+        grid-auto-rows: minmax($s-about-row-minmax-m, 1fr);
+      }
+
       .ctn-grid {
         width: 75%;
         margin: auto;
-        grid-template-rows: minmax($s-about-row-minmax-m, 1fr) 1fr;
-        grid-auto-rows: minmax($s-about-row-minmax-m, 1fr);
+
 
         .about-elt.elt-txt {
           padding: $s-about-txt-padding-tb $s-about-txt-padding-lr-m;

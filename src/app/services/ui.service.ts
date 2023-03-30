@@ -35,13 +35,13 @@ export class UiService {
       visibleInNav: true,
     },
     <IPageInfos>{
-      route: RoutesNames.PageSportEnEcoles,
+      route: RoutesNames.PageSportPourParticulier,
       displayName: 'Particulier',
       disponible: false,
       visibleInNav: false,
     },
     <IPageInfos>{
-      route: RoutesNames.PageSportPourParticulier,
+      route: RoutesNames.PageSportEnEcoles,
       displayName: 'Ecoles',
       disponible: true,
       visibleInNav: true,
