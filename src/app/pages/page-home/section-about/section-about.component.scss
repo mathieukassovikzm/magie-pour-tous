@@ -16,7 +16,46 @@ $s-about-drop-shadow-color: $drop-shadow-color !default;
       margin-bottom: 0;
     }
 
-    .section-about-ctn {
+    .elt-txt {
+      padding: $s-about-txt-padding-tb $s-about-txt-padding-lr-s;
+      align-self: center;
+      position: relative;
+
+      h4 {
+        margin: 10px 0 5px 0;
+      }
+
+      &.txt-banner {
+        align-self: end;
+
+        h3,
+        h4 {
+          color: $c-secundary-light;
+          text-shadow: 2px 2px 4px $c-secundary-dark;
+        }
+
+        h3 {
+          position: relative;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 80%;
+          border: solid 2px $c-secundary-light;
+          border-radius: 20px;
+          margin-bottom: 20px;
+        }
+      }
+
+      ::ng-deep svg {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 150px;
+        filter: drop-shadow($s-about-drop-shadow-size $s-about-drop-shadow-color);
+      }
+
+    }
+
+    .ctn-banner {
       position: relative;
       top: -130px;
       display: grid;
@@ -34,23 +73,35 @@ $s-about-drop-shadow-color: $drop-shadow-color !default;
             $angle: 180deg);
         }
 
+        grid-column: 1;
+
+        &.elt-banner {
+          grid-row: 1 / span 2;
+        }
+
+        &.txt-banner {
+          grid-row: 2;
+        }
+      }
+    }
+
+
+    .ctn-grid {
+      top: -130px;
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: minmax($s-about-row-minmax-s, 1fr) 1fr;
+      grid-auto-rows: minmax($s-about-row-minmax-s, 1fr);
+
+      .about-elt {
         &.elt-img {
-          background-position: center;
-          /* Center the image */
-          background-repeat: no-repeat;
-          /* Do not repeat the image */
-          background-size: cover;
 
-          /* Resize the background image to cover the entire container */
-          &.img-1 {
-            background-image: url("/assets/img/section-about/About-PhotoProfil-1-v.jpg");
-          }
-
-          &.img-2 {
-            background-image: url("/assets/img/section-about/About-PhotoProfil-2-v.jpg");
-          }
-
+          &.img-1,
+          &.img-2,
           &.img-3 {
+            padding: $s-about-txt-padding-tb $s-about-txt-padding-lr-s;
+
             img {
               position: relative;
               left: 50%;
@@ -61,85 +112,25 @@ $s-about-drop-shadow-color: $drop-shadow-color !default;
               filter: drop-shadow($s-about-drop-shadow-size $s-about-drop-shadow-color);
             }
           }
-        }
 
-        &.elt-txt {
-          padding: $s-about-txt-padding-tb $s-about-txt-padding-lr-s;
-          align-self: center;
-
-          h4 {
-            margin: 10px 0 5px 0;
-          }
-
-          &.txt-banner {
-            align-self: end;
-
-            h3,
-            h4 {
-              color: $c-secundary-light;
-              text-shadow: 2px 2px 4px $c-secundary-dark;
-            }
-
-            h3 {
-              position: relative;
-              left: 50%;
-              transform: translateX(-50%);
-              width: 80%;
-              border: solid 2px $c-secundary-light;
-              border-radius: 20px;
-              margin-bottom: 20px;
-            }
-          }
-
-          &.bkg-primary {
-            height: 100%;
-            background-color: $c-primary;
-
-            .txt-ctn {
-              position: relative;
-              left: 50%;
-              top: 50%;
-              transform: translateX(-50%) translateY(-50%);
-
-              p {
-                color: $c-text-light;
-              }
-            }
-          }
-
-          svg {
-            position: relative;
-            left: 50%;
-            transform: translateX(-50%);
-            max-width: 150px;
-            filter: drop-shadow($s-about-drop-shadow-size $s-about-drop-shadow-color);
-          }
         }
 
         grid-column: 1;
 
-        &.elt-banner {
-          grid-row: 1 / span 2;
-        }
-
-        &.txt-banner {
-          grid-row: 2;
-        }
-
         &.txt-1 {
-          grid-row: 3;
+          grid-row: 1;
         }
 
         &.img-1 {
-          grid-row: 4 / span 2;
+          grid-row: 2;
         }
 
         &.txt-2 {
-          grid-row: 6;
+          grid-row: 3;
         }
 
         &.img-2 {
-          grid-row: 7 / span 2;
+          grid-row: 4;
         }
       }
     }
@@ -150,7 +141,15 @@ $s-about-drop-shadow-color: $drop-shadow-color !default;
 @media only screen and (min-width: $min-width-m) {
   :host {
     .section-about {
-      .section-about-ctn {
+      .ctn-banner {
+        .about-elt.elt-banner {
+          @include bkgGradient($url: "/assets/img/section-about/About-PhotoBanner-h.jpg",
+            $color1: transparent,
+            $color1Stop: 25%,
+            $color2: rgba($c-primary, 0.7),
+            $color2Stop: 60%);
+        }
+
         grid-template-columns: 1fr 1fr;
 
         .about-elt {
@@ -163,25 +162,31 @@ $s-about-drop-shadow-color: $drop-shadow-color !default;
             grid-column: 2;
             grid-row: 1 / span 2;
           }
+        }
+      }
 
+      .ctn-grid {
+        grid-template-columns: 1fr 1fr;
+
+        .about-elt {
           &.txt-1 {
             grid-column: 1;
-            grid-row: 3 / span 1;
+            grid-row: 1/ span 2;
           }
 
           &.img-1 {
             grid-column: 2;
-            grid-row: 3 / span 2;
+            grid-row: 1;
           }
 
           &.img-2 {
             grid-column: 1;
-            grid-row: 4 / span 2;
+            grid-row: 3;
           }
 
           &.txt-2 {
             grid-column: 2;
-            grid-row: 5 / span 1;
+            grid-row: 2 / span 2;
           }
 
           &.txt-3 {
@@ -192,32 +197,6 @@ $s-about-drop-shadow-color: $drop-shadow-color !default;
             grid-column: 2;
           }
         }
-
-        .about-elt {
-          &.elt-banner {
-            @include bkgGradient($url: "/assets/img/section-about/About-PhotoBanner-h.jpg",
-              $color1: transparent,
-              $color1Stop: 25%,
-              $color2: rgba($c-primary, 0.7),
-              $color2Stop: 60%);
-          }
-
-          &.elt-img {
-            &.img-1 {
-              background-image: url("/assets/img/section-about/About-PhotoProfil-1-h.jpg");
-            }
-
-            &.img-2 {
-              background-image: url("/assets/img/section-about/About-PhotoProfil-2-h.jpg");
-            }
-
-            &.img-3 {
-              img {
-                filter: none;
-              }
-            }
-          }
-        }
       }
     }
   }
@@ -226,12 +205,44 @@ $s-about-drop-shadow-color: $drop-shadow-color !default;
 @media only screen and (min-width: $min-width-m) {
   :host {
     .section-about {
-      .section-about-ctn {
+      .ctn-grid {
+        width: 75%;
+        margin: auto;
         grid-template-rows: minmax($s-about-row-minmax-m, 1fr) 1fr;
         grid-auto-rows: minmax($s-about-row-minmax-m, 1fr);
 
         .about-elt.elt-txt {
           padding: $s-about-txt-padding-tb $s-about-txt-padding-lr-m;
+        }
+
+        .about-elt {
+          &.txt-1 {
+            grid-column: 1;
+            grid-row: 1;
+          }
+
+          &.img-1 {
+            grid-column: 2;
+            grid-row: 1;
+          }
+
+          &.img-2 {
+            grid-column: 1;
+            grid-row: 2;
+          }
+
+          &.txt-2 {
+            grid-column: 2;
+            grid-row: 2;
+          }
+
+          &.txt-3 {
+            grid-column: 1;
+          }
+
+          &.img-3 {
+            grid-column: 2;
+          }
         }
       }
     }

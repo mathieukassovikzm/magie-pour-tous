@@ -74,7 +74,7 @@ export class UiService {
       .pipe(filter((e: Event): e is RouterEvent => e instanceof RouterEvent))
       .subscribe((e: RouterEvent) => {
         this.closeNav();
-        this.moveSlowToId(viewportScroller, 'app');
+        // this.moveSlowToId(viewportScroller, 'app');
       });
   }
 
