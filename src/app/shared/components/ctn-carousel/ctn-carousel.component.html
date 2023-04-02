@@ -1,0 +1,11 @@
+<div class="carousel-container" [style.width]="getCarouselWidth()">
+  <div class="carousel-slide-container">
+    <div class="" *ngFor="let slide of slides; let i = index" [@slideInOut]="currentSlide">
+      <app-carousel-slide *ngIf="i === currentSlide" [dataSlide]="slide"></app-carousel-slide>
+    </div>
+  </div>
+</div>
+<div class="ctn-btn">
+  <div class="btn" (click)="previousSlide()">Previous</div>
+  <div class="btn" (click)="nextSlide()">Next</div>
+</div>
