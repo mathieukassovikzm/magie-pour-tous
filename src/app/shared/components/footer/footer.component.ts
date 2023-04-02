@@ -14,4 +14,11 @@ export class FooterComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+
+  getRouteMentionLegales(): string {
+    return `../${this.pageMentionsLegales}`;
+  }
+  getRoutePolitiqueConfidentialite(): string {
+    return `../${this.pagePolitiqueConfidentialite}`;
+  }
 }
