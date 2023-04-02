@@ -12,5 +12,11 @@ $seec-pres-bloc-title-b: 40px;
         margin-bottom: $seec-pres-bloc-title-b;
       }
     }
+
+    .video-youtube ::ng-deep iframe {
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
 }

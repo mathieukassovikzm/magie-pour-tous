@@ -15,7 +15,6 @@ export class AppComponent implements OnInit, OnDestroy {
   public limiteSize = 650;
   public classCantScroll = 'cant-scroll';
   public backgroundColor = '';
-
   public resizeObservable$: Observable<Event>;
   public subscription$: Subscription = new Subscription();
 
@@ -26,6 +25,8 @@ export class AppComponent implements OnInit, OnDestroy {
   public oldAnimationState: number | undefined = undefined;
 
   public prevHeight = '';
+
+  private apiLoaded = false;
 
   constructor(
     private uiService: UiService,
@@ -65,6 +66,13 @@ export class AppComponent implements OnInit, OnDestroy {
     } else if (clientWidth > this.limiteSize) {
       this.isUnderLimit = false;
       this.isUnderLimit = false;
+    }
+
+    if (!this.apiLoaded) {
+      const tag = document.createElement('script');
+      tag.src = 'https://www.youtube.com/iframe_api';
+      document.body.appendChild(tag);
+      this.apiLoaded = true;
     }
   }
 

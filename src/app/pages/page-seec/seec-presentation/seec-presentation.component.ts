@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./seec-presentation.component.scss'],
 })
 export class SeecPresentationComponent implements OnInit {
+  public videoId = 'LPQ-fO-aLDY';
   constructor() {}
 
   ngOnInit() {}
