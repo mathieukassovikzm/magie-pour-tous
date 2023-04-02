@@ -24,6 +24,11 @@ export class SeeService {
       title: 'Les activités',
       link: 'activitees',
     },
+    {
+      name: 'Nos partenaires',
+      title: 'Nos partenaires',
+      link: 'trust',
+    },
   ];
   public seeListActivities: IActivityModel[] = [
     {

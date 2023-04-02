@@ -2,11 +2,34 @@ import { Injectable } from '@angular/core';
 import { IActivityModel } from '../models/activity';
 import { IStickerModel } from '../models/sticker';
 import { ITrustModel } from '../models/partner';
+import { IPageNavModel } from '../models/pageNav';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SeecService {
+  public listTitle: IPageNavModel[] = [
+    {
+      name: 'Présentation',
+      title: 'Présentation',
+      link: 'presentation',
+    },
+    {
+      name: 'Formules',
+      title: 'Nos formules',
+      link: 'formules',
+    },
+    {
+      name: 'Activites',
+      title: 'Les activités',
+      link: 'activitees',
+    },
+    {
+      name: 'Nos partenaires',
+      title: 'Nos partenaires',
+      link: 'trust',
+    },
+  ];
   public seecListActivities: IActivityModel[] = [
     {
       title: 'Entex',

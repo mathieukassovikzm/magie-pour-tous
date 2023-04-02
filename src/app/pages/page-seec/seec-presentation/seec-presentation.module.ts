@@ -1,11 +1,11 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SeecPresentationComponent } from './seec-presentation.component';
-import { SectionTitleSimpleModule } from 'src/app/shared/components/section-title/section-title-simple/section-title-simple.module';
+import { NgModule } from '@angular/core';
+import { SectionTitleBkgBlkModule } from 'src/app/shared/components/section-title/section-title-bkg-blk/section-title-bkg-blk.module';
 import { VideoModule } from 'src/app/shared/components/video/video.module';
+import { SeecPresentationComponent } from './seec-presentation.component';
 
 @NgModule({
-  imports: [CommonModule, SectionTitleSimpleModule, VideoModule],
+  imports: [CommonModule, SectionTitleBkgBlkModule, VideoModule],
   exports: [SeecPresentationComponent],
   declarations: [SeecPresentationComponent],
 })
