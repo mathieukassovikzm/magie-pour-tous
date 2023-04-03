@@ -32,9 +32,9 @@ export const carouselFadeAnimation = trigger('carouselAnimation', [
 ]);
 
 // =========================
-// Slide
+// Slide - 1 element
 // =========================
-export const animationCarousel = trigger('slideInOut', [
+export const animationSimpleCarousel = trigger('slideInOut', [
   transition(
     ':decrement',
     group([
@@ -105,4 +105,50 @@ export const animationCarousel = trigger('slideInOut', [
       ),
     ])
   ),
+]);
+
+// =========================
+// Slide - Multiples element
+// =========================
+const slideWidthTotal = 400; // $slide-width + 2*$slide-side-padding
+const animationDuration = '1s ease-in-out';
+const animationParamsDecrement = {
+  slideWidthTotal: slideWidthTotal,
+  animationDuration: animationDuration,
+};
+const animationParamsIncrement = {
+  slideWidthTotal: -1 * slideWidthTotal,
+  animationDuration: animationDuration,
+};
+
+export const containerSlideAnimation = animation([
+  query(
+    '.carousel-slide-container',
+    [
+      style({ transform: 'translateX(0)', offset: 0 }),
+      animate(
+        '{{animationDuration}}',
+        style({ transform: 'translateX({{slideWidthTotal}}px)', offset: 1 })
+      ),
+    ],
+    { optional: true }
+  ),
+]);
+
+export const animationMultipleCarousel = trigger('slideInOut', [
+  transition(
+    ':decrement',
+    useAnimation(containerSlideAnimation, {
+      params: {
+        ...animationParamsDecrement,
+      },
+    })
+  ),
+  transition(':increment', [
+    useAnimation(containerSlideAnimation, {
+      params: {
+        ...animationParamsIncrement,
+      },
+    }),
+  ]),
 ]);

@@ -21,7 +21,6 @@ export class CarouselEntrepriseComponent implements OnInit {
       i++;
       return slide;
     });
-    console.log(this.companiesSlides);
   }
 
   ngOnInit() {}

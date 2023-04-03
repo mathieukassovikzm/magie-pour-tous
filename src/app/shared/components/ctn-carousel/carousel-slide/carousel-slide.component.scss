@@ -1,8 +1,9 @@
 @import "_variables-dir";
+$slide-width: 300px;
+$slide-side-padding: 50px;
+$slide-duration: 1s;
 
 :host {
-  position: absolute;
-
   .carousel-slide {
     width: $slide-width;
     height: 100%;

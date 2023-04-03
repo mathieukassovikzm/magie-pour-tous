@@ -49,9 +49,9 @@ $see-scale-up: 1.02;
 /*******************************
  * Section-trust
  *******************************/
-$slide-width: 300px;
-$slide-side-padding: 50px;
-$slide-duration: 1s;
+$slide-width: 300px !default;
+$slide-side-padding: 50px !default;
+$slide-duration: 1s !default;
 
 /*******************************
  * Page Contact
