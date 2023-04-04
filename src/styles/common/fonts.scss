@@ -1,0 +1,142 @@
+/**************************************************************
+** Fonts
+***************************************************************/
+@font-face {
+  font-family: "Ostrich";
+  src: url("/assets/fonts/OstrichSans-Heavy.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Tw";
+  src: url("/assets/fonts/Tw-Cen-MT-Condensed.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/************************
+** Titles
+*************************/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-title, sans-serif;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+  text-align: center;
+  color: $c-primary;
+}
+
+h1 {
+  font-size: rem(28);
+
+  @media only screen and (min-width: $min-width-xs) {
+    font-size: rem(35);
+  }
+
+  @media only screen and (min-width: $min-width-s) {
+    font-size: rem(45);
+  }
+
+  @media only screen and (min-width: $min-width-m) {
+    font-size: rem(50);
+  }
+
+  @media only screen and (min-width: $min-width-l) {
+    font-size: rem(70);
+  }
+}
+
+h2 {
+  font-size: rem(40);
+
+  @media only screen and (min-width: $min-width-xs) {
+    font-size: rem(50);
+  }
+
+  @media only screen and (min-width: $min-width-s) {
+    font-size: rem(60);
+  }
+
+  @media only screen and (min-width: $min-width-m) {
+    font-size: rem(70);
+  }
+}
+
+h3 {
+  font-size: rem(30);
+
+  @media only screen and (min-width: $min-width-s) {
+    font-size: rem(40);
+  }
+
+  @media only screen and (min-width: $min-width-m) {
+    font-size: rem(45);
+  }
+}
+
+h4 {
+  font-size: rem(20);
+
+  @media only screen and (min-width: $min-width-xs) {
+    font-size: rem(30);
+  }
+
+  @media only screen and (min-width: $min-width-s) {
+    font-size: rem(35);
+  }
+}
+
+h5 {
+  font-size: rem(15);
+
+  @media only screen and (min-width: $min-width-xs) {
+    font-size: rem(20);
+  }
+
+  @media only screen and (min-width: $min-width-s) {
+    font-size: rem(25);
+  }
+}
+
+/************************
+** Paragraphes
+*************************/
+p,
+span {
+  font-family: $font-txt, sans-serif;
+  font-size: $base-size-font-txt-s;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+
+  color: $c-text-dark;
+  text-align: center;
+
+  &.small {
+    font-size: $base-size-font-txt-xs;
+    line-height: 1.3;
+    letter-spacing: 0.04em;
+  }
+
+  @media only screen and (min-width: $min-width-s) {
+    font-size: $base-size-font-txt-m;
+
+    &.small {
+      font-size: $base-size-font-txt-s;
+    }
+  }
+
+  @media only screen and (min-width: $min-width-m) {
+    font-size: $base-size-font-txt-l;
+
+    &.small {
+      font-size: $base-size-font-txt-l;
+      line-height: 1.5;
+      letter-spacing: 0.05em;
+    }
+  }
+}

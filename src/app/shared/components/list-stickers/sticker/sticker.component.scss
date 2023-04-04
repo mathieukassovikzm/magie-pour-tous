@@ -1,0 +1,92 @@
+@import "_variables-dir";
+@import "_mixins-dir";
+
+$sticker-color: $c-primary !default;
+$sticker-bkg-color: transparent !default;
+$sticker-width: 500px !default;
+$sticker-height: 90% !default;
+$sticker-icon-size: 100px !default;
+$sticker-scale: 1.1 !default;
+$sticker-scale-hover: 1.03 !default;
+$sticker-border-radius: 10px !default;
+$sticker-drop-shadow-size: 2px 6px 6px !default;
+$sticker-drop-shadow-color: rgba($c-background-dark, 0.16) !default;
+
+:host {
+  .sticker-ctn {
+    margin: 10px auto;
+    width: 100%;
+    padding: 20px;
+    border: 1px solid $sticker-color;
+    background-color: $sticker-bkg-color;
+    border-radius: $sticker-border-radius;
+    box-shadow: $sticker-drop-shadow-size $sticker-drop-shadow-color;
+
+    .sticker-txt {
+      text-align: center;
+    }
+
+    .sticker-icon {
+      transition: all 0.2s ease;
+      position: relative;
+
+      ::ng-deep {
+        .icon {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translateX(-50%) translateY(-50%);
+          width: $sticker-icon-size;
+          height: $sticker-icon-size;
+          @include svg;
+        }
+
+      }
+
+      height: 150px;
+      transform: scale($sticker-scale);
+    }
+
+    transition: transform $animation-duration-short ease,
+    color $animation-duration-short ease;
+
+    &:hover,
+    &.hovered {
+      transform: scale($sticker-scale-hover);
+
+      .sticker-icon {
+        ::ng-deep {
+          .icon {
+            @include svg-hover;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $min-width-m) {
+  :host {
+    .sticker-ctn {
+      width: $sticker-width;
+      height: $sticker-height;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      .sticker-icon {
+        width: 30%;
+        height: 100%;
+      }
+
+      .sticker-txt {
+        width: 70%;
+        margin-left: 10px;
+
+        p {
+          text-align: left;
+        }
+      }
+    }
+  }
+}

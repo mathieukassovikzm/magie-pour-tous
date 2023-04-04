@@ -1,0 +1,62 @@
+@import "_variables-dir";
+
+$dotted-line-dot-size: 8px !default;
+$dotted-line-dot-stroke-width: 25 !default;
+$dotted-line-dot-color: $c-primary !default;
+$dotted-line-line-color: $c-primary !default;
+$dotted-line-line-nb: 3;
+$dotted-line-line-height: 2px;
+$dotted-line-line-width: 8px;
+$dotted-line-line-base: 15px;
+$dotted-line-line-space: 5px;
+$dotted-line-bottom: $dotted-line-dot-size/2 + $dotted-line-line-space;
+
+:host {
+  .dotted-line {
+    .dot {
+      position: absolute;
+      display: inline-block;
+      transform: translateY(-40%);
+      height: $dotted-line-dot-size;
+      width: $dotted-line-dot-size;
+
+      circle {
+        stroke: $dotted-line-dot-color;
+        stroke-width: $dotted-line-dot-stroke-width;
+        fill: none;
+      }
+    }
+
+    .line {
+      position: absolute;
+      width: $dotted-line-line-width;
+      height: $dotted-line-line-height;
+      border: 0;
+      background-color: $dotted-line-line-color;
+    }
+
+    &.left {
+      left: -1 * ($dotted-line-line-base + $dotted-line-dot-size + $dotted-line-line-space * $dotted-line-line-nb + $dotted-line-line-width * ($dotted-line-line-nb - 1));
+
+      .line {
+        @for $i from 1 through $dotted-line-line-nb {
+          &.line#{$i} {
+            left: $dotted-line-dot-size + $dotted-line-line-space * $i + $dotted-line-line-width * ($i - 1);
+          }
+        }
+      }
+    }
+
+    &.right {
+      right: -1 * ($dotted-line-line-base - $dotted-line-dot-size/2 + $dotted-line-line-space * $dotted-line-line-nb + $dotted-line-line-width * ($dotted-line-line-nb - 1));
+
+      .line {
+        @for $i from 1 through $dotted-line-line-nb {
+          &.line#{$i} {
+            right: $dotted-line-line-space * $i + $dotted-line-line-width * ($i - 1);
+          }
+        }
+      }
+    }
+  }
+}

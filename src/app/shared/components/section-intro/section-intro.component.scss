@@ -1,0 +1,171 @@
+@import "_variables-dir";
+
+/*******************************
+ * section-Intro
+ *******************************/
+$intro-bkg-color: $c-primary;
+$intro-txt-color: $c-secundary-light;
+$intro-bkg-opacity: 0.8;
+$intro-panel-l-width: 60%;
+$intro-triangle-width: 220px;
+$intro-transition-duration: 1.5s;
+$intro-transition-delay: 0.5s;
+$intro-ctn-top: 48%;
+
+.page-home :host .s-intro {
+  background-image: url("/assets/img/section-intro/page-home-small.jpg");
+}
+
+.page-see :host .s-intro {
+  background-image: url("/assets/img/section-intro/page-see-small.jpg");
+}
+
+.page-spp :host .s-intro {
+  background-image: url("/assets/img/section-intro/page-spp-small.jpg");
+}
+
+.page-seec :host .s-intro {
+  background-image: url("/assets/img/section-intro/page-seec-small.jpg");
+}
+
+:host {
+  .s-intro {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: calc(100vh - #{$header-bottom-height});
+
+    padding: 0;
+
+    .panel {
+      position: absolute;
+      width: 100%;
+      height: calc(100vh - #{$header-bottom-height});
+
+      .contain {
+        position: absolute;
+        width: 50%;
+        height: 50%;
+        bottom: calc($header-bottom-height / 2);
+        right: 0;
+
+        .txt {
+          position: relative;
+          width: 110%;
+          top: $intro-ctn-top;
+          left: 35%;
+          transform: translateX(-50%) translateY(-50%);
+          z-index: 2;
+
+          h1,
+          h5 {
+            color: $intro-txt-color;
+            text-shadow: 0px 1px 2px $c-text-dark;
+          }
+
+          h1 {
+            margin-bottom: 0px;
+          }
+
+          h5 {
+            margin: 10px 0 20px 0;
+          }
+
+          .btn-cartoon-ctn {
+            position: relative;
+            left: -12px;
+          }
+        }
+      }
+
+      svg {
+        height: calc(100vh - #{$header-bottom-height});
+        display: block;
+        height: 100%;
+        width: 100%;
+
+        .triangle {
+          fill: transparentize($intro-bkg-color, 1-$intro-bkg-opacity);
+
+          &.triangle-screen {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $min-width-l) {
+  .page-home :host .s-intro {
+    background-image: url("/assets/img/section-intro/page-home.jpg");
+  }
+
+  .page-see :host .s-intro {
+    background-image: url("/assets/img/section-intro/page-see.jpg");
+  }
+
+  .page-spp :host .s-intro {
+    background-image: url("/assets/img/section-intro/page-spp.jpg");
+  }
+
+  .page-seec :host .s-intro {
+    background-image: url("/assets/img/section-intro/page-seec.jpg");
+  }
+
+  :host {
+    .s-intro {
+      .panel {
+        position: absolute;
+        width: 80%;
+        height: calc(100vh - #{$header-bottom-height});
+
+        &.panel-right {
+          right: 0;
+        }
+
+        .contain {
+          // background: transparentize($intro-bkg-color, 1-$intro-bkg-opacity);
+          height: calc(100vh - #{$header-bottom-height});
+          bottom: 0;
+        }
+
+        .txt {
+          h1 {
+            margin-bottom: 0px;
+          }
+
+          h5 {
+            margin: 50px 0;
+          }
+
+          .btn-cartoon-ctn {
+            top: 100px;
+          }
+        }
+
+        svg {
+          .triangle {
+            &.triangle-responsive {
+              display: none;
+            }
+
+            &.triangle-screen {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1190px) {
+  :host {
+    .s-intro {
+      .panel {
+        width: $intro-panel-l-width;
+      }
+    }
+  }
+}

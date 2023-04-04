@@ -1,0 +1,39 @@
+/*******************************
+ * Variables Globales
+ *******************************/
+
+$animation-duration-short: 0.2s;
+$animation-duration: 0.5s;
+
+/*******************************
+ * Media Query
+ *******************************/
+$min-width-xs: 350px;
+$min-width-s: 450px;
+$min-width-m: 650px;
+$min-width-l: 850px;
+$min-width-xl: 1200px;
+
+/*******************************
+ * Colors
+ *******************************/
+
+$c-primary: #fdb719;
+$c-primary-light: lighten($c-primary, 0.7);
+$c-primary-dark: darken($c-primary, 0.7);
+
+$c-secundary: #e2e0dd;
+$c-secundary-light: #fff;
+$c-secundary-dark: #333333;
+
+$c-text-light: $c-secundary-light;
+$c-text-dark: $c-secundary-dark;
+
+$c-background-light: $c-secundary-light;
+$c-background-dark: #000;
+
+$c-box-shadow-dark: rgba($c-background-dark, 0.9);
+$c-box-shadow-light: rgba($c-secundary, 0.9);
+
+$drop-shadow-size: 2px 5px 5px !default;
+$drop-shadow-color: rgba($c-background-dark, 0.5) !default;

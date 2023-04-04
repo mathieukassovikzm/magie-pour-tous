@@ -1,0 +1,162 @@
+@import "_variables-dir";
+@import "_functions";
+@import "mixins-dir";
+
+:host {
+  .ctn-vignette {
+    position: relative;
+    margin: $see-vignette-m-top-bottom auto;
+    border: $vignette-border-width solid $see-vignette-h2-color;
+    border-radius: 10px 10px 10px 10px;
+    background-color: $c-secundary-light;
+    box-shadow: $drop-shadow-size $drop-shadow-color;
+
+    .vignette-text-title {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      height: $see-icon-size;
+
+      .activity-logo {
+        position: relative;
+        margin-left: 20px;
+        height: $see-icon-size;
+
+        ::ng-deep {
+          .icon-svg {
+            display: block;
+            height: $see-icon-size;
+            @include svg($color: $c-primary);
+          }
+        }
+      }
+
+      h5 {
+        width: 100%;
+      }
+    }
+
+    .vignette {
+      position: relative;
+      display: flex;
+      width: 100%;
+
+      background-repeat: no-repeat;
+      background-size: cover;
+      border-radius: 0px 0px 7px 7px;
+      border-top: 1px solid $see-vignette-h2-color;
+
+      .vignette-text {
+        position: relative;
+        width: 50%;
+        height: 100%;
+        padding: 8px;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 0px 0px 0px 7px;
+
+        .txt-sports {
+          position: relative;
+          width: 100%;
+          top: 50%;
+          left: 50%;
+          transform: translateX(-50%) translateY(-50%);
+
+          p {
+            font-size: $base-size-font-txt-xs;
+          }
+        }
+      }
+
+      .slide-enter-active {
+        transition-duration: 1s;
+      }
+
+      .slide-leave-active {
+        transition-duration: 1s;
+      }
+
+      .slide-enter-to,
+      .slide-leave {
+        max-height: calc($see-vignette-width / 2)- $vignette-border-width;
+        overflow: hidden;
+      }
+
+      .slide-enter,
+      .slide-leave-to {
+        overflow: hidden;
+        max-height: 0;
+      }
+    }
+
+    @each $activity in $see-activity {
+      .#{$activity} {
+        background-image: url($see-img-path + "#{$activity}.jpg");
+      }
+    }
+
+    transition: transform $animation-duration-short ease,
+    color $animation-duration-short ease;
+
+    &:hover {
+      transform: scale($see-scale-up);
+
+      .vignette-text-title {
+        background-color: $see-vignette-h2-color;
+
+        h5 {
+          color: $c-secundary-light;
+        }
+
+        .activity-logo ::ng-deep {
+          .icon-svg {
+            @include svg-hover;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $min-width-xs) {
+  :host .ctn-vignette {
+    .vignette .vignette-text .txt-sports p {
+      font-size: $base-size-font-txt-s;
+    }
+  }
+}
+
+@media only screen and (min-width: $min-width-s) {
+  :host .ctn-vignette .vignette .vignette-text .txt-sports p {
+    font-size: $base-size-font-txt-m;
+  }
+}
+
+@media only screen and (min-width: $min-width-m) {
+  :host .ctn-vignette {
+    width: $see-vignette-width * 1.5;
+
+    .vignette-text-title {
+      height: $see-icon-size + 20px;
+
+      .activity-logo {
+        height: $see-icon-size + 20px;
+
+        ::ng-deep .icon-svg {
+          height: $see-icon-size + 20px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $min-width-l) {
+  :host .ctn-vignette {
+    width: $see-vignette-width * 2;
+  }
+}
+
+@media only screen and (min-width: 1228px) {
+  :host .ctn-vignette {
+    width: $see-vignette-width * 1.5;
+  }
+}

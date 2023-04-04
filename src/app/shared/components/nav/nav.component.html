@@ -1,0 +1,15 @@
+<div [class]="classHeaderScreen()">
+  <div class="div-logo" [class.small]="isSmallSquare">
+    <div [class]="classMenuSquare()"></div>
+    <div (click)="goToTop()">
+      <img src="./assets/img/logos/Go2Sport_Logo-website-bg-black.png" class="menu-img" alt="logo Go2Sport 29" />
+    </div>
+  </div>
+  <nav class="nav">
+    <div *ngFor="let navItem of lstPagesNav">
+      <a [routerLink]="navItem.route" class="nav-item" routerLinkActive="router-link-exact-active">
+        {{navItem.displayName}}
+      </a>
+    </div>
+  </nav>
+</div>

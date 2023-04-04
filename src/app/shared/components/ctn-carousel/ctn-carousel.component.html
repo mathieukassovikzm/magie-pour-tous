@@ -1,0 +1,12 @@
+<div class="carousel-container" [style.width]="getCarouselWidth()" [@slideInOut]="currentSlide"
+  (@slideInOut.done)="onAnimationDoneEvent($event)">
+  <div id="carousel-slide-container" class="carousel-slide-container">
+    <div *ngFor="let slide of evolutingLstSlide; let i = index">
+      <app-carousel-slide [dataSlide]="slide"></app-carousel-slide>
+    </div>
+  </div>
+</div>
+<!-- <div class="ctn-btn">
+  <div class="btn" (click)="previousSlide()">Previous</div>
+  <div class="btn" (click)="nextSlide()">Next</div>
+</div> -->

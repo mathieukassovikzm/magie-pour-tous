@@ -1,0 +1,23 @@
+@import "_variables-dir";
+
+:host {
+  .list-stickers {
+    margin: 10px;
+  }
+}
+
+@media only screen and (min-width: $min-width-m) {
+  :host {
+    .list-stickers {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      align-items: stretch;
+    }
+
+    .sticker {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+<div class="value-icon" [class.hovered]="isHover()" (mouseover)="hoverIn()" (mouseout)="hoverOut()">
+  <div class="value-icon-title">
+    <h4>{{value.title}}</h4>
+  </div>
+  <div class="value-icon-icon">
+    <app-svg-circle />
+    <app-svg-solidarite *ngIf="isSolidarite()" />
+    <app-svg-partage *ngIf="isPartage()" />
+    <app-svg-tolerance *ngIf="isTolerance()" />
+    <app-svg-convivialite *ngIf="isConvivialite()" />
+  </div>

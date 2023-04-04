@@ -1,0 +1,7 @@
+@import "_variables-dir";
+
+:host {
+  .section-container {
+    padding: $section-padding-tb $section-padding-lr;
+  }
+}

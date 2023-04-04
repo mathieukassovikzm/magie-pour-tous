@@ -1,0 +1,12 @@
+:host {
+  .list-titles-svg {
+    margin: 10px;
+  }
+
+  .list-titles-svg {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+}

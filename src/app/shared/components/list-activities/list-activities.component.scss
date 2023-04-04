@@ -1,0 +1,22 @@
+@import "_variables-dir";
+
+:host {
+  .list-activities {
+    margin: 10px;
+  }
+}
+
+@media only screen and (min-width: $min-width-m) {
+  :host .list-activities {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;
+    justify-content: space-evenly;
+
+    .activitee {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  }
+}

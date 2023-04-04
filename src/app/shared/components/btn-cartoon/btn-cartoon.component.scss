@@ -1,0 +1,154 @@
+@import "_variables-dir";
+
+$btn-cartoon-anim-dur: $animation-duration !default;
+$btn-cartoon-skewX: 20deg !default;
+$btn-cartoon-bkg-color: $c-secundary-dark !default;
+$btn-cartoon-color: $c-secundary-light !default;
+$btn-cartoon-color-hover: $c-primary !default;
+$btn-cartoon-box-shadow-color: $c-box-shadow-light !default;
+$btn-cartoon-box-shadow-color-hover: $c-secundary-light !default;
+$btn-cartoon-box-shadow-size: 1px 2px 3px !default;
+$btn-cartoon-box-shadow-size-hover: 5px 5px 1px !default;
+
+:host {
+  .btn-cartoon-ctn {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+
+    .cta {
+      display: flex;
+      padding: 0px 25px;
+      text-decoration: none;
+      color: $btn-cartoon-color;
+      background: $btn-cartoon-bkg-color;
+      transition: 1s;
+      box-shadow: $btn-cartoon-box-shadow-size $btn-cartoon-box-shadow-color;
+      transform: skewX(-1 * $btn-cartoon-skewX);
+
+      span {
+        position: relative;
+        color: $btn-cartoon-color;
+        transform: skewX($btn-cartoon-skewX);
+
+        &.span-txt {
+          top: 12px;
+        }
+
+        &.span-svg {
+          width: 20px;
+          margin-left: 30px;
+          position: relative;
+          top: 6px;
+          transition: $btn-cartoon-anim-dur;
+          margin-right: 0px;
+
+          ::ng-deep {
+            svg {
+              width: 66px;
+              height: 43px;
+
+              path,
+              polygon {
+                fill: $btn-cartoon-color;
+
+                &.one {
+                  transition: 0.4s;
+                  transform: translateX(-60%);
+                }
+
+                &.two {
+                  transition: $btn-cartoon-anim-dur;
+                  transform: translateX(-30%);
+                }
+
+                &.three {
+                  transition: 0.3s;
+                  transform: translateX(75%);
+                }
+              }
+            }
+          }
+
+        }
+      }
+
+      &:focus {
+        outline: none;
+      }
+
+      &:hover {
+        transition: $btn-cartoon-anim-dur;
+        box-shadow: $btn-cartoon-box-shadow-size-hover $btn-cartoon-box-shadow-color-hover;
+
+        span {
+          color: $btn-cartoon-color-hover;
+
+          &.span-svg {
+            transition: $btn-cartoon-anim-dur;
+            margin-right: 45px;
+
+            ::ng-deep {
+              svg {
+
+                path.one,
+                polygon.one {
+                  transform: translateX(0%);
+                  animation: color_anim 1s infinite 0.2s;
+                }
+
+                path.two,
+                polygon.two {
+                  transform: translateX(0%);
+                  animation: color_anim 1s infinite 0.4s;
+                }
+
+                path.three,
+                polygon.three {
+                  transform: translateX(0%);
+                  animation: color_anim 1s infinite 0.6s;
+                }
+              }
+            }
+
+          }
+        }
+      }
+    }
+  }
+}
+
+/* SVG animations */
+@keyframes color_anim {
+  0% {
+    fill: $btn-cartoon-color;
+  }
+
+  50% {
+    fill: $btn-cartoon-color-hover;
+  }
+
+  100% {
+    fill: $btn-cartoon-color;
+  }
+}
+
+@media only screen and (min-width: $min-width-s) {
+  :host {
+    .btn-cartoon-ctn .cta span {
+      &.span-txt {
+        top: 11px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $min-width-m) {
+  :host {
+    .btn-cartoon-ctn .cta span {
+      &.span-txt {
+        top: 8px;
+      }
+    }
+  }
+}

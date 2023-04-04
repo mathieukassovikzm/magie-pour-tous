@@ -1,0 +1,18 @@
+@import "_variables-dir";
+
+:host {
+  .list-partners {
+    margin: 10px;
+  }
+}
+
+@media only screen and (min-width: $min-width-m) {
+  :host {
+    .list-partners {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      align-items: stretch;
+    }
+  }
+}

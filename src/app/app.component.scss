@@ -1,0 +1,39 @@
+@import "_variables-dir";
+
+:host {
+  .s-header {
+    z-index: 1;
+
+    .fake-elt {
+      height: $header-bottom-height;
+    }
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  ::ng-deep router-outlet~* {
+    width: 100%;
+    height: 100%;
+  }
+
+  .translatedMenu-enter-active {
+    animation: translateIn $animation-duration;
+  }
+
+  .translatedMenu-leave-active {
+    animation: translateIn $animation-duration reverse;
+  }
+
+  @keyframes translateIn {
+    0% {
+      transform: translateX(100%);
+    }
+
+    100% {
+      transform: translateX(0%);
+    }
+  }
+}

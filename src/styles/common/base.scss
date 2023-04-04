@@ -1,0 +1,12 @@
+body {
+  font-family: $font-txt, sans-serif;
+  scrollbar-color: $c-primary $c-secundary;
+
+  &::-webkit-scrollbar-track {
+    background: $c-background-dark;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $c-primary;
+  }
+}

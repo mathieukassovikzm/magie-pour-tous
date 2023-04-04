@@ -1,0 +1,9 @@
+@import "_variables-dir";
+
+:host {
+
+  .carousel-enterprise {
+    width: 100%;
+    margin-bottom: $section-padding-tb;
+  }
+}

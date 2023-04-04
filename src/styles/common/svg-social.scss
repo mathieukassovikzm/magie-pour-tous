@@ -1,0 +1,39 @@
+$svg-media-size: 40px !default;
+
+.svg-social {
+  width: $svg-media-size;
+  path {
+    fill: $c-secundary-light;
+  }
+  circle {
+    stroke: $c-secundary-light;
+    stroke-width: 6px;
+    transition: all $animation-duration-short ease;
+
+    fill: transparent;
+  }
+  &.logo-facebook {
+    &:hover {
+      circle {
+        fill: #3b5998;
+        stroke: transparent;
+      }
+    }
+  }
+  &.logo-instagram {
+    &:hover {
+      circle {
+        fill: url(#grad1);
+        stroke: transparent;
+      }
+    }
+  }
+  &.logo-linkedin {
+    &:hover {
+      circle {
+        fill: #0e76a8;
+        stroke: transparent;
+      }
+    }
+  }
+}

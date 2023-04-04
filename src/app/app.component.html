@@ -1,0 +1,13 @@
+<div id="app">
+  <header id="header" class="s-header">
+    <div id="fake-elt" class="fake-elt"></div>
+    <app-nav></app-nav>
+    <app-nav-responsive></app-nav-responsive>
+  </header>
+
+  <div [@routeAnimations]="outlet.isActivated ? outlet.activatedRoute : ''" class="container"
+    (@routeAnimations.start)="onAnimationEnterEvent($event)" (@routeAnimations.done)="onAnimationDoneEvent($event)">
+    <router-outlet #outlet="outlet"></router-outlet>
+  </div>
+  <!-- <CookieBar></CookieBar> -->
+</div>

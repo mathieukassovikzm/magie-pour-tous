@@ -1,0 +1,18 @@
+@import "_variables-dir";
+$slide-width: 300px;
+$slide-side-padding: 50px;
+$slide-duration: 1s;
+
+:host {
+  .carousel-slide {
+    width: $slide-width;
+    height: 100%;
+    margin: 0 $slide-side-padding;
+    text-align: center;
+
+    img {
+      width: $slide-width;
+      height: auto;
+    }
+  }
+}

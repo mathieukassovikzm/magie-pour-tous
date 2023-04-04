@@ -1,0 +1,20 @@
+<div class="page-spp">
+  <app-section-intro [titleInfos]="titleInfo" />
+  <section class="section section-spp" id="spp">
+    <app-section-title-simple>Sport pour particulier</app-section-title-simple>
+    <div class="section-container">
+      <p>
+        Nous proposons une séance de Fitness remise en forme à la salle de la
+        Coudraie de Pleyben tous les mardis de 18h30 à 19h30. Notre but est de
+        vous accompagner à la reprise d'une activité sportive où encore à vous
+        entretenir physiquement.
+      </p>
+      <div class="container-flex">
+        <div *ngFor="let element of elements">
+          <app-item-spp [elementSpp]="element"></app-item-spp>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<app-footer></app-footer>

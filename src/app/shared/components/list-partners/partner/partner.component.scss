@@ -1,0 +1,15 @@
+@import "_variables-dir";
+
+:host {
+  .partner {
+    width: $slide-width;
+    height: 100%;
+    margin: 0 $slide-side-padding;
+    text-align: center;
+
+    img {
+      width: $slide-width;
+      height: auto;
+    }
+  }
+}
