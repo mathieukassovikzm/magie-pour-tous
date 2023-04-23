@@ -12,6 +12,5 @@ export interface IPageInfos {
   route?: string;
   displayName?: string;
   iconName?: string;
-  disponible?: boolean;
   visibleInNav?: boolean;
 }

@@ -10,27 +10,7 @@ const routes: Routes = [
       import('./pages/page-home/page-home.module').then(
         (m) => m.PageHomeModule
       ),
-    data: { animationState: 'home' }
-  },
-  {
-    path: RoutesNames.PageSportEnEntreprise,
-    loadChildren: () =>
-      import('./pages/page-see/page-see.module').then((m) => m.PageSeeModule),
-    data: { animationState: 'see' }
-  },
-  {
-    path: RoutesNames.PageSportPourParticulier,
-    loadChildren: () =>
-      import('./pages/page-spp/page-spp.module').then((m) => m.PageSppModule),
-    data: { animationState: 'spp' }
-  },
-  {
-    path: RoutesNames.PageSportEnEcoles,
-    loadChildren: () =>
-      import('./pages/page-seec/page-seec.module').then(
-        (m) => m.PageSeecModule
-      ),
-    data: { animationState: 'seec' }
+    data: { animationState: 'home' },
   },
   {
     path: RoutesNames.PageContact,
@@ -38,17 +18,7 @@ const routes: Routes = [
       import('./pages/page-contact/page-contact.module').then(
         (m) => m.PageContactModule
       ),
-    data: { animationState: 'contact' }
-  },
-  {
-    path: RoutesNames.PageMentionsLegales,
-    loadChildren: () =>
-      import('./pages/page-ml/page-ml.module').then((m) => m.PageMlModule),
-  },
-  {
-    path: RoutesNames.PagePolitiqueConfidentialite,
-    loadChildren: () =>
-      import('./pages/page-pc/page-pc.module').then((m) => m.PagePcModule),
+    data: { animationState: 'contact' },
   },
 ];
 
@@ -56,4 +26,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -1,7 +1,7 @@
 import { ViewportScroller } from '@angular/common';
 import { Injectable } from '@angular/core';
 import { Event, Router, RouterEvent } from '@angular/router';
-import { filter, Subject } from 'rxjs';
+import { Subject, filter } from 'rxjs';
 import { IPageInfos, RoutesNames } from '../models/routes';
 
 const darkBackground = 'dark-background';
@@ -25,44 +25,27 @@ export class UiService {
     <IPageInfos>{
       route: RoutesNames.PageHome,
       displayName: 'Accueil',
-      disponible: true,
       visibleInNav: true,
     },
     <IPageInfos>{
       route: RoutesNames.PageSportEnEntreprise,
-      displayName: 'Entreprise',
-      disponible: true,
+      displayName: 'Spectacles',
       visibleInNav: true,
     },
     <IPageInfos>{
       route: RoutesNames.PageSportPourParticulier,
-      displayName: 'Particulier',
-      disponible: false,
-      visibleInNav: false,
+      displayName: "L'artiste",
+      visibleInNav: true,
     },
     <IPageInfos>{
       route: RoutesNames.PageSportEnEcoles,
-      displayName: 'Ecoles',
-      disponible: true,
+      displayName: 'Espace Pro',
       visibleInNav: true,
     },
     <IPageInfos>{
       route: RoutesNames.PageContact,
       displayName: 'Contact',
-      disponible: true,
       visibleInNav: true,
-    },
-    <IPageInfos>{
-      route: RoutesNames.PageMentionsLegales,
-      displayName: 'Mentions Legales',
-      disponible: true,
-      visibleInNav: false,
-    },
-    <IPageInfos>{
-      route: RoutesNames.PagePolitiqueConfidentialite,
-      displayName: 'Politique Confidentialite',
-      disponible: true,
-      visibleInNav: false,
     },
   ];
 
