@@ -12,21 +12,6 @@ $intro-transition-duration: 1.5s;
 $intro-transition-delay: 0.5s;
 $intro-ctn-top: 48%;
 
-.page-home :host .s-intro {
-  background-image: url("/assets/img/section-intro/page-home-small.jpg");
-}
-
-.page-see :host .s-intro {
-  background-image: url("/assets/img/section-intro/page-see-small.jpg");
-}
-
-.page-spp :host .s-intro {
-  background-image: url("/assets/img/section-intro/page-spp-small.jpg");
-}
-
-.page-seec :host .s-intro {
-  background-image: url("/assets/img/section-intro/page-seec-small.jpg");
-}
 
 :host {
   .s-intro {
@@ -97,22 +82,6 @@ $intro-ctn-top: 48%;
 }
 
 @media only screen and (min-width: $min-width-l) {
-  .page-home :host .s-intro {
-    background-image: url("/assets/img/section-intro/page-home.jpg");
-  }
-
-  .page-see :host .s-intro {
-    background-image: url("/assets/img/section-intro/page-see.jpg");
-  }
-
-  .page-spp :host .s-intro {
-    background-image: url("/assets/img/section-intro/page-spp.jpg");
-  }
-
-  .page-seec :host .s-intro {
-    background-image: url("/assets/img/section-intro/page-seec.jpg");
-  }
-
   :host {
     .s-intro {
       .panel {

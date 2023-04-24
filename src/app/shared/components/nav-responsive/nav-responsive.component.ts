@@ -3,7 +3,7 @@ import { ViewportScroller } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import * as _ from 'lodash';
 import { Observable, Subscription } from 'rxjs';
-import { IPageInfos, RoutesNames } from 'src/app/models/routes';
+import { IPageInfos } from 'src/app/models/routes';
 import { UiService } from 'src/app/services/ui.service';
 import { SidebarCloseAnimation, SidebarOpenAnimation } from './animation';
 
@@ -37,12 +37,6 @@ const animationParams = {
   ],
 })
 export class NavResponsiveComponent implements OnInit, OnDestroy {
-  public pageHome = RoutesNames.PageHome;
-  public pageSportEnEntreprise = RoutesNames.PageSportEnEntreprise;
-  public pageSportPourParticulier = RoutesNames.PageSportPourParticulier;
-  public pageSportEnEcoles = RoutesNames.PageSportEnEcoles;
-  public pageContact = RoutesNames.PageContact;
-
   public backgroundColor = '';
 
   public isNavOpenState$: Observable<boolean>;

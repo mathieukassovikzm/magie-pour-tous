@@ -1,9 +1,9 @@
-<section class="s-intro">
+<section class="s-intro" [ngStyle]="{ 'background-image': 'url(' + backgroundImage + '.jpg)'}">
   <div class="panel animation panel-right">
     <div class="contain">
       <div class="txt">
-        <h1>{{titleInfos.h1}}</h1>
-        <h5>{{titleInfos.h5}}</h5>
+        <h1>{{titleInfos.title}}</h1>
+        <h5>{{titleInfos.subtitle}}</h5>
         <button (btnClicked)="goToLink()">Savoir plus</button>
       </div>
     </div>

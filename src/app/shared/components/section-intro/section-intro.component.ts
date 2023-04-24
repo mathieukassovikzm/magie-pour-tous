@@ -1,5 +1,13 @@
 import { ViewportScroller } from '@angular/common';
-import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  Input,
+  OnDestroy,
+  OnInit,
+} from '@angular/core';
+import { Observable, Subscription, fromEvent } from 'rxjs';
+import { ISectionTitle } from 'src/app/models/routes';
 import { UiService } from 'src/app/services/ui.service';
 
 @Component({
@@ -7,22 +15,51 @@ import { UiService } from 'src/app/services/ui.service';
   templateUrl: './section-intro.component.html',
   styleUrls: ['./section-intro.component.scss'],
 })
-export class SectionIntroComponent implements OnInit, AfterViewInit {
-  @Input() titleInfos: any;
+export class SectionIntroComponent implements OnInit, OnDestroy {
+  @Input() titleInfos: ISectionTitle = {};
+
+  public limiteSize = 650;
+  public isUnderLimit = false;
+  public resizeObservable$: Observable<Event>;
+  public subscription$: Subscription = new Subscription();
+  public backgroundImage;
 
   constructor(
     private uiService: UiService,
     private viewportScroller: ViewportScroller
-  ) {}
+  ) {
+    this.backgroundImage = this.titleInfos.backgroundImgPath;
+    this.resizeObservable$ = fromEvent(window, 'resize');
+    var subResize = this.resizeObservable$.subscribe((evt) => {
+      this.onResize();
+    });
+  }
 
   ngOnInit() {}
 
-  ngAfterViewInit() {}
+  ngOnDestroy() {
+    this.subscription$.unsubscribe();
+  }
 
   goToLink() {
     this.uiService.moveSlowToId(
       this.viewportScroller,
-      `${this.titleInfos.link}`
+      `${this.titleInfos?.link}`
     );
+  }
+
+  onResize() {
+    this.isUnderLimitSize();
+  }
+
+  isUnderLimitSize(): void {
+    var clientWidth = document.documentElement.clientWidth;
+    if (clientWidth < this.limiteSize && this.isUnderLimit === false) {
+      this.isUnderLimit = true;
+      this.backgroundImage = this.titleInfos.backgroundImgPathSmall;
+    } else if (clientWidth > this.limiteSize && this.isUnderLimit === true) {
+      this.isUnderLimit = false;
+      this.backgroundImage = this.titleInfos.backgroundImgPath;
+    }
   }
 }

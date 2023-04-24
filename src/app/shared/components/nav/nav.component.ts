@@ -1,8 +1,8 @@
 import { ViewportScroller } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import * as _ from 'lodash';
-import { fromEvent, Observable, Subscription } from 'rxjs';
-import { IPageInfos, RoutesNames } from 'src/app/models/routes';
+import { Observable, Subscription, fromEvent } from 'rxjs';
+import { IPageInfos } from 'src/app/models/routes';
 import { UiService } from 'src/app/services/ui.service';
 
 @Component({
@@ -11,12 +11,6 @@ import { UiService } from 'src/app/services/ui.service';
   styleUrls: ['./nav.component.scss'],
 })
 export class NavComponent implements OnInit, OnDestroy {
-  public pageHome = RoutesNames.PageHome;
-  public pageSportEnEntreprise = RoutesNames.PageSportEnEntreprise;
-  public pageSportPourParticulier = RoutesNames.PageSportPourParticulier;
-  public pageSportEnEcoles = RoutesNames.PageSportEnEcoles;
-  public pageContact = RoutesNames.PageContact;
-
   public isNavOpenState = false;
   public backgroundColor = '';
   public isSmallSquare = false;
