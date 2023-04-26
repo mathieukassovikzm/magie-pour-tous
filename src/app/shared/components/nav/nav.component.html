@@ -1,9 +1,7 @@
-<div [class]="classHeaderScreen()">
+<div class="header screen">
   <div class="div-logo" [class.small]="isSmallSquare">
-    <div [class]="classMenuSquare()"></div>
-    <div (click)="goToTop()">
-      <img src="./assets/img/logos/Go2Sport_Logo-website-bg-black.png" class="menu-img" alt="logo Go2Sport 29" />
-    </div>
+    <!-- <div class="menu-square"></div> -->
+    <app-svg-logo (click)="goToTop()"></app-svg-logo>
   </div>
   <nav class="nav">
     <div *ngFor="let navItem of lstPagesNav">

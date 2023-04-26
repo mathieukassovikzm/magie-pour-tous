@@ -22,20 +22,22 @@ export class SectionIntroComponent implements OnInit, OnDestroy {
   public isUnderLimit = false;
   public resizeObservable$: Observable<Event>;
   public subscription$: Subscription = new Subscription();
-  public backgroundImage;
+  public backgroundImage: string | undefined = '';
 
   constructor(
     private uiService: UiService,
     private viewportScroller: ViewportScroller
   ) {
-    this.backgroundImage = this.titleInfos.backgroundImgPath;
     this.resizeObservable$ = fromEvent(window, 'resize');
     var subResize = this.resizeObservable$.subscribe((evt) => {
       this.onResize();
     });
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.onResize();
+    this.backgroundImage = this.titleInfos.backgroundImgPath;
+  }
 
   ngOnDestroy() {
     this.subscription$.unsubscribe();

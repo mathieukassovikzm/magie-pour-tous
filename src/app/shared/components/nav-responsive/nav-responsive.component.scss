@@ -2,10 +2,6 @@
 @import "_functions";
 
 :host {
-  .fake-elt {
-    height: $header-bottom-height;
-  }
-
   .header.responsive {
     z-index: 10;
     position: absolute;

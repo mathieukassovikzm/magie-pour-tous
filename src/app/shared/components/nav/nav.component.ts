@@ -43,14 +43,6 @@ export class NavComponent implements OnInit, OnDestroy {
     this.scrollSubscription$.unsubscribe();
   }
 
-  classMenuSquare(): string {
-    return `menu-square ${this.backgroundColor}`;
-  }
-
-  classHeaderScreen(): string {
-    return `header screen ${this.backgroundColor}`;
-  }
-
   goToTop() {
     this.uiService.moveSlowToId(this.viewportScroller, `app`);
   }

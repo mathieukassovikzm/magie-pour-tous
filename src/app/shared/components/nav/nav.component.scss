@@ -2,10 +2,6 @@
 @import "_functions";
 
 :host {
-  .fake-elt {
-    height: $header-bottom-height;
-  }
-
   .header {
     z-index: 10;
     position: absolute;
@@ -57,25 +53,38 @@
         z-index: 1;
         cursor: pointer;
 
+        //circle
+        width: $header-img-circle-size;
+        height: $header-img-circle-size;
+        top: $header-img-circle-position-top;
+        left: $header-img-circle-position-left;
+        border-radius: 50%;
+        box-shadow: 1px 2px 3px $c-box-shadow-light;
+        background-color: $c-background-light ;
+
         &.small {
           transform: scale(0.78);
         }
 
-        .menu-square {
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          transform: rotate($header-img-square-rotation);
-          z-index: 2;
-          box-shadow: 1px 2px 3px $c-box-shadow-light;
-        }
+        // .menu-square {
+        //   position: absolute;
+        //   width: 100%;
+        //   height: 100%;
+        //   transform: rotate($header-img-square-rotation);
+        //   z-index: 2;
+        //   box-shadow: 1px 2px 3px $c-box-shadow-light;
+        //   background-color: $c-background-light ;
+        // }
 
-        .menu-img {
+        .svg-logo {
           position: absolute;
-          bottom: 0;
+          bottom: $header-img-position-bottom;
           left: $header-img-position-left;
           width: $header-img-size;
           z-index: 3;
+
+          bottom: $header-img-circle-svg-position-bottom;
+          left: $header-img-circle-svg-position-left;
         }
       }
 
