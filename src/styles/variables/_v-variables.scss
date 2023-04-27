@@ -14,6 +14,7 @@ $vignette-border-width: 2px;
 /*******************************
  * Header
  *******************************/
+$header-txt-color: $c-text-light;
 $header-txt-hover-color: $c-primary;
 $header-txt-size-m: $base-size-font-txt-m;
 $header-txt-size-l: $base-size-font-txt-xl;
@@ -23,9 +24,15 @@ $header-img-square-rotation: -54deg;
 $header-img-square-size: 300px;
 $header-img-square-position-top: -160px;
 $header-img-square-position-left: -75px;
-$header-img-size: 60%;
-$header-img-position-left: 70px;
+$header-img-size: 56%;
+$header-img-position-left: 80px;
+$header-img-position-bottom: -30px;
 
+$header-img-circle-size: 220px;
+$header-img-circle-position-top: -60px;
+$header-img-circle-position-left: -55px;
+$header-img-circle-svg-position-left: 66px;
+$header-img-circle-svg-position-bottom: 20px;
 /*******************************
  * section-sport-en-entreprise
  *******************************/

@@ -1,8 +1,8 @@
 import { ViewportScroller } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import * as _ from 'lodash';
-import { fromEvent, Observable, Subscription } from 'rxjs';
-import { IPageInfos, RoutesNames } from 'src/app/models/routes';
+import { Observable, Subscription, fromEvent } from 'rxjs';
+import { IPageInfos } from 'src/app/models/routes';
 import { UiService } from 'src/app/services/ui.service';
 
 @Component({
@@ -11,15 +11,9 @@ import { UiService } from 'src/app/services/ui.service';
   styleUrls: ['./nav.component.scss'],
 })
 export class NavComponent implements OnInit, OnDestroy {
-  public pageHome = RoutesNames.PageHome;
-  public pageSportEnEntreprise = RoutesNames.PageSportEnEntreprise;
-  public pageSportPourParticulier = RoutesNames.PageSportPourParticulier;
-  public pageSportEnEcoles = RoutesNames.PageSportEnEcoles;
-  public pageContact = RoutesNames.PageContact;
-
   public isNavOpenState = false;
   public backgroundColor = '';
-  public isSmallSquare = false;
+  public userHasScrolled = false;
 
   public scrollObservable$: Observable<Event>;
   public scrollSubscription$: Subscription;
@@ -49,24 +43,16 @@ export class NavComponent implements OnInit, OnDestroy {
     this.scrollSubscription$.unsubscribe();
   }
 
-  classMenuSquare(): string {
-    return `menu-square ${this.backgroundColor}`;
-  }
-
-  classHeaderScreen(): string {
-    return `header screen ${this.backgroundColor}`;
-  }
-
   goToTop() {
     this.uiService.moveSlowToId(this.viewportScroller, `app`);
   }
 
   onScroll() {
     var y = window.scrollY;
-    if (y > 50 && !this.isSmallSquare) {
-      this.isSmallSquare = true;
-    } else if (y < 50 && this.isSmallSquare) {
-      this.isSmallSquare = false;
+    if (y > 50 && !this.userHasScrolled) {
+      this.userHasScrolled = true;
+    } else if (y < 50 && this.userHasScrolled) {
+      this.userHasScrolled = false;
     }
   }
 }

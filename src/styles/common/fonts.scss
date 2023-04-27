@@ -2,15 +2,22 @@
 ** Fonts
 ***************************************************************/
 @font-face {
-  font-family: "Ostrich";
-  src: url("/assets/fonts/OstrichSans-Heavy.otf") format("truetype");
+  font-family: "Celliad";
+  src: url("/assets/fonts/Celliad.otf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Tw";
-  src: url("/assets/fonts/Tw-Cen-MT-Condensed.ttf") format("truetype");
+  font-family: "Montserrat-Light";
+  src: url("/assets/fonts/Montserrat-Light.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Futura-CondensedLight";
+  src: url("/assets/fonts/Futura-CondensedLight.otf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }

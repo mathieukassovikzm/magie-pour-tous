@@ -1,8 +1,8 @@
 import { ViewportScroller } from '@angular/common';
 import { Injectable } from '@angular/core';
 import { Event, Router, RouterEvent } from '@angular/router';
-import { filter, Subject } from 'rxjs';
-import { IPageInfos, RoutesNames } from '../models/routes';
+import { Subject, filter } from 'rxjs';
+import { IPageInfos, LstPagesMap } from '../models/routes';
 
 const darkBackground = 'dark-background';
 const lightBackground = 'light-background';
@@ -21,50 +21,7 @@ export class UiService {
   public isHoveredTolerance = false;
   public isHoveredConviviality = false;
 
-  public lstPages: IPageInfos[] = [
-    <IPageInfos>{
-      route: RoutesNames.PageHome,
-      displayName: 'Accueil',
-      disponible: true,
-      visibleInNav: true,
-    },
-    <IPageInfos>{
-      route: RoutesNames.PageSportEnEntreprise,
-      displayName: 'Entreprise',
-      disponible: true,
-      visibleInNav: true,
-    },
-    <IPageInfos>{
-      route: RoutesNames.PageSportPourParticulier,
-      displayName: 'Particulier',
-      disponible: false,
-      visibleInNav: false,
-    },
-    <IPageInfos>{
-      route: RoutesNames.PageSportEnEcoles,
-      displayName: 'Ecoles',
-      disponible: true,
-      visibleInNav: true,
-    },
-    <IPageInfos>{
-      route: RoutesNames.PageContact,
-      displayName: 'Contact',
-      disponible: true,
-      visibleInNav: true,
-    },
-    <IPageInfos>{
-      route: RoutesNames.PageMentionsLegales,
-      displayName: 'Mentions Legales',
-      disponible: true,
-      visibleInNav: false,
-    },
-    <IPageInfos>{
-      route: RoutesNames.PagePolitiqueConfidentialite,
-      displayName: 'Politique Confidentialite',
-      disponible: true,
-      visibleInNav: false,
-    },
-  ];
+  public lstPages: IPageInfos[] = [];
 
   constructor(
     public router: Router,
@@ -76,6 +33,10 @@ export class UiService {
         this.closeNav();
         this.moveSlowToId(viewportScroller, 'app');
       });
+
+    LstPagesMap.forEach((value: IPageInfos, key: string) => {
+      this.lstPages.push(value);
+    });
   }
 
   toggleNav(): void {
