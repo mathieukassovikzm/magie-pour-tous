@@ -4,12 +4,8 @@
       <div class="txt">
         <h1>{{titleInfos.title}}</h1>
         <h5>{{titleInfos.subtitle}}</h5>
-        <button (btnClicked)="goToLink()">Savoir plus</button>
+        <button *ngIf="!!titleInfos.btnTxt" (btnClicked)="goToLink()">{{titleInfos.btnTxt}}</button>
       </div>
     </div>
-    <svg viewBox="0 0 500 500" preserveAspectRatio="none">
-      <polygon class="triangle triangle-screen on-left" points="500,0 500,500 0,500 200,0" />
-      <polygon class="triangle triangle-responsive on-left" points="500,0 500,500 0,500" />
-    </svg>
   </div>
 </section>

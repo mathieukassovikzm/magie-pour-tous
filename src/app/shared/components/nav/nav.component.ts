@@ -13,7 +13,7 @@ import { UiService } from 'src/app/services/ui.service';
 export class NavComponent implements OnInit, OnDestroy {
   public isNavOpenState = false;
   public backgroundColor = '';
-  public isSmallSquare = false;
+  public userHasScrolled = false;
 
   public scrollObservable$: Observable<Event>;
   public scrollSubscription$: Subscription;
@@ -49,10 +49,10 @@ export class NavComponent implements OnInit, OnDestroy {
 
   onScroll() {
     var y = window.scrollY;
-    if (y > 50 && !this.isSmallSquare) {
-      this.isSmallSquare = true;
-    } else if (y < 50 && this.isSmallSquare) {
-      this.isSmallSquare = false;
+    if (y > 50 && !this.userHasScrolled) {
+      this.userHasScrolled = true;
+    } else if (y < 50 && this.userHasScrolled) {
+      this.userHasScrolled = false;
     }
   }
 }

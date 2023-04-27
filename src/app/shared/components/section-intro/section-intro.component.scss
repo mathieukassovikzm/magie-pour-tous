@@ -18,7 +18,8 @@ $intro-ctn-top: 48%;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    height: calc(100vh - #{$header-bottom-height});
+    // height: calc(100vh - #{$header-bottom-height});
+    height: calc(100vh);
 
     padding: 0;
 
@@ -54,6 +55,7 @@ $intro-ctn-top: 48%;
 
           h5 {
             margin: 10px 0 20px 0;
+            font-family: "Montserrat-Light";
           }
 
           .btn-cartoon-ctn {

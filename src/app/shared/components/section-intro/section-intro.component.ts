@@ -1,11 +1,5 @@
 import { ViewportScroller } from '@angular/common';
-import {
-  AfterViewInit,
-  Component,
-  Input,
-  OnDestroy,
-  OnInit,
-} from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Observable, Subscription, fromEvent } from 'rxjs';
 import { ISectionTitle } from 'src/app/models/routes';
 import { UiService } from 'src/app/services/ui.service';

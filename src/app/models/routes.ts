@@ -3,6 +3,7 @@ export interface ISectionTitle {
   subtitle?: string;
   backgroundImgPath?: string;
   backgroundImgPathSmall?: string;
+  btnTxt?: string;
   link?: string;
 }
 
