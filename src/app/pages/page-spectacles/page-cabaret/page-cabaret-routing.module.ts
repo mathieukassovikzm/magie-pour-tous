@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PageHomeComponent } from './page-home.component';
+import { PageCabaretComponent } from './page-cabaret.component';
 
 const routes: Routes = [
   {
@@ -8,7 +8,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: PageHomeComponent,
+        component: PageCabaretComponent,
       },
     ],
   },
@@ -18,4 +18,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class PageHomeRoutingModule {}
+export class PageCabaretRoutingModule {}

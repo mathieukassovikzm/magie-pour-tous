@@ -1,0 +1,10 @@
+:host {
+  .section-container {
+    display: flex;
+
+    .desc,
+    img {
+      width: 50%;
+    }
+  }
+}

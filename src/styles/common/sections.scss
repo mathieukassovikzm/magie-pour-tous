@@ -5,13 +5,13 @@ section,
   padding-left: $section-padding-lr;
   padding-right: $section-padding-lr;
 
-  .section-container {
+  &.section-container {
     width: 100%;
     padding: $section-container-padding-tb $section-container-padding-lr;
   }
 
   @media only screen and (min-width: $min-width-m) {
-    .section-container {
+    &.section-container {
       width: 75%;
       margin: auto;
     }
@@ -22,6 +22,7 @@ section,
   background-color: $c-background-light;
   color: $c-text-dark;
 }
+
 .dark-background {
   background-color: $c-background-dark;
   color: $c-text-light;

@@ -1,11 +1,8 @@
-<section class="s-intro" [ngStyle]="{ 'background-image': 'url(' + backgroundImage + '.jpg)'}">
-  <div class="panel animation panel-right">
-    <div class="contain">
-      <div class="txt">
-        <h1>{{titleInfos.title}}</h1>
-        <h5>{{titleInfos.subtitle}}</h5>
-        <button *ngIf="!!titleInfos.btnTxt" (btnClicked)="goToLink()">{{titleInfos.btnTxt}}</button>
-      </div>
-    </div>
+<section class="s-intro"
+  [ngStyle]="{ 'background': 'linear-gradient(0deg, rgba(0, 0, 0, 0.7) 0%, rgba(255, 255, 255, 0) 35%),no-repeat center center url(' + backgroundImage + '.jpg)'}">
+  <div class="txt">
+    <h1>{{titleInfos.title}}</h1>
+    <h5>{{titleInfos.subtitle}}</h5>
+    <button *ngIf="!!titleInfos.btnTxt" (btnClicked)="goToLink()">{{titleInfos.btnTxt}}</button>
   </div>
 </section>

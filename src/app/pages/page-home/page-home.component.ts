@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ISectionTitle, LstPagesMap } from 'src/app/models/routes';
+import { ISectionTitle, LstPagesMap, Pages } from 'src/app/models/routes';
 
 @Component({
   selector: 'app-page-home',
@@ -7,7 +7,7 @@ import { ISectionTitle, LstPagesMap } from 'src/app/models/routes';
   styleUrls: ['./page-home.component.scss'],
 })
 export class PageHomeComponent implements OnInit {
-  public titleInfos = LstPagesMap.get('pageHome')?.sectionTitle!;
+  public titleInfos = LstPagesMap.get(Pages.HOME)?.sectionTitle!;
 
   constructor() {}
 

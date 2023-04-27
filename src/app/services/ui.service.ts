@@ -2,7 +2,7 @@ import { ViewportScroller } from '@angular/common';
 import { Injectable } from '@angular/core';
 import { Event, Router, RouterEvent } from '@angular/router';
 import { Subject, filter } from 'rxjs';
-import { IPageInfos, LstPagesMap } from '../models/routes';
+import { IPageInfos, LstPagesMap, Pages } from '../models/routes';
 
 const darkBackground = 'dark-background';
 const lightBackground = 'light-background';
@@ -34,7 +34,7 @@ export class UiService {
         this.moveSlowToId(viewportScroller, 'app');
       });
 
-    LstPagesMap.forEach((value: IPageInfos, key: string) => {
+    LstPagesMap.forEach((value: IPageInfos, key: Pages) => {
       this.lstPages.push(value);
     });
   }
