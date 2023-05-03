@@ -14,36 +14,36 @@ const routes: Routes = [
       {
         path: LstPagesMap.get(Pages.SPECCLOSUP)?.route,
         loadChildren: () =>
-          import('./page-clos-up/page-clos-up.module').then(
-            (m) => m.PageClosUpModule
+          import('./page-desc-spectacle/page-desc-spectacle.module').then(
+            (m) => m.PageDescSpectacleModule
           ),
       },
       {
         path: LstPagesMap.get(Pages.SPECCABARET)?.route,
         loadChildren: () =>
-          import('./page-cabaret/page-cabaret.module').then(
-            (m) => m.PageCabaretModule
+          import('./page-desc-spectacle/page-desc-spectacle.module').then(
+            (m) => m.PageDescSpectacleModule
           ),
       },
       {
         path: LstPagesMap.get(Pages.SPECGRANDESILLU)?.route,
         loadChildren: () =>
-          import('./page-grandes-illu/page-grandes-illu.module').then(
-            (m) => m.PageGrandesIlluModule
+          import('./page-desc-spectacle/page-desc-spectacle.module').then(
+            (m) => m.PageDescSpectacleModule
           ),
       },
       {
         path: LstPagesMap.get(Pages.SPECENFANTS)?.route,
         loadChildren: () =>
-          import('./page-jeune-public/page-jeune-public.module').then(
-            (m) => m.PageJeunePublicModule
+          import('./page-desc-spectacle/page-desc-spectacle.module').then(
+            (m) => m.PageDescSpectacleModule
           ),
       },
       {
         path: LstPagesMap.get(Pages.SPECMAGIENUM)?.route,
         loadChildren: () =>
-          import('./page-magie-numerique/page-magie-numerique.module').then(
-            (m) => m.PageMagieNumeriqueModule
+          import('./page-desc-spectacle/page-desc-spectacle.module').then(
+            (m) => m.PageDescSpectacleModule
           ),
       },
     ],

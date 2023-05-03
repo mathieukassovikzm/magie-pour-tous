@@ -9,6 +9,12 @@ import { LstPagesMap, Pages } from 'src/app/models/routes';
 export class PageSpectaclesComponent implements OnInit {
   public titleInfos = LstPagesMap.get(Pages.SPECTACLES)?.sectionTitle!;
 
+  public titleInfosClosUp = LstPagesMap.get(Pages.SPECCLOSUP)!;
+  public titleInfosCabaret = LstPagesMap.get(Pages.SPECCABARET)!;
+  public titleInfosMagieNum = LstPagesMap.get(Pages.SPECMAGIENUM)!;
+  public titleInfosEnfants = LstPagesMap.get(Pages.SPECENFANTS)!;
+  public titleInfosGrandesIllu = LstPagesMap.get(Pages.SPECGRANDESILLU)!;
+
   constructor() {}
 
   ngOnInit() {}

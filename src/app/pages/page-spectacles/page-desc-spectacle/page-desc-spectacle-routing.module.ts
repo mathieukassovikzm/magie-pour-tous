@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PageJeunePublicComponent } from './page-jeune-public.component';
+import { PageDescSpectacleComponent } from './page-desc-spectacle.component';
 
 const routes: Routes = [
   {
@@ -8,7 +8,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: PageJeunePublicComponent,
+        component: PageDescSpectacleComponent,
       },
     ],
   },
@@ -18,4 +18,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class PageJeunePublicRoutingModule {}
+export class PageDescSpectacleRoutingModule {}
