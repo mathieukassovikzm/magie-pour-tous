@@ -1,9 +1,5 @@
 <div class="page-spectacle">
   <app-section-intro [titleInfos]="titleInfos"></app-section-intro>
-  <button [routerLink]="titleInfosClosUp.route">{{titleInfosClosUp.displayName}}</button>
-  <button [routerLink]="titleInfosCabaret.route">{{titleInfosCabaret.displayName}}</button>
-  <button [routerLink]="titleInfosMagieNum.route">{{titleInfosMagieNum.displayName}}</button>
-  <button [routerLink]="titleInfosEnfants.route">{{titleInfosEnfants.displayName}}</button>
-  <button [routerLink]="titleInfosGrandesIllu.route">{{titleInfosGrandesIllu.displayName}}</button>
+  <app-lst-btn-card class="ctn-cards" [lstBtnCards]="lstBtn"></app-lst-btn-card>
 </div>
 <app-footer></app-footer>

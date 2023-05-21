@@ -10,7 +10,7 @@ $intro-panel-l-width: 60%;
 $intro-triangle-width: 220px;
 $intro-transition-duration: 1.5s;
 $intro-transition-delay: 0.5s;
-$intro-ctn-top: 80%;
+$intro-ctn-top: 85%;
 
 $color1: rgba(0, 0, 0, 0.7);
 $color1Stop: 0%;
@@ -28,13 +28,37 @@ $angle: 90deg;
 
     padding: 0;
 
-    .txt {
+    .title-txt {
       position: relative;
-      width: 110%;
-      top: $intro-ctn-top;
-      left: 50%;
+      width: 100%;
       transform: translateX(-50%) translateY(-50%);
       z-index: 2;
+
+      // Par défault
+      top: $intro-ctn-top;
+      left: 50%;
+
+      // Right
+      &.right {
+        transform: translateY(-50%);
+        top: 50%;
+        width: 50%;
+      }
+
+      &.left {
+        transform: translateY(-50%);
+        top: 50%;
+        width: 50%;
+        left: 0;
+      }
+
+      &.top {
+        top: 100% - $intro-ctn-top;
+      }
+
+      &.bottom {
+        top: $intro-ctn-top;
+      }
 
       h1,
       h5 {
@@ -64,13 +88,13 @@ $angle: 90deg;
 @media only screen and (min-width: $min-width-l) {
   :host {
     .s-intro {
-      .txt {
+      .title-txt {
         h1 {
           margin-bottom: 0px;
         }
 
         h5 {
-          margin: 50px 0;
+          margin: 20px 0;
         }
 
         .btn-cartoon-ctn {

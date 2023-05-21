@@ -1,11 +1,4 @@
-export interface ISectionTitle {
-  title?: string;
-  subtitle?: string;
-  backgroundImgPath?: string;
-  backgroundImgPathSmall?: string;
-  btnTxt?: string;
-  link?: string;
-}
+import { ISectionTitle, TitlePosition } from './section-title';
 
 export interface IPageInfos {
   route?: string;
@@ -36,6 +29,7 @@ export const LstPagesMap = new Map<Pages, IPageInfos>([
       displayName: 'Accueil',
       visibleInNav: true,
       sectionTitle: {
+        txtPosition: TitlePosition.BOTTOM,
         title: 'Ronan Calvany',
         subtitle: 'Magie pour tous',
         backgroundImgPath: '/assets/img/section-intro/page-home',
@@ -50,6 +44,7 @@ export const LstPagesMap = new Map<Pages, IPageInfos>([
       displayName: "L'artiste",
       visibleInNav: true,
       sectionTitle: {
+        txtPosition: TitlePosition.BOTTOM,
         title: 'Ronan Calvany',
         subtitle: 'Magie pour tous',
         backgroundImgPath: '/assets/img/section-intro/page-artiste',
@@ -64,8 +59,8 @@ export const LstPagesMap = new Map<Pages, IPageInfos>([
       displayName: 'Les spectacles',
       visibleInNav: true,
       sectionTitle: {
-        title: 'Ronan Calvany',
-        subtitle: 'Magie pour tous',
+        txtPosition: TitlePosition.LEFT,
+        title: 'Les Spectacles',
         backgroundImgPath: '/assets/img/section-intro/page-spectacles',
         backgroundImgPathSmall:
           '/assets/img/section-intro/page-spectacles-small',

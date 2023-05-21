@@ -5,6 +5,7 @@ import { SectionIntroModule } from 'src/app/shared/components/section-intro/sect
 import { PageSpectaclesRoutingModule } from './page-spectacles-routing.module';
 import { PageSpectaclesComponent } from './page-spectacles.component';
 import { RouterModule } from '@angular/router';
+import { LstBtnCardModule } from 'src/app/shared/components/lst-btn-card/lst-btn-card.module';
 
 @NgModule({
   imports: [
@@ -12,6 +13,7 @@ import { RouterModule } from '@angular/router';
     RouterModule,
     PageSpectaclesRoutingModule,
     SectionIntroModule,
+    LstBtnCardModule,
     FooterModule,
   ],
   exports: [PageSpectaclesComponent],

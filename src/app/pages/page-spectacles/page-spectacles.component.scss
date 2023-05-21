@@ -1,3 +1,21 @@
+@import "variables-dir";
+
 :host {
-  ::ng-deep .page-spectacle {}
+  position: relative;
+
+  .ctn-cards {
+    margin: 30px 5px;
+  }
+}
+
+/* ---------------------- Media query ----------------------------*/
+@media only screen and (min-width: $min-width-l) {
+  :host {
+    .ctn-cards {
+      z-index: 2;
+      position: absolute;
+      top: 50%;
+      right: 35%;
+    }
+  }
 }

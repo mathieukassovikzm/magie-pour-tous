@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { LstPagesMap, Pages } from 'src/app/models/routes';
 import { ISpectacleModel } from 'src/app/models/spectacle';
 
@@ -10,7 +10,16 @@ import { ISpectacleModel } from 'src/app/models/spectacle';
 })
 export class PageDescSpectacleComponent implements OnInit {
   public spectacleClosUp: ISpectacleModel = {
-    title: 'Clos-Up',
+    sectionTitle: {
+      title: LstPagesMap.get(Pages.SPECCLOSUP)!.displayName,
+      btn: {
+        btnTxt: 'En Savoir plus',
+      },
+      backgroundImgPath:
+        '/assets/img/section-spectacles/Spectacles-ClosUp-PhotoBanner-h',
+      backgroundImgPathSmall:
+        '/assets/img/section-spectacles/Spectacles-ClosUp-PhotoBanner-v',
+    },
     videoId: 'zYLcCo28-fM',
     tabTxt: [
       "De table en table et/ou au cocktail dînatoire, c'est à 20 cm de vos yeux que la magie prend forme.",
@@ -27,7 +36,16 @@ export class PageDescSpectacleComponent implements OnInit {
   };
 
   public spectacleCabaret: ISpectacleModel = {
-    title: 'Cabaret',
+    sectionTitle: {
+      title: LstPagesMap.get(Pages.SPECCABARET)!.displayName,
+      btn: {
+        btnTxt: 'En Savoir plus',
+      },
+      backgroundImgPath:
+        '/assets/img/section-spectacles/Spectacles-Cabaret-PhotoBanner-h',
+      backgroundImgPathSmall:
+        '/assets/img/section-spectacles/Spectacles-Cabaret-PhotoBanner-v',
+    },
     videoId: 'WaHn1s9alUc',
     tabTxt: [
       "Lors de votre repas, l'artiste magicien réalise différentes  interventions (entre les plats) de 10 à 30 minutes sur scène. Avec beaucoup d'humour, de finesse et de légèreté, l'artiste fait participer les invités et propose des numéros hors du commun.",
@@ -49,7 +67,16 @@ export class PageDescSpectacleComponent implements OnInit {
   };
 
   public spectacleMagieNum: ISpectacleModel = {
-    title: 'Magie Numérique et Close-up digital',
+    sectionTitle: {
+      title: LstPagesMap.get(Pages.SPECMAGIENUM)!.displayName,
+      btn: {
+        btnTxt: 'En Savoir plus',
+      },
+      backgroundImgPath:
+        '/assets/img/section-spectacles/Spectacles-MagieNum-PhotoBanner-h',
+      backgroundImgPathSmall:
+        '/assets/img/section-spectacles/Spectacles-MagieNum-PhotoBanner-v',
+    },
     videoId: 'xpwda7_BXOs',
     tabTxt: [
       "La Magie digitale, une animation originale et innovante pour faire voyager vos événements dans l'ère du temps.",
@@ -64,7 +91,16 @@ export class PageDescSpectacleComponent implements OnInit {
   };
 
   public spectacleJeunePublic: ISpectacleModel = {
-    title: 'Magie Numérique et Close-up digital',
+    sectionTitle: {
+      title: LstPagesMap.get(Pages.SPECENFANTS)!.displayName,
+      btn: {
+        btnTxt: 'En Savoir plus',
+      },
+      backgroundImgPath:
+        '/assets/img/section-spectacles/Spectacles-JeunePublic-PhotoBanner-h',
+      backgroundImgPathSmall:
+        '/assets/img/section-spectacles/Spectacles-JeunePublic-PhotoBanner-v',
+    },
     tabTxt: [
       'A CHACUN SON TOUR',
       "Il était une fois un magicien issu d'une grande famille de magiciens… ",
@@ -78,7 +114,16 @@ export class PageDescSpectacleComponent implements OnInit {
   };
 
   public spectacleGrandesIllu: ISpectacleModel = {
-    title: 'Show Grandes Illusions',
+    sectionTitle: {
+      title: LstPagesMap.get(Pages.SPECGRANDESILLU)!.displayName,
+      btn: {
+        btnTxt: 'En Savoir plus',
+      },
+      backgroundImgPath:
+        '/assets/img/section-spectacles/Spectacles-GrandesIllu-PhotoBanner-h',
+      backgroundImgPathSmall:
+        '/assets/img/section-spectacles/Spectacles-GrandesIllu-PhotoBanner-v',
+    },
     tabTxt: [
       'Spectacle de Magie Complet (1h45)',
       "Grandes illusions, numéro d'oiseaux, mentalisme, artistes internationaux…",

@@ -1,6 +1,7 @@
+import { ISectionTitle } from './section-title';
+
 export interface ISpectacleModel {
-  name?: string;
-  title: string;
+  sectionTitle: ISectionTitle;
   videoId?: string;
   tabTxt: string[];
   visible: boolean;

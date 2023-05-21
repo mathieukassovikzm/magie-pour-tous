@@ -1,12 +1,11 @@
 <div class="page-spectacle">
-  <!-- <app-section-intro [titleInfos]="titleInfos"></app-section-intro> -->
+  <app-section-intro [titleInfos]="spectacle.sectionTitle"></app-section-intro>
   <section class="section-container">
     <div class="desc">
-      <h3>{{spectacle.title}}</h3>
+      <h3>{{spectacle.sectionTitle.title}}</h3>
       <div class="ctn-txt" *ngFor="let txt of spectacle.tabTxt">
         <p>{{txt}}</p>
       </div>
-      <button>En Savoir plus</button>
     </div>
   </section>
   <section class="section-container bloc-video" *ngIf="!!spectacle.videoId">

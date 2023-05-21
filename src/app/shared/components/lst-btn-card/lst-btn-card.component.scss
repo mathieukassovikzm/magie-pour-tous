@@ -1,0 +1,64 @@
+@import "variables-dir";
+
+$nbElt: 10;
+$left-switch : 40px;
+$bottom-switch : 45px;
+
+:host {
+  .ctn-list-card {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+
+    .ctn-card {
+      margin: 5px;
+    }
+  }
+}
+
+/* ---------------------- Media query ----------------------------*/
+@media only screen and (min-width: $min-width-l) {
+  :host {
+    .ctn-list-card {
+      height: $card-height;
+
+      &.row {
+        .ctn-card {
+          position: absolute;
+          transition: 0.5s ease all;
+
+          &.card-hovered {
+            transform: translateX($card-width - $left-switch + 5px);
+          }
+        }
+
+        @for $i from 1 through $nbElt {
+          li:nth-child(n + #{$i}) {
+            left: $i * $left-switch;
+            z-index: $nbElt - $i;
+          }
+        }
+      }
+
+      &.colunm {
+        .ctn-card {
+          position: absolute;
+          transition: 0.5s ease all;
+
+          &.card-hovered {
+            transform: translateY(-1 * $card-height + $bottom-switch);
+          }
+        }
+
+        @for $i from 1 through $nbElt {
+          li:nth-child(n + #{$i}) {
+            bottom: $i * $bottom-switch;
+            z-index: $nbElt - $i;
+          }
+        }
+      }
+    }
+  }
+}

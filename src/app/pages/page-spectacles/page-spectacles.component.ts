@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ILstBtnCard } from 'src/app/models/btn';
 import { LstPagesMap, Pages } from 'src/app/models/routes';
+import { UiService } from 'src/app/services/ui.service';
 
 @Component({
   selector: 'app-page-spectacles',
@@ -8,14 +10,11 @@ import { LstPagesMap, Pages } from 'src/app/models/routes';
 })
 export class PageSpectaclesComponent implements OnInit {
   public titleInfos = LstPagesMap.get(Pages.SPECTACLES)?.sectionTitle!;
+  public lstBtn: ILstBtnCard;
 
-  public titleInfosClosUp = LstPagesMap.get(Pages.SPECCLOSUP)!;
-  public titleInfosCabaret = LstPagesMap.get(Pages.SPECCABARET)!;
-  public titleInfosMagieNum = LstPagesMap.get(Pages.SPECMAGIENUM)!;
-  public titleInfosEnfants = LstPagesMap.get(Pages.SPECENFANTS)!;
-  public titleInfosGrandesIllu = LstPagesMap.get(Pages.SPECGRANDESILLU)!;
-
-  constructor() {}
+  constructor(private uiService: UiService) {
+    this.lstBtn = uiService.lstBtnCards;
+  }
 
   ngOnInit() {}
 }
