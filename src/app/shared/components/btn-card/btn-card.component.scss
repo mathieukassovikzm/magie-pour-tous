@@ -1,0 +1,83 @@
+@import "variables-dir";
+
+
+:host {
+  .card {
+    position: relative;
+    width: $card-width;
+    height: $card-height;
+    font: $card-font-size 'Trebuchet MS';
+
+    border-radius: $card-padding;
+    background: $card-background;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+
+    .card-corner {
+      position: absolute;
+      width: 12px;
+      text-align: center;
+      letter-spacing: -2px;
+
+      p {
+        font-size: 1rem;
+      }
+
+      &.card-corner-top {
+        top: $card-padding;
+        left: $card-padding;
+      }
+
+      &.card-corner-bottom {
+        bottom: $card-padding;
+        right: $card-padding;
+        transform: rotate(180deg)
+      }
+    }
+
+    .txt-side {
+      position: relative;
+      transform: translateY(-50%);
+      top: 50%;
+    }
+
+    &.card-heart,
+    &.card-diamond {
+      p {
+        color: $card-color-red;
+      }
+
+      ::ng-deep svg path {
+        fill: $card-color-red;
+      }
+    }
+
+    &.card-spade,
+    &.card-club {
+      p {
+        color: $card-color-black;
+      }
+
+      ::ng-deep svg path {
+        fill: $card-color-black;
+      }
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+/* ---------------------- Media query ----------------------------*/
+@media only screen and (min-width: $min-width-l) {
+  :host {
+    .card {
+      .txt-side {
+        position: absolute;
+        transform: translateX(-50%) rotate(90deg);
+        top: 48%;
+        right: -14px;
+      }
+    }
+  }
+}

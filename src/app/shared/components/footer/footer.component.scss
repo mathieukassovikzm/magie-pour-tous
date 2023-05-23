@@ -8,7 +8,6 @@
 $footer-border-color: $c-primary !default;
 $footer-title-color: $c-primary !default;
 $footer-txt-color: $c-secundary-light !default;
-$footer-padding-t: $section-padding-tb !default;
 $footer-img-width: 250px !default;
 
 /*******************************
@@ -18,54 +17,33 @@ $footer-img-width: 250px !default;
 :host {
   .footer.section {
     position: relative;
-    padding-top: $footer-padding-t;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 0;
+    padding: 50px 10px;
     background-color: $c-secundary-dark;
     background-image: url("/assets/img/footer-small.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center center;
+    background-position: bottom;
     box-shadow: inset 0 0 0 1000px rgba($c-secundary-dark, 0.9);
 
     transition: transform ease $animation-duration;
 
-    .div-image {
-      text-align: center;
-      margin-bottom: 30px;
-
-      .footer-img {
-        position: relative;
-        width: $footer-img-width;
-        height: auto;
-      }
-    }
-
     .footer-item {
-      display: block;
-      margin-bottom: 30px;
+      color: $c-text-light;
 
-      h3 {
-        text-transform: lowercase;
+      &.logo {
+        margin: auto;
+        background-color: $c-text-light;
+        border-radius: 50%;
+        width: 150px;
+        margin-bottom: 20px;
+
+        ::ng-deep svg {
+          scale: 0.85;
+        }
       }
 
-      .contact-info {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 10px 0;
-
-        .icon {
-          width: 30px;
-          @include svg($color: $footer-txt-color);
-        }
-
-        p {
-          margin-left: 10px;
-          color: $footer-txt-color;
-          text-align: center;
-        }
+      p {
+        color: $c-text-light;
       }
 
       .social-icons {
@@ -83,22 +61,12 @@ $footer-img-width: 250px !default;
         }
       }
 
-      &.nav {
+      &.enterprise-infos {
         display: flex;
-        flex-direction: column;
-        margin-top: $section-padding-tb;
-        padding-bottom: 20px;
-        margin-bottom: 0px;
+        justify-content: space-between;
 
-        a {
-          color: $footer-txt-color;
-          text-align: center;
-          font-size: rem(25);
-          transition: color ease $animation-duration-short;
-
-          &:hover {
-            color: $footer-title-color;
-          }
+        li p {
+          font-size: 12px;
         }
       }
     }
@@ -111,38 +79,10 @@ $footer-img-width: 250px !default;
     .footer.section {
       background-image: url("/assets/img/footer.jpg");
 
-      .footer-item {
-        .contact-infos {
-          display: flex;
-          justify-content: center;
-          flex-wrap: wrap;
-
-          .contact-info {
-            &.phone {
-              margin-right: 30px;
-            }
-
-            &.address {
-              width: 100%;
-
-              .text-address {
-                display: flex;
-              }
-            }
-          }
-        }
-
-        &.nav {
-          flex-direction: row;
-          justify-content: center;
-
-          a {
-            margin: 0 30px;
-            font-size: rem(30);
-          }
-        }
+      .footer-item.enterprise-infos {
+        margin: auto;
+        width: $section-container-width;
       }
     }
   }
-
 }

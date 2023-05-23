@@ -10,8 +10,13 @@ $intro-panel-l-width: 60%;
 $intro-triangle-width: 220px;
 $intro-transition-duration: 1.5s;
 $intro-transition-delay: 0.5s;
-$intro-ctn-top: 48%;
+$intro-ctn-top: 85%;
 
+$color1: rgba(0, 0, 0, 0.7);
+$color1Stop: 0%;
+$color2: rgba(255, 255, 255, 0);
+$color2Stop: 50%;
+$angle: 90deg;
 
 :host {
   .s-intro {
@@ -23,61 +28,41 @@ $intro-ctn-top: 48%;
 
     padding: 0;
 
-    .panel {
-      position: absolute;
+    .title-txt {
+      position: relative;
       width: 100%;
-      height: calc(100vh - #{$header-bottom-height});
+      transform: translateX(-50%) translateY(-50%);
+      z-index: 2;
 
-      .contain {
-        position: absolute;
+      // Par défault
+      top: $intro-ctn-top;
+      left: 50%;
+
+      // Right
+      &.right {
+        transform: translateY(-50%);
+        top: 50%;
         width: 50%;
-        height: 50%;
-        bottom: calc($header-bottom-height / 2);
-        right: 0;
-
-        .txt {
-          position: relative;
-          width: 110%;
-          top: $intro-ctn-top;
-          left: 35%;
-          transform: translateX(-50%) translateY(-50%);
-          z-index: 2;
-
-          h1,
-          h5 {
-            color: $intro-txt-color;
-            text-shadow: 0px 1px 2px $c-text-dark;
-          }
-
-          h1 {
-            margin-bottom: 0px;
-          }
-
-          h5 {
-            margin: 10px 0 20px 0;
-            font-family: "Montserrat-Light";
-          }
-
-          .btn-cartoon-ctn {
-            position: relative;
-            left: -12px;
-          }
-        }
       }
 
-      svg {
-        height: calc(100vh - #{$header-bottom-height});
-        display: block;
-        height: 100%;
-        width: 100%;
+      &.left {
+        transform: translateY(-50%);
+        top: 50%;
+        width: 50%;
+        left: 0;
+      }
 
-        .triangle {
-          fill: transparentize($intro-bkg-color, 1-$intro-bkg-opacity);
+      &.top {
+        top: 100% - $intro-ctn-top;
+      }
 
-          &.triangle-screen {
-            display: none;
-          }
-        }
+      &.bottom {
+        top: $intro-ctn-top;
+      }
+
+      .btn-cartoon-ctn {
+        position: relative;
+        left: -12px;
       }
     }
   }
@@ -86,44 +71,20 @@ $intro-ctn-top: 48%;
 @media only screen and (min-width: $min-width-l) {
   :host {
     .s-intro {
-      .panel {
-        position: absolute;
-        width: 80%;
-        height: calc(100vh - #{$header-bottom-height});
-
-        &.panel-right {
-          right: 0;
+      .title-txt {
+        .btn-cartoon-ctn {
+          top: 100px;
         }
+      }
 
-        .contain {
-          // background: transparentize($intro-bkg-color, 1-$intro-bkg-opacity);
-          height: calc(100vh - #{$header-bottom-height});
-          bottom: 0;
-        }
-
-        .txt {
-          h1 {
-            margin-bottom: 0px;
+      svg {
+        .triangle {
+          &.triangle-responsive {
+            display: none;
           }
 
-          h5 {
-            margin: 50px 0;
-          }
-
-          .btn-cartoon-ctn {
-            top: 100px;
-          }
-        }
-
-        svg {
-          .triangle {
-            &.triangle-responsive {
-              display: none;
-            }
-
-            &.triangle-screen {
-              display: block;
-            }
+          &.triangle-screen {
+            display: block;
           }
         }
       }

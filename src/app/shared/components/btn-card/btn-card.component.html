@@ -1,0 +1,17 @@
+<div [class]="setClassBtnFace()" (click)="navigate()">
+  <div class="card-corner card-corner-top">
+    <p class="value">{{btnInfos.value}}</p>
+    <app-svg-heart *ngIf="isHeart()"></app-svg-heart>
+    <app-svg-spade *ngIf="isSpade()"></app-svg-spade>
+    <app-svg-club *ngIf="isClub()"></app-svg-club>
+    <app-svg-diamond *ngIf="isDiamond()"></app-svg-diamond>
+  </div>
+  <div class="card-corner card-corner-bottom">
+    <p class="value">{{btnInfos.value}}</p>
+    <app-svg-heart *ngIf="isHeart()"></app-svg-heart>
+    <app-svg-spade *ngIf="isSpade()"></app-svg-spade>
+    <app-svg-club *ngIf="isClub()"></app-svg-club>
+    <app-svg-diamond *ngIf="isDiamond()"></app-svg-diamond>
+  </div>
+  <p class="txt-side">{{btnInfos.btnTxt}}</p>
+</div>

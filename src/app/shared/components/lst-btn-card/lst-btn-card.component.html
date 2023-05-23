@@ -1,0 +1,6 @@
+<ul [class]="getClassCtnLstCard()">
+  <li *ngFor="let btn of lstBtnCards.lstBtnCard; let i = index" [class]="getClassCtnCard(i)"
+    (mouseenter)="mouseEnterCard(i)" (mouseleave)="mouseLeaveCard(i)">
+    <app-btn-card [btnInfos]="btn"></app-btn-card>
+  </li>
+</ul>

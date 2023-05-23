@@ -1,7 +1,7 @@
 import { ViewportScroller } from '@angular/common';
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Observable, Subscription, fromEvent } from 'rxjs';
-import { ISectionTitle } from 'src/app/models/routes';
+import { ISectionTitle } from 'src/app/models/section-title';
 import { UiService } from 'src/app/services/ui.service';
 
 @Component({
@@ -37,10 +37,14 @@ export class SectionIntroComponent implements OnInit, OnDestroy {
     this.subscription$.unsubscribe();
   }
 
+  setClassTitleTxt(): string {
+    return `title-txt ${this.titleInfos.txtPosition}`;
+  }
+
   goToLink() {
     this.uiService.moveSlowToId(
       this.viewportScroller,
-      `${this.titleInfos?.link}`
+      `${this.titleInfos?.btn?.btnLink}`
     );
   }
 

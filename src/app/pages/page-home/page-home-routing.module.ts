@@ -5,7 +5,12 @@ import { PageHomeComponent } from './page-home.component';
 const routes: Routes = [
   {
     path: '',
-    component: PageHomeComponent,
+    children: [
+      {
+        path: '',
+        component: PageHomeComponent,
+      },
+    ],
   },
 ];
 
