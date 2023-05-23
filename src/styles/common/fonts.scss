@@ -39,15 +39,10 @@ h6 {
 }
 
 h1 {
-  font-size: rem(28);
-
-  @media only screen and (min-width: $min-width-xs) {
-    font-size: rem(35);
-  }
-
-  @media only screen and (min-width: $min-width-s) {
-    font-size: rem(45);
-  }
+  font-size: rem(45);
+  color: $c-text-light;
+  margin: 20px 0;
+  text-shadow: 0px 1px 2px $c-text-dark;
 
   @media only screen and (min-width: $min-width-m) {
     font-size: rem(50);
@@ -59,34 +54,40 @@ h1 {
 }
 
 h2 {
-  font-size: rem(40);
+  font-size: rem(32);
+  margin: 10px 0;
+  color: $c-primary;
+  font-family: "Montserrat-Light";
+  text-transform: uppercase;
+  text-shadow: 0px 1px 2px $c-text-dark;
 
-  @media only screen and (min-width: $min-width-xs) {
-    font-size: rem(50);
-  }
-
-  @media only screen and (min-width: $min-width-s) {
-    font-size: rem(60);
-  }
-
-  @media only screen and (min-width: $min-width-m) {
-    font-size: rem(70);
+  @media only screen and (min-width: $min-width-l) {
+    margin: 20px 0;
   }
 }
 
 h3 {
-  font-size: rem(30);
-
-  @media only screen and (min-width: $min-width-s) {
-    font-size: rem(40);
-  }
+  font-size: rem(26);
+  color: $c-primary;
+  font-family: "Montserrat-Light";
 
   @media only screen and (min-width: $min-width-m) {
-    font-size: rem(45);
+    font-size: rem(30);
   }
 }
 
 h4 {
+  font-size: rem(18);
+  margin: 20px 0 10px 0;
+  color: $c-primary;
+  font-family: "Montserrat-Light";
+
+  @media only screen and (min-width: $min-width-m) {
+    font-size: rem(22);
+  }
+}
+
+h5 {
   font-size: rem(20);
 
   @media only screen and (min-width: $min-width-xs) {
@@ -98,15 +99,16 @@ h4 {
   }
 }
 
-h5 {
+h6 {
   font-size: rem(15);
+  margin: 10px 0 20px 0;
+  color: $c-primary;
+  font-family: "Montserrat-Light";
+  text-transform: uppercase;
+  text-shadow: 0px 1px 2px $c-text-dark;
 
-  @media only screen and (min-width: $min-width-xs) {
-    font-size: rem(20);
-  }
-
-  @media only screen and (min-width: $min-width-s) {
-    font-size: rem(25);
+  @media only screen and (min-width: $min-width-l) {
+    margin: 20px 0;
   }
 }
 

@@ -5,7 +5,7 @@ $section-padding-tb: 100px;
 $section-padding-lr: 0px;
 $section-container-padding-tb: 10px;
 $section-container-padding-lr: 10px;
-
+$section-container-width: 70%;
 $background-image: "../assets/img/Background.png";
 $background-color: $c-primary;
 
@@ -33,32 +33,6 @@ $header-img-circle-position-top: -60px;
 $header-img-circle-position-left: -55px;
 $header-img-circle-svg-position-left: 66px;
 $header-img-circle-svg-position-bottom: 20px;
-/*******************************
- * section-sport-en-entreprise
- *******************************/
-
-// Activitées
-$see-activity: see-fitness, see-combat, see-sports-co, see-sports-raquettes, see-sports-plein-air, seec-entex,
-  seec-combat, seec-sports-co, seec-sports-raquettes, seec-sports-plein-air;
-// $see-sport: fitness, pilate, step, cardio-training, gym-douce, boxe-francaise, judo, gouren, lutte, football, handball,
-//   basketball, volleyball, rugby, ultimate, badminton, tennis-de-table, tennis, course-a-pied, course-d-orientation, velo;
-$see-img-path: "/assets/img/activities/";
-$see-nav-height: 120px;
-$see-nav-border-color: $c-primary;
-$see-vignette-h2-color: $c-primary;
-$see-vignette-h2-shade-color: $c-secundary-dark;
-$see-vignette-txt-color: #fff;
-$see-vignette-width: 300px;
-$see-vignette-m-top-bottom: 20px;
-$see-icon-size: 60px;
-$see-scale-up: 1.02;
-
-/*******************************
- * Section-trust
- *******************************/
-$slide-width: 300px !default;
-$slide-side-padding: 50px !default;
-$slide-duration: 1s !default;
 
 /*******************************
  * Page Contact
@@ -83,12 +57,6 @@ $s-infos-title-color: $c-text-light;
 $s-infos-svg-size: 40px;
 $s-infos-svg-bkg-color: $c-text-dark;
 $s-infos-svg-color: $c-primary-light;
-
-/*******************************
- * Cookie bar
- *******************************/
-$cookie-translate-y: 104px !default;
-$cookie-screen-translate-y: 52px !default;
 
 /*******************************
  * Card

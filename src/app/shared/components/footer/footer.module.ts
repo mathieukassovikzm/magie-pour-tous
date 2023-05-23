@@ -8,6 +8,7 @@ import { SvgInstagramModule } from '../../svg/svg-instagram/svg-instagram.module
 import { SvgLinkedinModule } from '../../svg/svg-linkedin/svg-linkedin.module';
 import { SvgPhoneModule } from '../../svg/svg-phone/svg-phone.module';
 import { FooterComponent } from './footer.component';
+import { SvgLogoModule } from '../../svg/svg-logo/svg-logo.module';
 
 const svgs = [
   SvgAddressModule,
@@ -16,10 +17,11 @@ const svgs = [
   SvgInstagramModule,
   SvgLinkedinModule,
   SvgPhoneModule,
+  SvgLogoModule,
 ];
 @NgModule({
   imports: [CommonModule, svgs, RouterModule],
   exports: [FooterComponent],
   declarations: [FooterComponent],
 })
-export class FooterModule { }
+export class FooterModule {}

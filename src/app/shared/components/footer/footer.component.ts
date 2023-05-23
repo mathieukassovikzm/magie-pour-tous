@@ -1,4 +1,6 @@
+import { ViewportScroller } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { UiService } from 'src/app/services/ui.service';
 
 @Component({
   selector: 'app-footer',
@@ -6,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.scss'],
 })
 export class FooterComponent implements OnInit {
-  constructor() {}
+  constructor(
+    private uiService: UiService,
+    private viewportScroller: ViewportScroller
+  ) {}
 
   ngOnInit() {}
+  goToTop() {
+    this.uiService.moveSlowToId(this.viewportScroller, `app`);
+  }
 }
