@@ -1,7 +1,7 @@
 import { ISectionTitle, TitlePosition } from './section-title';
 
 export interface IPageInfos {
-  route?: string;
+  path?: string;
   displayName?: string;
   iconName?: string;
   visibleInNav?: boolean;
@@ -25,7 +25,7 @@ export const LstPagesMap = new Map<Pages, IPageInfos>([
   [
     Pages.HOME,
     <IPageInfos>{
-      route: 'home',
+      path: 'home',
       displayName: 'Accueil',
       visibleInNav: true,
       sectionTitle: {
@@ -40,7 +40,7 @@ export const LstPagesMap = new Map<Pages, IPageInfos>([
   [
     Pages.ARTISTE,
     <IPageInfos>{
-      route: 'artiste',
+      path: 'artiste',
       displayName: "L'artiste",
       visibleInNav: true,
       sectionTitle: {
@@ -55,7 +55,7 @@ export const LstPagesMap = new Map<Pages, IPageInfos>([
   [
     Pages.SPECTACLES,
     <IPageInfos>{
-      route: 'spectacles',
+      path: 'spectacles',
       displayName: 'Les spectacles',
       visibleInNav: true,
       sectionTitle: {
@@ -70,7 +70,7 @@ export const LstPagesMap = new Map<Pages, IPageInfos>([
   [
     Pages.SPECCLOSUP,
     <IPageInfos>{
-      route: 'clos-up',
+      path: 'clos-up',
       displayName: 'Clos-Up',
       visibleInNav: false,
     },
@@ -78,7 +78,7 @@ export const LstPagesMap = new Map<Pages, IPageInfos>([
   [
     Pages.SPECMAGIENUM,
     <IPageInfos>{
-      route: 'magie-numerique',
+      path: 'magie-numerique',
       displayName: 'Magie Numérique et close-up digital',
       visibleInNav: false,
     },
@@ -86,7 +86,7 @@ export const LstPagesMap = new Map<Pages, IPageInfos>([
   [
     Pages.SPECCABARET,
     <IPageInfos>{
-      route: 'cabaret',
+      path: 'cabaret',
       displayName: 'Cabaret',
       visibleInNav: false,
     },
@@ -94,7 +94,7 @@ export const LstPagesMap = new Map<Pages, IPageInfos>([
   [
     Pages.SPECENFANTS,
     <IPageInfos>{
-      route: 'jeune-public',
+      path: 'jeune-public',
       displayName: 'Spectacle jeune public',
       visibleInNav: false,
     },
@@ -102,7 +102,7 @@ export const LstPagesMap = new Map<Pages, IPageInfos>([
   [
     Pages.SPECGRANDESILLU,
     <IPageInfos>{
-      route: 'show-grandes-illusions',
+      path: 'show-grandes-illusions',
       displayName: 'Show Grandes Illusions',
       visibleInNav: false,
     },
@@ -110,7 +110,7 @@ export const LstPagesMap = new Map<Pages, IPageInfos>([
   [
     Pages.ESPACEPRO,
     <IPageInfos>{
-      route: 'espace-pro',
+      path: 'espace-pro',
       displayName: 'Espace Pro',
       visibleInNav: false,
     },
@@ -118,7 +118,7 @@ export const LstPagesMap = new Map<Pages, IPageInfos>([
   [
     Pages.CONTACT,
     <IPageInfos>{
-      route: 'contact',
+      path: 'contact',
       displayName: 'Contact',
       visibleInNav: true,
     },

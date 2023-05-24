@@ -12,35 +12,35 @@ const routes: Routes = [
         component: PageSpectaclesComponent,
       },
       {
-        path: LstPagesMap.get(Pages.SPECCLOSUP)?.route,
+        path: LstPagesMap.get(Pages.SPECCLOSUP)?.path,
         loadChildren: () =>
           import('./page-desc-spectacle/page-desc-spectacle.module').then(
             (m) => m.PageDescSpectacleModule
           ),
       },
       {
-        path: LstPagesMap.get(Pages.SPECCABARET)?.route,
+        path: LstPagesMap.get(Pages.SPECCABARET)?.path,
         loadChildren: () =>
           import('./page-desc-spectacle/page-desc-spectacle.module').then(
             (m) => m.PageDescSpectacleModule
           ),
       },
       {
-        path: LstPagesMap.get(Pages.SPECGRANDESILLU)?.route,
+        path: LstPagesMap.get(Pages.SPECGRANDESILLU)?.path,
         loadChildren: () =>
           import('./page-desc-spectacle/page-desc-spectacle.module').then(
             (m) => m.PageDescSpectacleModule
           ),
       },
       {
-        path: LstPagesMap.get(Pages.SPECENFANTS)?.route,
+        path: LstPagesMap.get(Pages.SPECENFANTS)?.path,
         loadChildren: () =>
           import('./page-desc-spectacle/page-desc-spectacle.module').then(
             (m) => m.PageDescSpectacleModule
           ),
       },
       {
-        path: LstPagesMap.get(Pages.SPECMAGIENUM)?.route,
+        path: LstPagesMap.get(Pages.SPECMAGIENUM)?.path,
         loadChildren: () =>
           import('./page-desc-spectacle/page-desc-spectacle.module').then(
             (m) => m.PageDescSpectacleModule

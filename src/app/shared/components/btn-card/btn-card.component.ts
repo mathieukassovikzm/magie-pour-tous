@@ -34,7 +34,7 @@ export class BtnCardComponent implements OnInit {
 
   navigate(): void {
     this.router.navigate([
-      `${LstPagesMap.get(Pages.SPECTACLES)?.route}/${this.btnInfos.btnLink}`,
+      `${LstPagesMap.get(Pages.SPECTACLES)?.path}/${this.btnInfos.btnLink}`,
     ]);
   }
 }

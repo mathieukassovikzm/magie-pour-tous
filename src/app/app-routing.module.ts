@@ -2,44 +2,48 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LstPagesMap, Pages } from './models/routes';
 
-const routes: Routes = [
+const routesSite: Routes = [
   {
-    path: '',
-    redirectTo: LstPagesMap.get(Pages.HOME)?.route,
-    pathMatch: 'full',
-  },
-  {
-    path: LstPagesMap.get(Pages.HOME)?.route,
+    path: LstPagesMap.get(Pages.HOME)?.path,
     loadChildren: () =>
       import('./pages/page-home/page-home.module').then(
         (m) => m.PageHomeModule
       ),
-    data: { animationState: 'home' },
+    data: LstPagesMap.get(Pages.HOME),
   },
   {
-    path: LstPagesMap.get(Pages.ARTISTE)?.route,
+    path: LstPagesMap.get(Pages.ARTISTE)?.path,
     loadChildren: () =>
       import('./pages/page-artiste/page-artiste.module').then(
         (m) => m.PageArtisteModule
       ),
-    data: { animationState: 'home' },
+    data: LstPagesMap.get(Pages.ARTISTE),
   },
   {
-    path: LstPagesMap.get(Pages.SPECTACLES)?.route,
+    path: LstPagesMap.get(Pages.SPECTACLES)?.path,
     loadChildren: () =>
       import('./pages/page-spectacles/page-spectacles.module').then(
         (m) => m.PageSpectacleModule
       ),
-    data: { animationState: 'home' },
+    data: LstPagesMap.get(Pages.SPECTACLES),
   },
   {
-    path: LstPagesMap.get(Pages.CONTACT)?.route,
+    path: LstPagesMap.get(Pages.CONTACT)?.path,
     loadChildren: () =>
       import('./pages/page-contact/page-contact.module').then(
         (m) => m.PageContactModule
       ),
-    data: { animationState: 'contact' },
+    data: LstPagesMap.get(Pages.CONTACT),
   },
+];
+
+const routes: Routes = [
+  {
+    path: '',
+    redirectTo: LstPagesMap.get(Pages.HOME)?.path,
+    pathMatch: 'full',
+  },
+  ...routesSite,
 ];
 
 @NgModule({
