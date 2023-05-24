@@ -26,31 +26,31 @@ export class UiService {
 
   public btnSpecClosup: IBtn = {
     btnTxt: LstPagesMap.get(Pages.SPECCLOSUP)?.displayName,
-    btnLink: LstPagesMap.get(Pages.SPECCLOSUP)?.route,
+    btnLink: LstPagesMap.get(Pages.SPECCLOSUP)?.path,
     cardFace: CardFace.SPADE,
     value: 'A',
   };
   public btnSpecCabaret: IBtn = {
     btnTxt: LstPagesMap.get(Pages.SPECCABARET)?.displayName,
-    btnLink: LstPagesMap.get(Pages.SPECCABARET)?.route,
+    btnLink: LstPagesMap.get(Pages.SPECCABARET)?.path,
     cardFace: CardFace.HEART,
     value: 'A',
   };
   public btnSpecMagieNum: IBtn = {
     btnTxt: 'Magie Digital',
-    btnLink: LstPagesMap.get(Pages.SPECMAGIENUM)?.route,
+    btnLink: LstPagesMap.get(Pages.SPECMAGIENUM)?.path,
     cardFace: CardFace.DIAMOND,
     value: 'A',
   };
   public btnSpecEnfants: IBtn = {
     btnTxt: 'Jeune public',
-    btnLink: LstPagesMap.get(Pages.SPECENFANTS)?.route,
+    btnLink: LstPagesMap.get(Pages.SPECENFANTS)?.path,
     cardFace: CardFace.CLUB,
     value: 'A',
   };
   public btnSpecGrandesIllu: IBtn = {
     btnTxt: LstPagesMap.get(Pages.SPECGRANDESILLU)?.displayName,
-    btnLink: LstPagesMap.get(Pages.SPECGRANDESILLU)?.route,
+    btnLink: LstPagesMap.get(Pages.SPECGRANDESILLU)?.path,
     cardFace: CardFace.CLUB,
     value: 'A',
   };

@@ -104,6 +104,17 @@
   }
 }
 
+// la page contact a toujours un background blanc
+.contact :host .header.screen {
+  .nav {
+    background-color: $c-background-light;
+
+    .nav-item {
+      color: $c-text-dark;
+    }
+  }
+}
+
 /* ---------------------- Media query ----------------------------*/
 
 @media only screen and (min-width: $min-width-m) {

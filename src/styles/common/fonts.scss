@@ -41,7 +41,7 @@ h6 {
 h1 {
   font-size: rem(45);
   color: $c-text-light;
-  margin: 20px 0;
+  margin: 0;
   text-shadow: 0px 1px 2px $c-text-dark;
 
   @media only screen and (min-width: $min-width-m) {

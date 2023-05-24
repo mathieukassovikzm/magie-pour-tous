@@ -1,81 +1,88 @@
 @import "_variables-dir";
 
 :host {
-  .p-contact.section {
-    height: calc(100vh - #{$header-bottom-height});
-    padding: 0;
+  .p-contact {
+    position: relative;
+    min-height: 100vh;
+    background-color: $c-secundary-dark;
+    background-image: url("/assets/img/contact.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    box-shadow: inset 0 0 0 1000px rgba($c-secundary-dark, 0.8);
 
-    .section-container {
-      width: 100%;
-      height: 100%;
-      padding: 0;
+    padding-top: $header-bottom-height;
+    padding-bottom: 0;
 
-      .p-contact-section {
-        padding-left: $form-section-padding-lr;
-        padding-right: $form-section-padding-lr;
+    .p-contact-item {
+      .svg-logo {
+        display: block;
+        margin: auto;
+        width: 150px;
+        margin-bottom: 20px;
+        background-color: $c-text-light;
+        border-radius: 50%;
 
+        ::ng-deep svg {
+          scale: 0.85;
+        }
+      }
 
-        &.section-infos {
-          padding-top: calc($section-padding-tb / 2);
-          padding-bottom: $section-padding-tb;
-          background-color: $form-section-infos-bkg-color;
+      &.infos {
+        padding-top: $header-bottom-height;
+        padding-bottom: $header-bottom-height;
 
-          h2,
-          h3 {
-            color: $s-infos-title-color;
-          }
+        p {
+          color: $c-text-light;
+        }
 
-          p {
-            text-align: center;
-          }
-
-          .contact-infos-item {
-            position: relative;
-
-            h3 {
-              margin-top: 25px;
-            }
-
-            ul {
-              width: 50%;
-              margin: auto;
-              display: flex;
-              flex-direction: row;
-              justify-content: center;
-
-              li {
-                margin: 0 10px;
-                width: $s-infos-svg-size;
-              }
-            }
+        .enterprise-infos {
+          li p {
+            font-size: 12px;
           }
         }
       }
     }
   }
-
 }
 
 /* ---------------------- Media query ----------------------------*/
 @media only screen and (min-width: $min-width-l) {
   :host {
-    .p-contact.section {
-      .section-container {
-        width: 100%;
-        display: flex;
-        flex-wrap: nowrap;
+    .p-contact {
+      background: none;
+      box-shadow: none;
+      height: 100vh;
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center;
+      flex-direction: row-reverse;
 
-        .p-contact-section {
+      .p-contact-item {
+        width: 50%;
 
-          &.section-infos {
-            padding-left: $form-section-fs-padding-lr;
-            padding-right: $form-section-fs-padding-lr;
-            padding-top: $section-padding-tb;
-            padding-bottom: $section-padding-tb;
+        &.img {
+          position: relative;
+          background-color: $c-secundary-dark;
+          background-image: url("/assets/img/contact.jpg");
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: bottom;
+          box-shadow: inset 0 0 0 1000px rgba($c-secundary-dark, 0.6);
+          max-height: 100vh;
+        }
+
+
+        &.infos {
+          padding: 0 30px;
+
+          p {
+            color: $c-text-dark;
           }
 
-          &.section-infos {
-            width: 100%;
+          .enterprise-infos {
+            display: flex;
+            justify-content: space-between;
           }
         }
       }

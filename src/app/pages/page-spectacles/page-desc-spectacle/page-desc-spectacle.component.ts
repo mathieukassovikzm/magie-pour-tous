@@ -139,24 +139,24 @@ export class PageDescSpectacleComponent implements OnInit {
   ngOnInit() {
     let url = this.router.url;
     const currentRoute = url.replace(
-      `/${LstPagesMap.get(Pages.SPECTACLES)!.route}/`,
+      `/${LstPagesMap.get(Pages.SPECTACLES)!.path}/`,
       ''
     );
 
     switch (currentRoute) {
-      case LstPagesMap.get(Pages.SPECCLOSUP)!.route:
+      case LstPagesMap.get(Pages.SPECCLOSUP)!.path:
         this.spectacle = this.spectacleClosUp;
         break;
-      case LstPagesMap.get(Pages.SPECCABARET)!.route:
+      case LstPagesMap.get(Pages.SPECCABARET)!.path:
         this.spectacle = this.spectacleCabaret;
         break;
-      case LstPagesMap.get(Pages.SPECMAGIENUM)!.route:
+      case LstPagesMap.get(Pages.SPECMAGIENUM)!.path:
         this.spectacle = this.spectacleMagieNum;
         break;
-      case LstPagesMap.get(Pages.SPECENFANTS)!.route:
+      case LstPagesMap.get(Pages.SPECENFANTS)!.path:
         this.spectacle = this.spectacleJeunePublic;
         break;
-      case LstPagesMap.get(Pages.SPECGRANDESILLU)!.route:
+      case LstPagesMap.get(Pages.SPECGRANDESILLU)!.path:
         this.spectacle = this.spectacleGrandesIllu;
         break;
       default:

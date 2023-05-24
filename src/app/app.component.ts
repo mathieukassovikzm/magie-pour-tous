@@ -1,7 +1,16 @@
 import { AnimationEvent } from '@angular/animations';
 import { ViewportScroller } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { fromEvent, Observable, Subscription, tap } from 'rxjs';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import {
+  Observable,
+  Subscription,
+  filter,
+  fromEvent,
+  map,
+  switchMap,
+  tap,
+} from 'rxjs';
 import { sliderAnimation } from './animation';
 import { UiService } from './services/ui.service';
 
@@ -28,9 +37,13 @@ export class AppComponent implements OnInit, OnDestroy {
 
   private apiLoaded = false;
 
+  public currentPageUrl = '';
+
   constructor(
     private uiService: UiService,
-    private viewportScroller: ViewportScroller
+    private viewportScroller: ViewportScroller,
+    private router: Router,
+    private activatedRoute: ActivatedRoute
   ) {
     this.isNavOpenState = this.uiService.isNavOpen;
     this.backgroundColor = this.uiService.backgroundColor;
@@ -56,6 +69,16 @@ export class AppComponent implements OnInit, OnDestroy {
 
     var subNav = this.isNavOpenState$.subscribe();
     this.subscription$.add(subNav);
+
+    var routerSub = this.router.events
+      .pipe(
+        filter((e) => e instanceof NavigationEnd),
+        map(() => this.activatedRoute),
+        map((route) => route.firstChild),
+        switchMap((route) => route!.data)
+      )
+      .subscribe((r) => (this.currentPageUrl = r['path']));
+    this.subscription$.add(routerSub);
   }
 
   ngOnInit() {
