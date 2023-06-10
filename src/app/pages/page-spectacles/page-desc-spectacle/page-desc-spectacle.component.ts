@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CardFace } from 'src/app/models/btn';
 import { LstPagesMap, Pages } from 'src/app/models/routes';
 import { ISpectacleModel } from 'src/app/models/spectacle';
 
@@ -14,6 +15,7 @@ export class PageDescSpectacleComponent implements OnInit {
       title: LstPagesMap.get(Pages.SPECCLOSUP)!.displayName,
       btn: {
         btnTxt: 'En Savoir plus',
+        cardFace: CardFace.CLUB,
       },
       backgroundImgPath:
         '/assets/img/section-spectacles/Spectacles-ClosUp-PhotoBanner-h',
@@ -40,6 +42,7 @@ export class PageDescSpectacleComponent implements OnInit {
       title: LstPagesMap.get(Pages.SPECCABARET)!.displayName,
       btn: {
         btnTxt: 'En Savoir plus',
+        cardFace: CardFace.DIAMOND,
       },
       backgroundImgPath:
         '/assets/img/section-spectacles/Spectacles-Cabaret-PhotoBanner-h',
@@ -71,6 +74,7 @@ export class PageDescSpectacleComponent implements OnInit {
       title: LstPagesMap.get(Pages.SPECMAGIENUM)!.displayName,
       btn: {
         btnTxt: 'En Savoir plus',
+        cardFace: CardFace.HEART,
       },
       backgroundImgPath:
         '/assets/img/section-spectacles/Spectacles-MagieNum-PhotoBanner-h',
@@ -95,6 +99,7 @@ export class PageDescSpectacleComponent implements OnInit {
       title: LstPagesMap.get(Pages.SPECENFANTS)!.displayName,
       btn: {
         btnTxt: 'En Savoir plus',
+        cardFace: CardFace.SPADE,
       },
       backgroundImgPath:
         '/assets/img/section-spectacles/Spectacles-JeunePublic-PhotoBanner-h',
@@ -118,6 +123,7 @@ export class PageDescSpectacleComponent implements OnInit {
       title: LstPagesMap.get(Pages.SPECGRANDESILLU)!.displayName,
       btn: {
         btnTxt: 'En Savoir plus',
+        cardFace: CardFace.DIAMOND,
       },
       backgroundImgPath:
         '/assets/img/section-spectacles/Spectacles-GrandesIllu-PhotoBanner-h',

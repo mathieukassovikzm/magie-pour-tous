@@ -59,7 +59,7 @@ export const LstPagesMap = new Map<Pages, IPageInfos>([
       displayName: 'Les spectacles',
       visibleInNav: true,
       sectionTitle: {
-        txtPosition: TitlePosition.LEFT,
+        txtPosition: TitlePosition.TOP,
         title: 'Les Spectacles',
         backgroundImgPath: '/assets/img/section-intro/page-spectacles',
         backgroundImgPathSmall:
