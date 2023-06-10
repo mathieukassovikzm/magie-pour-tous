@@ -1,0 +1,9 @@
+@import "_variables-dir";
+
+:host {
+  section ::ng-deep {
+    .section-call-to-action {
+      flex-direction: row-reverse;
+    }
+  }
+}

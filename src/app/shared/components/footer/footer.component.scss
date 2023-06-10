@@ -28,11 +28,11 @@ $footer-img-width: 250px !default;
     transition: transform ease $animation-duration;
 
     .footer-item {
-      color: $c-text-light;
+      color: $light;
 
       &.logo {
         margin: auto;
-        background-color: $c-text-light;
+        background-color: $light;
         border-radius: 50%;
         width: 150px;
         margin-bottom: 20px;
@@ -43,7 +43,7 @@ $footer-img-width: 250px !default;
       }
 
       p {
-        color: $c-text-light;
+        color: $light;
       }
 
       .social-icons {

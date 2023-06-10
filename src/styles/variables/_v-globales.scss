@@ -26,11 +26,13 @@ $c-secundary: #e2e0dd;
 $c-secundary-light: #fff;
 $c-secundary-dark: #333333;
 
-$c-text-light: $c-secundary-light;
-$c-text-dark: $c-secundary-dark;
+$c-tertiary-dark: #231820;
 
-$c-background-light: $c-secundary-light;
-$c-background-dark: #000;
+$dark: #010101;
+$light: #fff;
+
+$c-background-light: $light;
+$c-background-dark: $dark;
 
 $c-box-shadow-dark: rgba($c-background-dark, 0.9);
 $c-box-shadow-light: rgba($c-secundary, 0.9);

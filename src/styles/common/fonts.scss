@@ -40,9 +40,9 @@ h6 {
 
 h1 {
   font-size: rem(45);
-  color: $c-text-light;
+  color: $light;
   margin: 0;
-  text-shadow: 0px 1px 2px $c-text-dark;
+  text-shadow: 0px 1px 2px $dark;
 
   @media only screen and (min-width: $min-width-m) {
     font-size: rem(50);
@@ -59,7 +59,7 @@ h2 {
   color: $c-primary;
   font-family: "Montserrat-Light";
   text-transform: uppercase;
-  text-shadow: 0px 1px 2px $c-text-dark;
+  text-shadow: 0px 1px 2px $dark;
 
   @media only screen and (min-width: $min-width-l) {
     margin: 20px 0;
@@ -105,7 +105,7 @@ h6 {
   color: $c-primary;
   font-family: "Montserrat-Light";
   text-transform: uppercase;
-  text-shadow: 0px 1px 2px $c-text-dark;
+  text-shadow: 0px 1px 2px $dark;
 
   @media only screen and (min-width: $min-width-l) {
     margin: 20px 0;
@@ -122,7 +122,7 @@ span {
   line-height: 1.5;
   letter-spacing: 0.05em;
 
-  color: $c-text-dark;
+  color: $dark;
   text-align: center;
 
   &.small {

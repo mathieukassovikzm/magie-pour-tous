@@ -1,6 +1,6 @@
 <div class="page-spectacle">
   <app-section-intro [titleInfos]="spectacle.sectionTitle"></app-section-intro>
-  <section class="section-container">
+  <section>
     <div class="desc">
       <h3>{{spectacle.sectionTitle.title}}</h3>
       <div class="ctn-txt" *ngFor="let txt of spectacle.tabTxt">
@@ -8,7 +8,7 @@
       </div>
     </div>
   </section>
-  <section class="section-container bloc-video" *ngIf="!!spectacle.videoId">
+  <section class="bloc-video" *ngIf="!!spectacle.videoId">
     <h3>Vidéo de présentation</h3>
     <app-video class="video-youtube" [videoId]="spectacle.videoId"></app-video>
   </section>

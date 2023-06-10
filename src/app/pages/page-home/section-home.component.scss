@@ -1,0 +1,73 @@
+@import "_variables-dir";
+
+$section-half-text-with: 55%;
+
+:host {
+  section {
+
+    .text {
+      padding: 0 15px;
+      margin-bottom: 50px;
+
+      p,
+      h3 {
+        text-align: left;
+      }
+
+      h3 {
+        margin-bottom: 30px;
+      }
+    }
+
+    .picture {
+      position: relative;
+
+      .frame {
+        border: 15px solid $light;
+        width: 100%;
+        height: 100%;
+        transform: scale(0.92);
+        position: absolute;
+        top: 0;
+      }
+
+      img {
+        max-width: 100%;
+      }
+    }
+
+    .app-button ::ng-deep .button {
+      margin-top: 40px;
+    }
+  }
+}
+
+@media only screen and (min-width: $min-width-m) {
+  :host {
+    section {
+      padding: 0;
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: space-between;
+
+      .section-half {
+
+        &.text {
+          width: $section-half-text-with;
+          padding: 20px;
+
+          h3 {
+            font-size: rem(60);
+          }
+        }
+
+        &.picture {
+          width: 100% - $section-half-text-with;
+
+          img {}
+        }
+      }
+    }
+  }
+}
