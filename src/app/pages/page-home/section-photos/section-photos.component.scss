@@ -87,8 +87,7 @@ $gap: 5px;
 
         button {
           position: relative;
-          left: 50%;
-          transform: scale(0.8) translateX(-50%);
+          transform: scale(0.8);
           display: flex;
           flex-wrap: nowrap;
           background-color: transparent;
@@ -97,6 +96,7 @@ $gap: 5px;
           cursor: pointer;
           padding: $button-padding-tb $button-padding-lr;
           white-space: nowrap;
+          margin: auto;
 
           ::ng-deep {
 
@@ -177,6 +177,18 @@ $gap: 5px;
           }
         }
       }
+    }
+
+    h3 {
+      font-size: rem(40);
+    }
+  }
+}
+
+@media only screen and (min-width: $min-width-l) {
+  :host {
+    h3 {
+      font-size: rem(45);
     }
   }
 }
