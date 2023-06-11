@@ -6,24 +6,11 @@ export interface ICustomRoute extends Route {
 }
 
 export interface IPageInfos {
-  path?: string;
+  anchor?: string;
   displayName?: string;
   iconName?: string;
   visibleInNav?: boolean;
   sectionTitle?: ISectionTitle;
-}
-
-export enum Pages {
-  HOME,
-  ARTISTE,
-  SPECTACLES,
-  SPECCLOSUP,
-  SPECCABARET,
-  SPECMAGIENUM,
-  SPECENFANTS,
-  SPECGRANDESILLU,
-  ESPACEPRO,
-  CONTACT,
 }
 
 export const PageHome = <ICustomRoute>{
@@ -48,6 +35,7 @@ export const PageArtiste = <ICustomRoute>{
   loadChildren: () =>
     import('../pages/page-home/page-home.module').then((m) => m.PageHomeModule),
   data: <IPageInfos>{
+    anchor: 'artiste',
     displayName: "L'artiste",
     visibleInNav: true,
     sectionTitle: {
@@ -123,6 +111,7 @@ export const PageSpectacle = <ICustomRoute>{
   loadChildren: () =>
     import('../pages/page-home/page-home.module').then((m) => m.PageHomeModule),
   data: <IPageInfos>{
+    anchor: 'spectacles',
     displayName: 'Les spectacles',
     visibleInNav: true,
     sectionTitle: {
@@ -150,6 +139,7 @@ export const PageContact = <ICustomRoute>{
   loadChildren: () =>
     import('../pages/page-home/page-home.module').then((m) => m.PageHomeModule),
   data: <IPageInfos>{
+    anchor: 'contact',
     displayName: 'Contact',
     visibleInNav: true,
   },

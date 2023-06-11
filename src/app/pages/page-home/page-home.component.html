@@ -1,7 +1,7 @@
 <div class="page-home">
-  <app-section-intro [titleInfos]="titleInfos"></app-section-intro>
-  <app-section-presentation-magie></app-section-presentation-magie>
-  <app-section-photos></app-section-photos>
+  <app-section-intro [titleInfos]="titleInfos" [id]="anchorHome"></app-section-intro>
+  <app-section-presentation-magie [id]="anchorArtiste"></app-section-presentation-magie>
+  <app-section-photos [id]="anchorSpectacle"></app-section-photos>
   <app-section-call-to-action></app-section-call-to-action>
 </div>
-<app-footer></app-footer>
+<app-footer [id]="anchorContact"></app-footer>

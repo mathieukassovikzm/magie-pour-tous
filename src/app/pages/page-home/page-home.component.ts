@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { PageHome } from 'src/app/models/routes';
+import {
+  PageArtiste,
+  PageContact,
+  PageHome,
+  PageSpectacle,
+} from 'src/app/models/routes';
 
 @Component({
   selector: 'app-page-home',
@@ -9,6 +14,10 @@ import { PageHome } from 'src/app/models/routes';
 export class PageHomeComponent implements OnInit {
   public titleInfos = PageHome.data!['sectionTitle']!;
 
+  public anchorHome = PageHome.data.anchor;
+  public anchorArtiste = PageArtiste.data.anchor;
+  public anchorSpectacle = PageSpectacle.data.anchor;
+  public anchorContact = PageContact.data.anchor;
   constructor() {}
 
   ngOnInit() {}

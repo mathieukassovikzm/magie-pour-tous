@@ -1,3 +1,4 @@
+import { ViewportScroller } from '@angular/common';
 import {
   Component,
   HostBinding,
@@ -6,8 +7,9 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import { Router } from '@angular/router';
-import { IBtn, CardFace } from 'src/app/models/btn';
-import { PageSpectacle, Pages } from 'src/app/models/routes';
+import { IBtn, CardFace, LstTypeBtn } from 'src/app/models/btn';
+import { PageSpectacle } from 'src/app/models/routes';
+import { UiService } from 'src/app/services/ui.service';
 
 @Component({
   selector: 'app-button',
@@ -19,7 +21,11 @@ export class ButtonComponent implements OnInit {
   @HostBinding('class') class = 'app-button';
   @Input() btnInfos: IBtn = {};
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private uiService: UiService,
+    private viewportScroller: ViewportScroller
+  ) {}
 
   ngOnInit() {}
 
@@ -41,6 +47,12 @@ export class ButtonComponent implements OnInit {
   }
 
   navigate(): void {
-    this.router.navigate([`${PageSpectacle.path}/${this.btnInfos.btnLink}`]);
+    if (this.btnInfos.btnType == LstTypeBtn.ANCHOR)
+      this.uiService.moveSlowToId(
+        this.viewportScroller,
+        this.btnInfos.btnAnchor!
+      );
+    else
+      this.router.navigate([`${PageSpectacle.path}/${this.btnInfos.btnLink}`]);
   }
 }

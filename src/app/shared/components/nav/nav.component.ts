@@ -1,6 +1,7 @@
 import { ViewportScroller } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable, Subscription, fromEvent } from 'rxjs';
+import { ICustomRoute } from 'src/app/models/routes';
 import { UiService } from 'src/app/services/ui.service';
 
 @Component({
@@ -16,7 +17,7 @@ export class NavComponent implements OnInit, OnDestroy {
   public scrollObservable$: Observable<Event>;
   public scrollSubscription$: Subscription;
 
-  public lstPagesNav = this.uiService.lstPages;
+  public lstPagesNav: ICustomRoute[] = this.uiService.lstPagesForNav;
 
   constructor(
     private uiService: UiService,
@@ -39,6 +40,10 @@ export class NavComponent implements OnInit, OnDestroy {
 
   goToTop() {
     this.uiService.moveSlowToId(this.viewportScroller, `app`);
+  }
+
+  goToLink(anchor: string) {
+    this.uiService.moveSlowToId(this.viewportScroller, anchor);
   }
 
   onScroll() {

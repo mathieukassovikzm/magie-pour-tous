@@ -2,7 +2,7 @@ import { transition, trigger, useAnimation } from '@angular/animations';
 import { ViewportScroller } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
-import { IPageInfos } from 'src/app/models/routes';
+import { ICustomRoute } from 'src/app/models/routes';
 import { UiService } from 'src/app/services/ui.service';
 import { SidebarCloseAnimation, SidebarOpenAnimation } from './animation';
 
@@ -42,7 +42,7 @@ export class NavResponsiveComponent implements OnInit, OnDestroy {
   public isNavOpenState = false;
   public subscription$: Subscription = new Subscription();
 
-  public lstPagesNav: IPageInfos[] = this.uiService.lstPages;
+  public lstPagesNav: ICustomRoute[] = this.uiService.lstPagesForNav;
 
   constructor(
     private uiService: UiService,
@@ -64,5 +64,9 @@ export class NavResponsiveComponent implements OnInit, OnDestroy {
 
   goToTop() {
     this.uiService.moveSlowToId(this.viewportScroller, `app`);
+  }
+
+  goToLink(anchor: string) {
+    this.uiService.moveSlowToId(this.viewportScroller, anchor);
   }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { IBtn, CardFace } from 'src/app/models/btn';
+import { IBtn, CardFace, LstTypeBtn } from 'src/app/models/btn';
+import { PageContact } from 'src/app/models/routes';
 
 @Component({
   selector: 'app-section-call-to-action',
@@ -10,6 +11,8 @@ export class SectionCallToActionComponent implements OnInit {
   public btnInfos: IBtn = {
     cardFace: CardFace.HEART,
     btnTxt: 'Contactez-nous',
+    btnAnchor: PageContact.data.anchor,
+    btnType: LstTypeBtn.ANCHOR,
   };
   constructor() {}
 

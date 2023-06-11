@@ -5,12 +5,15 @@ import { Subject, filter } from 'rxjs';
 import { CardFace, IBtn, ILstBtnCard, LstCardDirection } from '../models/btn';
 import {
   ICustomRoute,
+  PageArtiste,
+  PageContact,
   PageHome,
   PageSpecCabaret,
   PageSpecCloseUp,
   PageSpecJeunePublic,
   PageSpecMagieNum,
   PageSpecShowGrandesIllusions,
+  PageSpectacle,
 } from '../models/routes';
 
 const darkBackground = 'dark-background';
@@ -30,7 +33,12 @@ export class UiService {
   public isHoveredTolerance = false;
   public isHoveredConviviality = false;
 
-  public lstPages: ICustomRoute[] = [PageHome];
+  public lstPagesForNav: ICustomRoute[] = [
+    PageHome,
+    PageArtiste,
+    PageSpectacle,
+    PageContact,
+  ];
 
   public btnSpecClosup: IBtn = {
     btnTxt: PageSpecCloseUp.data!['displayName'],
