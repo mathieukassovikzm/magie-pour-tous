@@ -6,7 +6,7 @@
   <nav class="nav">
     <div *ngFor="let navItem of lstPagesNav">
       <a [routerLink]="navItem.path" class="nav-item" routerLinkActive="router-link-exact-active">
-        {{navItem.displayName}}
+        {{navItem.data.displayName}}
       </a>
     </div>
   </nav>

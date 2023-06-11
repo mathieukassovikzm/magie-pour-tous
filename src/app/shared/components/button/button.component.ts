@@ -7,7 +7,7 @@ import {
 } from '@angular/core';
 import { Router } from '@angular/router';
 import { IBtn, CardFace } from 'src/app/models/btn';
-import { LstPagesMap, Pages } from 'src/app/models/routes';
+import { PageSpectacle, Pages } from 'src/app/models/routes';
 
 @Component({
   selector: 'app-button',
@@ -41,8 +41,6 @@ export class ButtonComponent implements OnInit {
   }
 
   navigate(): void {
-    this.router.navigate([
-      `${LstPagesMap.get(Pages.SPECTACLES)?.path}/${this.btnInfos.btnLink}`,
-    ]);
+    this.router.navigate([`${PageSpectacle.path}/${this.btnInfos.btnLink}`]);
   }
 }

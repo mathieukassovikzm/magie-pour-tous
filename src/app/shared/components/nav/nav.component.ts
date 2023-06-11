@@ -1,8 +1,6 @@
 import { ViewportScroller } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import * as _ from 'lodash';
 import { Observable, Subscription, fromEvent } from 'rxjs';
-import { IPageInfos } from 'src/app/models/routes';
 import { UiService } from 'src/app/services/ui.service';
 
 @Component({
@@ -18,7 +16,7 @@ export class NavComponent implements OnInit, OnDestroy {
   public scrollObservable$: Observable<Event>;
   public scrollSubscription$: Subscription;
 
-  public lstPagesNav: IPageInfos[];
+  public lstPagesNav = this.uiService.lstPages;
 
   constructor(
     private uiService: UiService,
@@ -30,10 +28,6 @@ export class NavComponent implements OnInit, OnDestroy {
     this.scrollObservable$ = fromEvent(window, 'scroll');
     this.scrollSubscription$ = this.scrollObservable$.subscribe((evt) => {
       this.onScroll();
-    });
-
-    this.lstPagesNav = _.filter(this.uiService.lstPages, {
-      visibleInNav: true,
     });
   }
 

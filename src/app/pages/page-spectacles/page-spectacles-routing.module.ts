@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { SpectacleSubRoutes } from 'src/app/models/routes';
 import { PageSpectaclesComponent } from './page-spectacles.component';
-import { LstPagesMap, Pages } from 'src/app/models/routes';
 
 const routes: Routes = [
   {
@@ -11,41 +11,7 @@ const routes: Routes = [
         path: '',
         component: PageSpectaclesComponent,
       },
-      {
-        path: LstPagesMap.get(Pages.SPECCLOSUP)?.path,
-        loadChildren: () =>
-          import('./page-desc-spectacle/page-desc-spectacle.module').then(
-            (m) => m.PageDescSpectacleModule
-          ),
-      },
-      {
-        path: LstPagesMap.get(Pages.SPECCABARET)?.path,
-        loadChildren: () =>
-          import('./page-desc-spectacle/page-desc-spectacle.module').then(
-            (m) => m.PageDescSpectacleModule
-          ),
-      },
-      {
-        path: LstPagesMap.get(Pages.SPECGRANDESILLU)?.path,
-        loadChildren: () =>
-          import('./page-desc-spectacle/page-desc-spectacle.module').then(
-            (m) => m.PageDescSpectacleModule
-          ),
-      },
-      {
-        path: LstPagesMap.get(Pages.SPECENFANTS)?.path,
-        loadChildren: () =>
-          import('./page-desc-spectacle/page-desc-spectacle.module').then(
-            (m) => m.PageDescSpectacleModule
-          ),
-      },
-      {
-        path: LstPagesMap.get(Pages.SPECMAGIENUM)?.path,
-        loadChildren: () =>
-          import('./page-desc-spectacle/page-desc-spectacle.module').then(
-            (m) => m.PageDescSpectacleModule
-          ),
-      },
+      ...SpectacleSubRoutes,
     ],
   },
 ];

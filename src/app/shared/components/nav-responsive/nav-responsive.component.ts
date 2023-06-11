@@ -1,7 +1,6 @@
 import { transition, trigger, useAnimation } from '@angular/animations';
 import { ViewportScroller } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import * as _ from 'lodash';
 import { Observable, Subscription } from 'rxjs';
 import { IPageInfos } from 'src/app/models/routes';
 import { UiService } from 'src/app/services/ui.service';
@@ -43,7 +42,7 @@ export class NavResponsiveComponent implements OnInit, OnDestroy {
   public isNavOpenState = false;
   public subscription$: Subscription = new Subscription();
 
-  public lstPagesNav: IPageInfos[];
+  public lstPagesNav: IPageInfos[] = this.uiService.lstPages;
 
   constructor(
     private uiService: UiService,
@@ -51,10 +50,6 @@ export class NavResponsiveComponent implements OnInit, OnDestroy {
   ) {
     this.backgroundColor = this.uiService.backgroundColor;
     this.isNavOpenState$ = this.uiService.subIsNavOpen.asObservable();
-
-    this.lstPagesNav = _.filter(this.uiService.lstPages, {
-      visibleInNav: true,
-    });
   }
 
   ngOnInit() {
