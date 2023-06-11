@@ -1,7 +1,9 @@
 @import "variables-dir";
 
 :host {
-  position: relative;
+  .page-spectacle {
+    position: relative;
+  }
 
   .ctn-cards {
     margin: 30px 5px;
@@ -15,7 +17,8 @@
       z-index: 2;
       position: absolute;
       top: 50%;
-      right: 35%;
+      left: 50%;
+      transform: translateX(-50%);
     }
   }
 }

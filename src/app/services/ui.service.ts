@@ -57,7 +57,7 @@ export class UiService {
 
   public lstBtnCards = <ILstBtnCard>{
     lstBtnCard: [],
-    direction: LstCardDirection.VERTICAL,
+    direction: LstCardDirection.HORIZONTAL,
   };
 
   constructor(

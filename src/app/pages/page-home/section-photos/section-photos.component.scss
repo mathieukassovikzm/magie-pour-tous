@@ -1,56 +1,182 @@
 @import "_variables-dir";
 
-$min-size-grid: 400px;
+$button-size: 25px;
+$button-padding-lr: 10px;
+$button-padding-tb: 2px;
+$button-color: $light;
+
+$min-size-grid: 250px;
 $gap: 5px;
 
 :host {
   .section-container {
 
     .photo-container {
-      height: $min-size-grid * 3;
-      width: $min-size-grid * 3;
-      display: grid;
-      grid-template-rows: repeat(3, 1fr);
-      grid-template-columns: repeat(3, 1fr);
-      column-gap: $gap;
-      row-gap: $gap;
+      margin: auto;
     }
 
-    .picture {
-      background-color: $c-secundary-dark;
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: bottom;
-      // box-shadow: inset 0 0 0 1000px rgba($c-secundary-dark, 0.8);
+    .picture-ctn {
 
+      .picture {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        width: 100%;
+        height: 100%;
+        position: relative;
+      }
 
-      &.pic-1 {
+      .picture::before {
+        content: "";
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        background-color: rgba($dark, 0.20);
+      }
+
+      &.pic-1 .picture {
         background-image: url("/assets/img/page-home/section-photos-closup.jpg");
-        grid-column: 1 / span 2;
       }
 
-      &.pic-2 {
+      &.pic-2 .picture {
         background-image: url("/assets/img/page-home/section-photos-cabaret.jpg");
-        grid-column: 3;
-        grid-row: 1 / span 2;
       }
 
-      &.pic-3 {
+      &.pic-3 .picture {
         background-image: url("/assets/img/page-home/section-photos-enfants.jpg");
       }
 
-      &.pic-4 {
+      &.pic-4 .picture {
         background-image: url("/assets/img/page-home/section-photos-magie-num.png");
-        grid-column: 1;
-        grid-row: 2 / span 2;
       }
 
-      &.pic-5 {
+      &.pic-5 .picture {
         background-image: url("/assets/img/page-home/section-photos-grande-illusion.jpg");
-        grid-column: 2;
-        grid-column: 2 / span 2;
       }
 
+      &.horizontal {
+        height: $min-size-grid;
+      }
+
+      &.vertical {
+        height: $min-size-grid*2;
+      }
+
+      span {
+        position: relative;
+        display: block;
+        width: 80%;
+        height: 80%;
+        top: 50%;
+        transform: translateY(-50%);
+        margin: auto;
+
+        .span-container {
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+
+        p {
+          color: $light;
+        }
+
+        button {
+          position: relative;
+          left: 50%;
+          transform: scale(0.8) translateX(-50%);
+          display: flex;
+          flex-wrap: nowrap;
+          background-color: transparent;
+          border: 1px solid $button-color;
+          border-radius: 20px;
+          cursor: pointer;
+          padding: $button-padding-tb $button-padding-lr;
+          white-space: nowrap;
+
+          ::ng-deep {
+
+            svg {
+              position: relative;
+              top: 5px;
+              width: $button-size;
+              height: $button-size;
+              margin-right: 10px;
+
+              path {
+                stroke: $button-color;
+                stroke-width: 30px;
+                fill: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $min-width-m) {
+  :host {
+    .section-container {
+      .photo-container {
+        height: $min-size-grid * 3;
+        width: $min-size-grid * 3;
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: $gap;
+        row-gap: $gap;
+        margin: auto;
+      }
+
+      .picture-ctn {
+        overflow: hidden;
+
+        &.pic-1 {
+          grid-column: 1 / span 2;
+        }
+
+        &.pic-2 {
+          grid-column: 3;
+          grid-row: 1 / span 2;
+        }
+
+        &.pic-3 {}
+
+        &.pic-4 {
+          grid-column: 1;
+          grid-row: 2 / span 2;
+        }
+
+        &.pic-5 {
+          grid-column: 2;
+          grid-column: 2 / span 2;
+        }
+
+        .picture {
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: bottom;
+          transition: all ease $animation-duration-short;
+        }
+
+        &:hover {
+          cursor: pointer;
+
+          .picture {
+            transform: scale(1.1);
+          }
+
+          .picture:before {
+            background-color: rgba($dark, 0.60);
+          }
+        }
+      }
     }
   }
 }
