@@ -4,7 +4,7 @@ import { CardFace, IBtn } from 'src/app/models/btn';
 @Component({
   selector: 'app-section-presentation-magie',
   templateUrl: './section-presentation-magie.component.html',
-  styleUrls: ['../section-home.component.scss'],
+  styleUrls: ['./section-presentation-magie.component.scss'],
 })
 export class SectionPresentationMagieComponent implements OnInit {
   public btnInfos: IBtn = {

@@ -4,7 +4,7 @@ import { IBtn, CardFace } from 'src/app/models/btn';
 @Component({
   selector: 'app-section-call-to-action',
   templateUrl: './section-call-to-action.component.html',
-  styleUrls: ['../section-home.component.scss'],
+  styleUrls: ['./section-call-to-action.component.scss'],
 })
 export class SectionCallToActionComponent implements OnInit {
   public btnInfos: IBtn = {
