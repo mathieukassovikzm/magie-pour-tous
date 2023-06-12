@@ -51,7 +51,9 @@ export const PageArtiste = <ICustomRoute>{
 export const PageSpecCloseUp = <ICustomRoute>{
   path: 'spectacles',
   loadChildren: () =>
-    import('../pages/page-home/page-home.module').then((m) => m.PageHomeModule),
+    import(
+      '../pages/page-spectacles/page-desc-spectacle/page-desc-spectacle.module'
+    ).then((m) => m.PageDescSpectacleModule),
   data: <IPageInfos>{
     displayName: 'Clos-Up',
     visibleInNav: false,
@@ -61,7 +63,9 @@ export const PageSpecCloseUp = <ICustomRoute>{
 export const PageSpecMagieNum = <ICustomRoute>{
   path: 'magie-numerique',
   loadChildren: () =>
-    import('../pages/page-home/page-home.module').then((m) => m.PageHomeModule),
+    import(
+      '../pages/page-spectacles/page-desc-spectacle/page-desc-spectacle.module'
+    ).then((m) => m.PageDescSpectacleModule),
   data: <IPageInfos>{
     displayName: 'Magie Numérique et close-up digital',
     visibleInNav: false,
@@ -71,7 +75,9 @@ export const PageSpecMagieNum = <ICustomRoute>{
 export const PageSpecCabaret = <ICustomRoute>{
   path: 'cabaret',
   loadChildren: () =>
-    import('../pages/page-home/page-home.module').then((m) => m.PageHomeModule),
+    import(
+      '../pages/page-spectacles/page-desc-spectacle/page-desc-spectacle.module'
+    ).then((m) => m.PageDescSpectacleModule),
   data: <IPageInfos>{
     displayName: 'Cabaret',
     visibleInNav: false,
@@ -81,7 +87,9 @@ export const PageSpecCabaret = <ICustomRoute>{
 export const PageSpecJeunePublic = <ICustomRoute>{
   path: 'jeune-public',
   loadChildren: () =>
-    import('../pages/page-home/page-home.module').then((m) => m.PageHomeModule),
+    import(
+      '../pages/page-spectacles/page-desc-spectacle/page-desc-spectacle.module'
+    ).then((m) => m.PageDescSpectacleModule),
   data: <IPageInfos>{
     displayName: 'Spectacle jeune public',
     visibleInNav: false,
@@ -91,7 +99,9 @@ export const PageSpecJeunePublic = <ICustomRoute>{
 export const PageSpecShowGrandesIllusions = <ICustomRoute>{
   path: 'show-grandes-illusions',
   loadChildren: () =>
-    import('../pages/page-home/page-home.module').then((m) => m.PageHomeModule),
+    import(
+      '../pages/page-spectacles/page-desc-spectacle/page-desc-spectacle.module'
+    ).then((m) => m.PageDescSpectacleModule),
   data: <IPageInfos>{
     displayName: 'Show Grandes Illusions',
     visibleInNav: false,

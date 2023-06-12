@@ -2,7 +2,7 @@
   <h3>Les spectacles</h3>
   <ul class="photo-container">
     <li class="picture-ctn pic-1 horizontal">
-      <div class="picture">
+      <div [routerLink]="navigate(pageSpecCloseUpPath)" class="picture">
         <span>
           <div class="span-container">
             <p>Close-Up</p>
@@ -16,7 +16,7 @@
       </div>
     </li>
     <li class="picture-ctn pic-2 vertical">
-      <div class="picture">
+      <div [routerLink]="navigate(pageSpecCabaretPath)" class="picture">
         <span>
           <div class="span-container">
             <p>Cabaret</p>
@@ -29,7 +29,7 @@
       </div>
     </li>
     <li class="picture-ctn pic-3">
-      <div class="picture">
+      <div [routerLink]="navigate(pageSpecJeunePublicPath)" class="picture">
         <span>
           <div class="span-container">
             <p>Jeune public</p>
@@ -42,7 +42,7 @@
       </div>
     </li>
     <li class="picture-ctn pic-4 vertical">
-      <div class="picture">
+      <div [routerLink]="navigate(pageSpecMagieNumPath)" class="picture">
         <span>
           <div class="span-container">
             <p>Close-up digital</p>
@@ -55,7 +55,7 @@
       </div>
     </li>
     <li class="picture-ctn pic-5 horizontal">
-      <div class="picture">
+      <div [routerLink]="navigate(pageSpecShowGrandesIllusionsPath)" class="picture">
         <span>
           <div class="span-container">
             <p>Show Grandes Illusions</p>

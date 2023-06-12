@@ -5,11 +5,12 @@ import { SvgDiamondModule } from 'src/app/shared/svg/svg-diamond/svg-diamond.mod
 import { SvgHeartModule } from 'src/app/shared/svg/svg-heart/svg-heart.module';
 import { SvgSpadeModule } from 'src/app/shared/svg/svg-spade/svg-spade.module';
 import { SectionPhotosComponent } from './section-photos.component';
+import { RouterModule } from '@angular/router';
 
 const svgs = [SvgHeartModule, SvgSpadeModule, SvgDiamondModule, SvgClubModule];
 
 @NgModule({
-  imports: [CommonModule, ...svgs],
+  imports: [CommonModule, RouterModule, ...svgs],
   exports: [SectionPhotosComponent],
   declarations: [SectionPhotosComponent],
 })

@@ -1,7 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CardFace } from 'src/app/models/btn';
-import { LstPagesMap, Pages } from 'src/app/models/routes';
+import {
+  PageHome,
+  PageSpecCabaret,
+  PageSpecCloseUp,
+  PageSpecJeunePublic,
+  PageSpecMagieNum,
+  PageSpecShowGrandesIllusions,
+} from 'src/app/models/routes';
 import { ISpectacleModel } from 'src/app/models/spectacle';
 
 @Component({
@@ -12,7 +19,7 @@ import { ISpectacleModel } from 'src/app/models/spectacle';
 export class PageDescSpectacleComponent implements OnInit {
   public spectacleClosUp: ISpectacleModel = {
     sectionTitle: {
-      title: LstPagesMap.get(Pages.SPECCLOSUP)!.displayName,
+      title: PageSpecCloseUp.data!.displayName,
       btn: {
         btnTxt: 'En Savoir plus',
         cardFace: CardFace.CLUB,
@@ -39,7 +46,7 @@ export class PageDescSpectacleComponent implements OnInit {
 
   public spectacleCabaret: ISpectacleModel = {
     sectionTitle: {
-      title: LstPagesMap.get(Pages.SPECCABARET)!.displayName,
+      title: PageSpecCabaret.data!.displayName,
       btn: {
         btnTxt: 'En Savoir plus',
         cardFace: CardFace.DIAMOND,
@@ -71,7 +78,7 @@ export class PageDescSpectacleComponent implements OnInit {
 
   public spectacleMagieNum: ISpectacleModel = {
     sectionTitle: {
-      title: LstPagesMap.get(Pages.SPECMAGIENUM)!.displayName,
+      title: PageSpecMagieNum.data!.displayName,
       btn: {
         btnTxt: 'En Savoir plus',
         cardFace: CardFace.HEART,
@@ -96,7 +103,7 @@ export class PageDescSpectacleComponent implements OnInit {
 
   public spectacleJeunePublic: ISpectacleModel = {
     sectionTitle: {
-      title: LstPagesMap.get(Pages.SPECENFANTS)!.displayName,
+      title: PageSpecJeunePublic.data!.displayName,
       btn: {
         btnTxt: 'En Savoir plus',
         cardFace: CardFace.SPADE,
@@ -120,7 +127,7 @@ export class PageDescSpectacleComponent implements OnInit {
 
   public spectacleGrandesIllu: ISpectacleModel = {
     sectionTitle: {
-      title: LstPagesMap.get(Pages.SPECGRANDESILLU)!.displayName,
+      title: PageSpecShowGrandesIllusions.data!.displayName,
       btn: {
         btnTxt: 'En Savoir plus',
         cardFace: CardFace.DIAMOND,
@@ -144,25 +151,22 @@ export class PageDescSpectacleComponent implements OnInit {
 
   ngOnInit() {
     let url = this.router.url;
-    const currentRoute = url.replace(
-      `/${LstPagesMap.get(Pages.SPECTACLES)!.path}/`,
-      ''
-    );
+    const currentRoute = url.replace(`/${PageHome.path}/`, '');
 
     switch (currentRoute) {
-      case LstPagesMap.get(Pages.SPECCLOSUP)!.path:
+      case PageSpecCloseUp.path:
         this.spectacle = this.spectacleClosUp;
         break;
-      case LstPagesMap.get(Pages.SPECCABARET)!.path:
+      case PageSpecCabaret.path:
         this.spectacle = this.spectacleCabaret;
         break;
-      case LstPagesMap.get(Pages.SPECMAGIENUM)!.path:
+      case PageSpecMagieNum.path:
         this.spectacle = this.spectacleMagieNum;
         break;
-      case LstPagesMap.get(Pages.SPECENFANTS)!.path:
+      case PageSpecJeunePublic.path:
         this.spectacle = this.spectacleJeunePublic;
         break;
-      case LstPagesMap.get(Pages.SPECGRANDESILLU)!.path:
+      case PageSpecShowGrandesIllusions.path:
         this.spectacle = this.spectacleGrandesIllu;
         break;
       default:
