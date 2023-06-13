@@ -66,7 +66,7 @@ export class NavResponsiveComponent implements OnInit, OnDestroy {
     this.uiService.moveSlowToId(this.viewportScroller, `app`);
   }
 
-  goToLink(anchor: string) {
-    this.uiService.moveSlowToId(this.viewportScroller, anchor);
+  goToLink(anchor?: string) {
+    if (anchor) this.uiService.moveSlowToId(this.viewportScroller, anchor);
   }
 }

@@ -49,13 +49,13 @@ export const PageArtiste = <ICustomRoute>{
 };
 
 export const PageSpecCloseUp = <ICustomRoute>{
-  path: 'spectacles',
+  path: 'close-up',
   loadChildren: () =>
     import(
       '../pages/page-spectacles/page-desc-spectacle/page-desc-spectacle.module'
     ).then((m) => m.PageDescSpectacleModule),
   data: <IPageInfos>{
-    displayName: 'Clos-Up',
+    displayName: 'Close-Up',
     visibleInNav: false,
   },
 };
@@ -138,8 +138,8 @@ export const PageEspacePro = <ICustomRoute>{
   loadChildren: () =>
     import('../pages/page-home/page-home.module').then((m) => m.PageHomeModule),
   data: <IPageInfos>{
-    path: 'espace-pro',
-    displayName: 'Espace Pro',
+    anchor: 'espace-pro',
+    displayName: 'La promesse',
     visibleInNav: false,
   },
 };

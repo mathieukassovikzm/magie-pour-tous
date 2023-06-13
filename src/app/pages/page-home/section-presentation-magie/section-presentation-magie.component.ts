@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostBinding, OnInit } from '@angular/core';
 import { CardFace, IBtn, LstTypeBtn } from 'src/app/models/btn';
 import { PageSpectacle } from 'src/app/models/routes';
 
@@ -8,6 +8,7 @@ import { PageSpectacle } from 'src/app/models/routes';
   styleUrls: ['./section-presentation-magie.component.scss'],
 })
 export class SectionPresentationMagieComponent implements OnInit {
+  @HostBinding('class') class = 'section-special';
   public btnInfos: IBtn = {
     cardFace: CardFace.SPADE,
     btnTxt: 'En Savoir Plus',

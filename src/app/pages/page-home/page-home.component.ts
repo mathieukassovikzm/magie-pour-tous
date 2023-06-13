@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {
   PageArtiste,
   PageContact,
+  PageEspacePro,
   PageHome,
   PageSpectacle,
 } from 'src/app/models/routes';
@@ -17,6 +18,7 @@ export class PageHomeComponent implements OnInit {
   public anchorHome = PageHome.data.anchor;
   public anchorArtiste = PageArtiste.data.anchor;
   public anchorSpectacle = PageSpectacle.data.anchor;
+  public anchorPromesse = PageEspacePro.data.anchor;
   public anchorContact = PageContact.data.anchor;
   constructor() {}
 

@@ -1,3 +1,81 @@
+@import "_variables-dir";
+
 :host {
-  .bloc-video {}
+  h3 {
+    margin-bottom: $section-h3-padding-b;
+  }
+
+  .page-spectacle {
+    padding-top: 20px;
+  }
+
+  .video-container {
+    position: relative;
+
+    ::ng-deep .video {
+      position: relative;
+      display: block;
+      left: 50%;
+      transform: translateX(-50%);
+      width: fit-content;
+
+      iframe {
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+.close-up :host .picture {
+  background-image: url("/assets/img/section-spectacles/Spectacles-ClosUp-PhotoBanner-v.jpg");
+}
+
+.cabaret :host .picture {
+  background-image: url("/assets/img/section-spectacles/Spectacles-Cabaret-PhotoBanner-v.jpg");
+}
+
+.jeune-public :host .picture {
+  background-image: url("/assets/img/section-spectacles/Spectacles-JeunePublic-PhotoBanner-v.jpg");
+}
+
+.magie-numerique :host .picture {
+  background-image: url("/assets/img/section-spectacles/Spectacles-MagieNum-PhotoBanner-v");
+}
+
+.show-grandes-illusions :host .picture {
+  background-image: url("/assets/img/section-spectacles/Spectacles-GrandesIllu-PhotoBanner-v.jpg");
+}
+
+/* ---------------------- Media query ----------------------------*/
+
+@media only screen and (min-width: $min-width-s) {
+  :host {
+    .section-special-container {
+      max-height: none;
+    }
+
+    h3 {
+      text-align: center;
+    }
+
+    .page-spectacle {
+      padding-top: 100px;
+    }
+  }
+}
+
+@media only screen and (min-width: $min-width-l) {
+  :host {
+    .page-spectacle {
+      padding-top: 100px;
+    }
+  }
+}
+
+@media only screen and (min-width: $min-width-xl) {
+  :host {
+    .section-special-container .text .text-container {
+      top: 0;
+    }
+  }
 }

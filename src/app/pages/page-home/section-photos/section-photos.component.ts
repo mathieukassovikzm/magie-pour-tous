@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostBinding, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {
   PageSpecCloseUp,
@@ -15,6 +15,7 @@ import {
   styleUrls: ['./section-photos.component.scss'],
 })
 export class SectionPhotosComponent implements OnInit {
+  @HostBinding('class') class = 'section-special';
   public pageSpecCloseUpPath = PageSpecCloseUp.path!;
   public pageSpecMagieNumPath = PageSpecMagieNum.path!;
   public pageSpecCabaretPath = PageSpecCabaret.path!;

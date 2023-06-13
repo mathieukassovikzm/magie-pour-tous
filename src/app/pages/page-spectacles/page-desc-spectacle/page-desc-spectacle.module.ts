@@ -5,12 +5,14 @@ import { SectionIntroModule } from 'src/app/shared/components/section-intro/sect
 import { VideoModule } from 'src/app/shared/components/video/video.module';
 import { PageDescSpectacleRoutingModule } from './page-desc-spectacle-routing.module';
 import { PageDescSpectacleComponent } from './page-desc-spectacle.component';
+import { ButtonModule } from 'src/app/shared/components/button/button.module';
 
 @NgModule({
   imports: [
     CommonModule,
     PageDescSpectacleRoutingModule,
     SectionIntroModule,
+    ButtonModule,
     VideoModule,
     FooterModule,
   ],

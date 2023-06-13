@@ -1,16 +1,25 @@
 <div class="page-spectacle">
-  <app-section-intro [titleInfos]="spectacle.sectionTitle"></app-section-intro>
-  <section>
-    <div class="desc">
-      <h3>{{spectacle.sectionTitle.title}}</h3>
-      <div class="ctn-txt" *ngFor="let txt of spectacle.tabTxt">
-        <p>{{txt}}</p>
+  <section class="section-special-container section-pres-magie">
+    <h3>
+      {{spectacle.sectionTitle.title}}
+    </h3>
+    <div class="text">
+      <div class="text-container">
+        <p *ngFor="let txt of spectacle.tabTxt">
+          {{txt}}
+        </p>
+        <!-- <app-button [btnInfos]="btnInfos"></app-button> -->
       </div>
+    </div>
+    <div class="picture">
+      <div class="frame"></div>
     </div>
   </section>
   <section class="bloc-video" *ngIf="!!spectacle.videoId">
     <h3>Vidéo de présentation</h3>
-    <app-video class="video-youtube" [videoId]="spectacle.videoId"></app-video>
+    <div class="video-container">
+      <app-video class="video-youtube" [videoId]="spectacle.videoId"></app-video>
+    </div>
   </section>
 </div>
 <app-footer></app-footer>

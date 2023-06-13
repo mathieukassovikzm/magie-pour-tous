@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  HostBinding,
+  OnInit,
+  ViewEncapsulation,
+} from '@angular/core';
 import { IBtn, CardFace, LstTypeBtn } from 'src/app/models/btn';
 import { PageContact } from 'src/app/models/routes';
 
@@ -8,6 +13,7 @@ import { PageContact } from 'src/app/models/routes';
   styleUrls: ['./section-call-to-action.component.scss'],
 })
 export class SectionCallToActionComponent implements OnInit {
+  @HostBinding('class') class = 'section-special';
   public btnInfos: IBtn = {
     cardFace: CardFace.HEART,
     btnTxt: 'Contactez-nous',

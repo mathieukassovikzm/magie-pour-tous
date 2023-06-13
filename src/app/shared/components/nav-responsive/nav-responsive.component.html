@@ -4,7 +4,7 @@
       <!-- <a [routerLink]="navItem.path" class="nav-item" routerLinkActive="router-link-exact-active">
         {{navItem.data.displayName}}
       </a> -->
-      <a goToLink(navItem.data.anchor!) class="nav-item" routerLinkActive="router-link-exact-active">
+      <a (click)="goToLink(navItem.data.anchor)" class="nav-item" routerLinkActive="router-link-exact-active">
         {{navItem.data.displayName}}
       </a>
     </div>

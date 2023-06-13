@@ -115,6 +115,22 @@
   }
 }
 
+.close-up,
+.magie-numerique,
+.cabaret,
+.jeune-public,
+.show-grandes-illusions {
+  :host .header.screen {
+    .nav {
+      background-color: $c-background-light;
+
+      .nav-item {
+        color: $dark;
+      }
+    }
+  }
+}
+
 /* ---------------------- Media query ----------------------------*/
 
 @media only screen and (min-width: $min-width-m) {

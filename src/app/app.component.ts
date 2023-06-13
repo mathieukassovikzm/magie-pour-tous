@@ -37,7 +37,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   private apiLoaded = false;
 
-  public currentPageUrl = '';
+  public currentPageUrl: string | undefined = '';
 
   constructor(
     private uiService: UiService,
@@ -73,11 +73,11 @@ export class AppComponent implements OnInit, OnDestroy {
     var routerSub = this.router.events
       .pipe(
         filter((e) => e instanceof NavigationEnd),
-        map(() => this.activatedRoute),
-        map((route) => route.firstChild),
-        switchMap((route) => route!.data)
+        map((e) => (<NavigationEnd>e)?.url)
       )
-      .subscribe((r) => (this.currentPageUrl = r['path']));
+      .subscribe(
+        (url) => (this.currentPageUrl = url?.split('?')[0].split('/').pop()) // On récupère la dernière partie de l'url
+      );
     this.subscription$.add(routerSub);
   }
 

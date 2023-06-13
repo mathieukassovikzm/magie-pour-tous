@@ -7,6 +7,7 @@ import {
   ICustomRoute,
   PageArtiste,
   PageContact,
+  PageEspacePro,
   PageHome,
   PageSpecCabaret,
   PageSpecCloseUp,
@@ -37,6 +38,7 @@ export class UiService {
     PageHome,
     PageArtiste,
     PageSpectacle,
+    PageEspacePro,
     PageContact,
   ];
 
