@@ -3,31 +3,23 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable, Subscription, fromEvent } from 'rxjs';
 import { ICustomRoute } from 'src/app/models/routes';
 import { UiService } from 'src/app/services/ui.service';
+import { Navigation } from '../../naviagation/navigation';
 
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.scss'],
 })
-export class NavComponent implements OnInit, OnDestroy {
-  public isNavOpenState = false;
-  public backgroundColor = '';
+export class NavComponent extends Navigation implements OnInit, OnDestroy {
   public userHasScrolled = false;
 
   public scrollObservable$: Observable<Event>;
-  public scrollSubscription$: Subscription;
 
-  public lstPagesNav: ICustomRoute[] = this.uiService.lstPagesForNav;
-
-  constructor(
-    private uiService: UiService,
-    private viewportScroller: ViewportScroller
-  ) {
-    this.backgroundColor = this.uiService.backgroundColor;
-    this.isNavOpenState = this.uiService.isNavOpen;
+  constructor() {
+    super();
 
     this.scrollObservable$ = fromEvent(window, 'scroll');
-    this.scrollSubscription$ = this.scrollObservable$.subscribe((evt) => {
+    this.subscription$ = this.scrollObservable$.subscribe((evt) => {
       this.onScroll();
     });
   }
@@ -35,15 +27,7 @@ export class NavComponent implements OnInit, OnDestroy {
   ngOnInit() {}
 
   ngOnDestroy() {
-    this.scrollSubscription$.unsubscribe();
-  }
-
-  goToTop() {
-    this.uiService.moveSlowToId(this.viewportScroller, `app`);
-  }
-
-  goToLink(anchor: string) {
-    this.uiService.moveSlowToId(this.viewportScroller, anchor);
+    this.subscription$.unsubscribe();
   }
 
   onScroll() {

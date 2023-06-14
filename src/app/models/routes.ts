@@ -18,9 +18,11 @@ export const PageHome = <ICustomRoute>{
   loadChildren: () =>
     import('../pages/page-home/page-home.module').then((m) => m.PageHomeModule),
   data: <IPageInfos>{
+    anchor: 'app',
     displayName: 'Accueil',
     visibleInNav: true,
     sectionTitle: {
+      anchor: 'home',
       txtPosition: TitlePosition.BOTTOM,
       title: 'Ronan Calvany',
       subtitle: 'Magie pour tous',

@@ -73,11 +73,25 @@ export class AppComponent implements OnInit, OnDestroy {
     var routerSub = this.router.events
       .pipe(
         filter((e) => e instanceof NavigationEnd),
-        map((e) => (<NavigationEnd>e)?.url)
+        map((e) => (<NavigationEnd>e)?.url),
+        tap(
+          (url) => (this.currentPageUrl = url?.split('?')[0].split('/').pop()) // On récupère la dernière partie de l'url
+        ),
+        map(() => this.activatedRoute.queryParams),
+        switchMap((params) => params!),
+        tap((params) => {
+          var anchor = params['anchor'];
+          if (anchor) {
+            // on rajoute un delay de 550ms parce que l'animation in/out router dure 500ms
+            setTimeout(() => {
+              this.goToAnchor(anchor);
+            }, 550);
+          } else {
+            this.goToAnchor('app');
+          }
+        })
       )
-      .subscribe(
-        (url) => (this.currentPageUrl = url?.split('?')[0].split('/').pop()) // On récupère la dernière partie de l'url
-      );
+      .subscribe();
     this.subscription$.add(routerSub);
   }
 
@@ -103,8 +117,8 @@ export class AppComponent implements OnInit, OnDestroy {
     this.subscription$.unsubscribe();
   }
 
-  goToTop() {
-    this.uiService.moveSlowToId(this.viewportScroller, `app`);
+  goToAnchor(anchor?: string): void {
+    if (anchor) this.uiService.moveSlowToId(this.viewportScroller, anchor);
   }
 
   onResize() {

@@ -10,6 +10,9 @@ $gap: 5px;
 
 :host {
   .section-container {
+    h3 {
+      margin-bottom: $section-h3-padding-b;
+    }
 
     .photo-container {
       margin: auto;
