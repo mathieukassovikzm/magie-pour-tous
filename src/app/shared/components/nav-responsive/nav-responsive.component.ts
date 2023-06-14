@@ -1,11 +1,11 @@
 import { transition, trigger, useAnimation } from '@angular/animations';
 import { ViewportScroller } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import * as _ from 'lodash';
 import { Observable, Subscription } from 'rxjs';
-import { IPageInfos } from 'src/app/models/routes';
+import { ICustomRoute } from 'src/app/models/routes';
 import { UiService } from 'src/app/services/ui.service';
 import { SidebarCloseAnimation, SidebarOpenAnimation } from './animation';
+import { Navigation } from '../../naviagation/navigation';
 
 const animationParams = {
   menuWidth: '100%',
@@ -36,25 +36,15 @@ const animationParams = {
     ]),
   ],
 })
-export class NavResponsiveComponent implements OnInit, OnDestroy {
-  public backgroundColor = '';
-
+export class NavResponsiveComponent
+  extends Navigation
+  implements OnInit, OnDestroy
+{
   public isNavOpenState$: Observable<boolean>;
-  public isNavOpenState = false;
-  public subscription$: Subscription = new Subscription();
 
-  public lstPagesNav: IPageInfos[];
-
-  constructor(
-    private uiService: UiService,
-    private viewportScroller: ViewportScroller
-  ) {
-    this.backgroundColor = this.uiService.backgroundColor;
+  constructor() {
+    super();
     this.isNavOpenState$ = this.uiService.subIsNavOpen.asObservable();
-
-    this.lstPagesNav = _.filter(this.uiService.lstPages, {
-      visibleInNav: true,
-    });
   }
 
   ngOnInit() {
@@ -65,9 +55,5 @@ export class NavResponsiveComponent implements OnInit, OnDestroy {
   }
   ngOnDestroy() {
     this.subscription$.unsubscribe();
-  }
-
-  goToTop() {
-    this.uiService.moveSlowToId(this.viewportScroller, `app`);
   }
 }

@@ -2,6 +2,7 @@
  * General
  *******************************/
 $section-padding-tb: 100px;
+$section-h3-padding-b: 30px;
 $section-padding-lr: 0px;
 $section-container-padding-tb: 10px;
 $section-container-padding-lr: 10px;
@@ -14,7 +15,7 @@ $vignette-border-width: 2px;
 /*******************************
  * Header
  *******************************/
-$header-txt-color: $c-text-light;
+$header-txt-color: $light;
 $header-txt-hover-color: $c-primary;
 $header-txt-size-m: $base-size-font-txt-m;
 $header-txt-size-l: $base-size-font-txt-xl;

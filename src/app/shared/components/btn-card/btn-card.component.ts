@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CardFace, IBtn } from 'src/app/models/btn';
-import { LstPagesMap, Pages } from 'src/app/models/routes';
 
 @Component({
   selector: 'app-btn-card',
@@ -33,8 +32,8 @@ export class BtnCardComponent implements OnInit {
   }
 
   navigate(): void {
-    this.router.navigate([
-      `${LstPagesMap.get(Pages.SPECTACLES)?.path}/${this.btnInfos.btnLink}`,
-    ]);
+    // this.router.navigate([
+    //   `${LstPagesMap.get(Pages.SPECTACLES)?.path}/${this.btnInfos.btnLink}`,
+    // ]);
   }
 }

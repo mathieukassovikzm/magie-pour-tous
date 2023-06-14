@@ -1,0 +1,97 @@
+@import "variables-dir";
+
+$button-padding-tb : 8px;
+$button-padding-lr : 12px;
+$button-border-radius : 51px;
+$button-face-size : 70px;
+$button-face-scale : 60%;
+$button-box-shadow : 0 2px 4px rgba(0, 0, 0, 0.18);
+
+.button {
+  position: relative;
+  margin: auto;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  background: transparent;
+  transition: all ease $animation-duration-short;
+
+  .button-face {
+    border: 1px solid;
+    border-radius: 50%;
+    width: $button-face-size;
+    height: $button-face-size;
+    background-color: $card-background;
+    box-shadow: $button-box-shadow;
+    z-index: 2;
+
+    svg {
+      transform: scale($button-face-scale);
+    }
+  }
+
+  &.button-heart,
+  &.button-diamond {
+    .button-face {
+      border-color: $card-color-red;
+    }
+
+    p {
+      border-color: $card-color-red;
+      color: $card-color-red;
+    }
+
+    svg path {
+      fill: $card-color-red;
+    }
+  }
+
+  &.button-spade,
+  &.button-club {
+    .button-face {
+      border-color: $card-color-black;
+    }
+
+    p {
+      border-color: $card-color-black;
+      color: $card-color-black;
+    }
+
+    svg path {
+      fill: $card-color-black;
+    }
+  }
+
+  .txt {
+    position: relative;
+    left: -30px;
+
+    padding: $button-padding-tb $button-padding-lr;
+    padding-left: 40px;
+    border-top-right-radius: $button-border-radius;
+    border-bottom-right-radius: $button-border-radius;
+    background-color: $card-background;
+    box-shadow: $button-box-shadow;
+    border: 1px solid;
+  }
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+  }
+}
+
+.dark-background {
+
+  .button .button-face {
+    background-color: $c-tertiary-dark;
+    border-color: $light;
+  }
+
+  .button .txt {
+    border-color: $light;
+    background-color: $c-tertiary-dark;
+    color: $light;
+  }
+
+}

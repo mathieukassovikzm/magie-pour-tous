@@ -1,8 +1,8 @@
-<section class="s-intro"
-  [ngStyle]="{ 'background': 'linear-gradient(0deg, rgba(0, 0, 0, 0.7) 0%, rgba(255, 255, 255, 0) 35%),no-repeat center center url(' + backgroundImage + '.jpg)'}">
+<div class="s-intro"
+  [ngStyle]="{ 'background': 'linear-gradient(0deg, rgba(0, 0, 0, 0.7) 0%, rgba(255, 255, 255, 0) 35%), no-repeat center center url(' + backgroundImage + '.jpg)', 'background-size': 'cover'}">
   <div [class]="setClassTitleTxt()">
     <h1>{{titleInfos.title}}</h1>
     <h2>{{titleInfos.subtitle}}</h2>
-    <button *ngIf="!!titleInfos.btn?.btnTxt" (btnClicked)="goToLink()">{{titleInfos.btn?.btnTxt}}</button>
+    <app-button *ngIf="!!titleInfos.btn" [btnInfos]="titleInfos.btn"></app-button>
   </div>
-</section>
+</div>

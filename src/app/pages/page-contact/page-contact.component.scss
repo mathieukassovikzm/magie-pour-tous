@@ -15,12 +15,14 @@
     padding-bottom: 0;
 
     .p-contact-item {
+      position: relative;
+
       .svg-logo {
         display: block;
         margin: auto;
         width: 150px;
         margin-bottom: 20px;
-        background-color: $c-text-light;
+        background-color: $light;
         border-radius: 50%;
 
         ::ng-deep svg {
@@ -33,10 +35,18 @@
         padding-bottom: $header-bottom-height;
 
         p {
-          color: $c-text-light;
+          color: $light;
         }
 
         .enterprise-infos {
+          position: absolute;
+          left: 0;
+          bottom: 5px;
+          width: 100%;
+          display: flex;
+          flex-wrap: nowrap;
+          justify-content: space-evenly;
+
           li p {
             font-size: 12px;
           }
@@ -50,6 +60,7 @@
 @media only screen and (min-width: $min-width-l) {
   :host {
     .p-contact {
+      position: relative;
       background: none;
       box-shadow: none;
       height: 100vh;
@@ -74,15 +85,10 @@
 
 
         &.infos {
-          padding: 0 30px;
+          padding: 30px;
 
           p {
-            color: $c-text-dark;
-          }
-
-          .enterprise-infos {
-            display: flex;
-            justify-content: space-between;
+            color: $dark;
           }
         }
       }

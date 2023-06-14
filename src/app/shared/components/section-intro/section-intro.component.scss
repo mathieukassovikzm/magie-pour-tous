@@ -20,9 +20,6 @@ $angle: 90deg;
 
 :host {
   .s-intro {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
     // height: calc(100vh - #{$header-bottom-height});
     height: calc(100vh);
 

@@ -2,8 +2,20 @@ import { ViewportScroller } from '@angular/common';
 import { Injectable } from '@angular/core';
 import { Event, Router, RouterEvent } from '@angular/router';
 import { Subject, filter } from 'rxjs';
-import { IPageInfos, LstPagesMap, Pages } from '../models/routes';
-import { IBtn, CardFace, ILstBtnCard, LstCardDirection } from '../models/btn';
+import { CardFace, IBtn, ILstBtnCard, LstCardDirection } from '../models/btn';
+import {
+  ICustomRoute,
+  PageArtiste,
+  PageContact,
+  PageEspacePro,
+  PageHome,
+  PageSpecCabaret,
+  PageSpecCloseUp,
+  PageSpecJeunePublic,
+  PageSpecMagieNum,
+  PageSpecShowGrandesIllusions,
+  PageSpectacle,
+} from '../models/routes';
 
 const darkBackground = 'dark-background';
 const lightBackground = 'light-background';
@@ -22,42 +34,48 @@ export class UiService {
   public isHoveredTolerance = false;
   public isHoveredConviviality = false;
 
-  public lstPages: IPageInfos[] = [];
+  public lstPagesForNav: ICustomRoute[] = [
+    PageHome,
+    PageArtiste,
+    PageSpectacle,
+    PageEspacePro,
+    PageContact,
+  ];
 
   public btnSpecClosup: IBtn = {
-    btnTxt: LstPagesMap.get(Pages.SPECCLOSUP)?.displayName,
-    btnLink: LstPagesMap.get(Pages.SPECCLOSUP)?.path,
+    btnTxt: PageSpecCloseUp.data!['displayName'],
+    btnLink: PageSpecCloseUp.path,
     cardFace: CardFace.SPADE,
     value: 'A',
   };
   public btnSpecCabaret: IBtn = {
-    btnTxt: LstPagesMap.get(Pages.SPECCABARET)?.displayName,
-    btnLink: LstPagesMap.get(Pages.SPECCABARET)?.path,
+    btnTxt: PageSpecCabaret.data!['displayName'],
+    btnLink: PageSpecCabaret.path,
     cardFace: CardFace.HEART,
     value: 'A',
   };
   public btnSpecMagieNum: IBtn = {
     btnTxt: 'Magie Digital',
-    btnLink: LstPagesMap.get(Pages.SPECMAGIENUM)?.path,
+    btnLink: PageSpecMagieNum.path,
     cardFace: CardFace.DIAMOND,
     value: 'A',
   };
   public btnSpecEnfants: IBtn = {
     btnTxt: 'Jeune public',
-    btnLink: LstPagesMap.get(Pages.SPECENFANTS)?.path,
+    btnLink: PageSpecJeunePublic.path,
     cardFace: CardFace.CLUB,
     value: 'A',
   };
   public btnSpecGrandesIllu: IBtn = {
-    btnTxt: LstPagesMap.get(Pages.SPECGRANDESILLU)?.displayName,
-    btnLink: LstPagesMap.get(Pages.SPECGRANDESILLU)?.path,
+    btnTxt: PageSpecShowGrandesIllusions.data!['displayName'],
+    btnLink: PageSpecShowGrandesIllusions.path,
     cardFace: CardFace.CLUB,
     value: 'A',
   };
 
   public lstBtnCards = <ILstBtnCard>{
     lstBtnCard: [],
-    direction: LstCardDirection.VERTICAL,
+    direction: LstCardDirection.HORIZONTAL,
   };
 
   constructor(
@@ -70,10 +88,6 @@ export class UiService {
         this.closeNav();
         // this.moveSlowToId(viewportScroller, 'app'); // TODO a décomenter
       });
-
-    LstPagesMap.forEach((value: IPageInfos, key: Pages) => {
-      this.lstPages.push(value);
-    });
 
     this.lstBtnCards.lstBtnCard.push(this.btnSpecClosup);
     this.lstBtnCards.lstBtnCard.push(this.btnSpecCabaret);

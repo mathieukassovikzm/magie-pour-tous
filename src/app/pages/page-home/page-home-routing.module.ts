@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PageHomeComponent } from './page-home.component';
+import { SpectacleSubRoutes } from 'src/app/models/routes';
 
 const routes: Routes = [
   {
@@ -10,6 +11,7 @@ const routes: Routes = [
         path: '',
         component: PageHomeComponent,
       },
+      ...SpectacleSubRoutes,
     ],
   },
 ];

@@ -1,17 +1,16 @@
 <div class="header responsive ">
-  <!-- <transition name="translatedMenu" v-on:before-enter="toggleScroll" v-on:after-leave="toggleScroll"> -->
   <nav [@sideMenu] *ngIf="isNavOpenState" class="nav nav-responsive">
     <div *ngFor="let navItem of lstPagesNav">
-      <a [routerLink]="navItem.path" class="nav-item" routerLinkActive="router-link-exact-active">
-        {{navItem.displayName}}
+      <!-- <a [routerLink]="navItem.path" class="nav-item" routerLinkActive="router-link-exact-active">
+        {{navItem.data.displayName}}
+      </a> -->
+      <a (click)="navigateToAnchor(navItem.data.anchor)" class="nav-item" routerLinkActive="router-link-exact-active">
+        {{navItem.data.displayName}}
       </a>
     </div>
   </nav>
   <!-- </transition>-->
   <div class="header-logo">
-    <!-- <div class="header-item menu-img" (click)="goToTop()">
-      <img src="./assets/img/logos/Go2Sport_Logo-medium-bg-black.png" alt="logo Go2Sport 29" />
-    </div> -->
     <app-svg-logo class="header-item" (click)="goToTop()"></app-svg-logo>
     <div class="header-item menu-burger ">
       <app-burger />

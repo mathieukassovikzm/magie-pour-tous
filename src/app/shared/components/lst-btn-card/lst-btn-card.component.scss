@@ -10,7 +10,7 @@ $bottom-switch : 45px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    width: 100%;
+    width: $card-width*2; // TODO a changer quand le nombre de cartes évolue
 
     .ctn-card {
       margin: 5px;
