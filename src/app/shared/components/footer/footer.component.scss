@@ -30,6 +30,10 @@ $footer-img-width: 250px !default;
     .footer-item {
       color: $light;
 
+      .item-groupe {
+        margin: 30px auto;
+      }
+
       &.logo {
         margin: auto;
         background-color: $light;

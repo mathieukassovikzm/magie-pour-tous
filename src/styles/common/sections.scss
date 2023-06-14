@@ -1,8 +1,8 @@
 section,
 .section {
   margin: 0;
-  padding-top: $section-padding-tb;
-  padding-bottom: $section-padding-tb;
+  padding-top: $section-padding-tb-small;
+  padding-bottom: $section-padding-tb-small;
   padding-left: $section-padding-lr;
   padding-right: $section-padding-lr;
 
@@ -12,6 +12,11 @@ section,
   }
 
   @media only screen and (min-width: $min-width-l) {
+    .section {
+      padding-top: $section-padding-tb;
+      padding-bottom: $section-padding-tb;
+    }
+
     .section-container {
       width: 75%;
       margin: auto;

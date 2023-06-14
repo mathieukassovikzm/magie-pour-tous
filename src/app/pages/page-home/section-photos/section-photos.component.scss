@@ -18,14 +18,14 @@ $gap: 5px;
       margin: auto;
       padding: 15px;
       display: grid;
-      grid-template-rows: repeat(8, 1fr);
+      grid-template-rows: repeat(5, 1fr);
       grid-template-columns: 1fr;
       row-gap: $gap;
       height: $min-size-grid * 8;
     }
 
     .picture-ctn {
-      height: $min-size-grid;
+      height: auto;
 
       .picture {
         background-repeat: no-repeat;
@@ -88,6 +88,7 @@ $gap: 5px;
         }
 
         p {
+          font-size: $base-size-font-txt-l;
           color: $light;
         }
 
@@ -129,9 +130,20 @@ $gap: 5px;
 @media only screen and (min-width: $min-width-m) {
   :host {
     .section-container {
+      width: 70%;
+      margin: auto;
+
+      .picture {
+        height: auto;
+
+        &.vertical {
+          height: auto;
+        }
+      }
+
       .photo-container {
-        height: $min-size-grid * 3;
-        width: $min-size-grid * 3;
+        width: 100%;
+        height: auto;
         display: grid;
         grid-template-rows: repeat(3, 1fr);
         grid-template-columns: repeat(3, 1fr);
