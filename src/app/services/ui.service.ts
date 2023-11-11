@@ -83,8 +83,8 @@ export class UiService {
     private viewportScroller: ViewportScroller
   ) {
     router.events
-      .pipe(filter((e: Event): e is RouterEvent => e instanceof RouterEvent))
-      .subscribe((e: RouterEvent) => {
+      .pipe(filter((e: Event) => e instanceof RouterEvent))
+      .subscribe(() => {
         this.closeNav();
         // this.moveSlowToId(viewportScroller, 'app'); // TODO a décomenter
       });
